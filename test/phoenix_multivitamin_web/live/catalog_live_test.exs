@@ -11,7 +11,7 @@ defmodule PhoenixMultivitaminWeb.CatalogLiveTest do
     bottled = Catalog.bottled_slots()
 
     assert html =~ "Phoenix Multivitamin"
-    assert html =~ "26 of 325"
+    assert html =~ "39 of 325"
     assert html =~ "Routing and plugs"
     assert html =~ "LiveView lifecycle and events"
     assert html =~ "Function components and HEEx"
@@ -29,9 +29,9 @@ defmodule PhoenixMultivitaminWeb.CatalogLiveTest do
   test "a planned slot says it is planned", %{conn: conn} do
     slot =
       Catalog.features()
-      |> hd()
-      |> Map.fetch!(:slots)
-      |> Enum.find(&(not &1.bottled))
+      |> Enum.find_value(fn feature ->
+        Enum.find(feature.slots, &(not &1.bottled))
+      end)
 
     {:ok, _view, html} = live(conn, slot.path)
     assert html =~ "planned"
