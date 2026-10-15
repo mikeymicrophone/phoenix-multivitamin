@@ -8,14 +8,14 @@ defmodule PhoenixMultivitaminWeb.CatalogLiveTest do
   test "the catalog lists every feature and the bottled count", %{conn: conn} do
     {:ok, _view, html} = live(conn, ~p"/")
 
-    [bottled] = Catalog.bottled_slots()
+    bottled = Catalog.bottled_slots()
 
     assert html =~ "Phoenix Multivitamin"
-    assert html =~ "1 of 325"
+    assert html =~ "13 of 325"
     assert html =~ "Routing and plugs"
     assert html =~ "LiveView lifecycle and events"
     assert html =~ "Testing"
-    assert html =~ bottled.title
+    assert Enum.all?(bottled, &(html =~ &1.title))
   end
 
   test "every slot has a page", %{conn: conn} do
