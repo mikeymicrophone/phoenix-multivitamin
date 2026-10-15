@@ -30,14 +30,16 @@ nil if you wanted the default.
 **What happens.** `attr :rest, :global, default: %{class: "mill-ticket"}`
 applies `mill-ticket` only when the caller omits `class`. Passing
 `class="rush-load"` replaces that default. The two names are not
-concatenated. A static `class="scale-slip"` on the same tag as `{@rest}`
-is a separate class attribute and still appears.
+concatenated. Writing `class="scale-slip"` on the same tag as `{@rest}`
+emits a second class attribute; the HTML parser keeps the first, so the
+cedar ticket shows `scale-slip` and never `mill-ticket`.
 
 **Why it matters.** The docs say the default map is "merged". Map merge
-replaces the `class` key. A rush load silently drops `mill-ticket`.
+replaces the `class` key. A static class on the same tag hides the rest
+class entirely.
 
-**What to do.** Concatenate the classes yourself before they reach rest, or
-put the default on the HTML tag instead of in the rest default map.
+**What to do.** Put the class on rest, not also on the tag. Concatenate
+caller and default classes yourself if you need both names.
 
 **Seen in:** [Port Angeles mill tickets](features/04-function-components-and-heex/05-port-angeles-mill-tickets/).
 

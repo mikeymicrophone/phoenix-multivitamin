@@ -4,7 +4,8 @@
 # - attr :rest, :global with a default map
 # - include: extra names on the global set
 # - Caller class replaces the rest default class (map merge), it does not concatenate
-# - A static class on the same tag as {@rest} is a second class attribute
+# - A static class on the same tag as {@rest} emits a second class attribute;
+#   the HTML parser keeps the first and the rest class is dropped
 
 defmodule PhoenixMultivitaminWeb.PortAngelesMillTicketsLive do
   @moduledoc false
@@ -45,7 +46,7 @@ defmodule PhoenixMultivitaminWeb.PortAngelesMillTicketsLive do
 
   def mill_ticket(assigns) do
     ~H"""
-    <article id={@id} class="scale-slip" {@rest}>
+    <article id={@id} {@rest}>
       <h2>{@species}</h2>
       <dl class="station-meta">
         <dt>Board feet</dt>
@@ -53,6 +54,21 @@ defmodule PhoenixMultivitaminWeb.PortAngelesMillTicketsLive do
         <dt>Truck</dt>
         <dd data-field="truck">{@truck}</dd>
       </dl>
+    </article>
+    """
+  end
+
+  attr :species, :string, required: true
+  attr :board_feet, :integer, required: true
+  attr :truck, :string, required: true
+  attr :id, :string, required: true
+  attr :rest, :global, default: %{class: "mill-ticket"}
+
+  def competing_class_ticket(assigns) do
+    ~H"""
+    <article id={@id} class="scale-slip" {@rest}>
+      <h2>{@species}</h2>
+      <p>Truck {@truck} · {@board_feet} bf</p>
     </article>
     """
   end
@@ -109,6 +125,13 @@ defmodule PhoenixMultivitaminWeb.PortAngelesMillTicketsLive do
         board_feet={6_100}
         truck="PA-18"
         disabled={@fir_disabled?}
+      />
+
+      <.competing_class_ticket
+        id="cedar-ticket"
+        species="Western redcedar"
+        board_feet={2_240}
+        truck="PA-9"
       />
     </Layouts.catalog>
     """

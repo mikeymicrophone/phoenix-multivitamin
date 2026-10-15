@@ -11,8 +11,9 @@ Each ticket declares `attr :rest, :global` with a default class and
 - `default: %{class: "mill-ticket"}` applies only when the caller omits
   `class`. A caller `class="rush-load"` **replaces** that default. The two
   class names are not concatenated.
-- A static `class="scale-slip"` on the same tag as `{@rest}` is a separate
-  class attribute and still appears beside the rest class.
+- A static `class="scale-slip"` on the same tag as `{@rest}` is a second
+  class attribute. The HTML parser keeps the first, so the cedar ticket
+  never shows `mill-ticket`.
 
 **Files**
 

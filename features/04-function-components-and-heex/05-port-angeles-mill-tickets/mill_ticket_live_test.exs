@@ -14,7 +14,9 @@ defmodule PhoenixMultivitaminWeb.PortAngelesMillTicketsLiveTest do
     assert has_element?(view, "#hemlock-ticket", "4820")
     fir = view |> element("#fir-ticket") |> render()
     assert fir =~ "mill-ticket"
-    assert fir =~ "scale-slip"
+    cedar = view |> element("#cedar-ticket") |> render()
+    assert cedar =~ "scale-slip"
+    refute cedar =~ "mill-ticket"
   end
 
   test "a caller class replaces the rest default class instead of concatenating", %{conn: conn} do
@@ -24,11 +26,11 @@ defmodule PhoenixMultivitaminWeb.PortAngelesMillTicketsLiveTest do
     class = view |> element("#hemlock-ticket") |> render()
     assert class =~ "rush-load"
     refute class =~ "mill-ticket"
-    assert class =~ "scale-slip"
 
     view |> element("#clear-hemlock-rush") |> render_click()
     class = view |> element("#hemlock-ticket") |> render()
     refute class =~ "rush-load"
+    assert class =~ "mill-ticket"
   end
 
   test "included global attrs such as disabled pass through rest", %{conn: conn} do
