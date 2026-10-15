@@ -8,81 +8,94 @@
   slots: [
     %{
       number: 1,
-      slug: "01-point-wilson-signal-flags",
-      title: "Point Wilson signal flags",
-      bottled: false
+      slug: "01-alki-point-signal-flags",
+      title: "Alki Point signal flags",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.AlkiPointSignalFlagsLive
     },
     %{
       number: 2,
       slug: "02-bush-point-range-board",
       title: "Bush Point range board",
-      bottled: false
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.BushPointRangeBoardLive
     },
     %{
       number: 3,
-      slug: "03-cattle-point-fog-logger",
-      title: "Cattle Point fog logger",
-      bottled: false
+      slug: "03-patos-island-fog-logger",
+      title: "Patos Island fog logger",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.PatosIslandFogLoggerLive
     },
     %{
       number: 4,
-      slug: "04-slip-point-light-book",
-      title: "Slip Point light book",
-      bottled: false
+      slug: "04-turn-point-light-book",
+      title: "Turn Point light book",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.TurnPointLightBookLive
     },
     %{
       number: 5,
-      slug: "05-ediz-hook-current-card",
-      title: "Ediz Hook current card",
-      bottled: false
+      slug: "05-west-point-current-card",
+      title: "West Point current card",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.WestPointCurrentCardLive
     },
     %{
       number: 6,
-      slug: "06-marrowstone-fog-desk",
-      title: "Marrowstone fog desk",
-      bottled: false
+      slug: "06-browns-point-fog-desk",
+      title: "Browns Point fog desk",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.BrownsPointFogDeskLive
     },
     %{
       number: 7,
-      slug: "07-sequim-bay-staff-gate",
-      title: "Sequim Bay staff gate",
-      bottled: false
+      slug: "07-point-no-point-staff-gate",
+      title: "Point No Point staff gate",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.PointNoPointStaffGateLive
     },
     %{
       number: 8,
       slug: "08-smith-island-tide-drum",
       title: "Smith Island tide drum",
-      bottled: false
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.SmithIslandTideDrumLive
     },
     %{
       number: 9,
       slug: "09-point-robinson-bell-relay",
       title: "Point Robinson bell relay",
-      bottled: false
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.PointRobinsonBellRelayLive
     },
     %{
       number: 10,
       slug: "10-edmonds-ramp-tickets",
       title: "Edmonds ramp tickets",
-      bottled: false
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.EdmondsRampTicketsLive
     },
     %{
       number: 11,
       slug: "11-mukilteo-fare-banner",
       title: "Mukilteo fare banner",
-      bottled: false
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.MukilteoFareBannerLive
     },
     %{
       number: 12,
       slug: "12-deception-pass-fault-line",
       title: "Deception Pass fault line",
-      bottled: false
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.DeceptionPassFaultLineLive
     },
     %{
       number: 13,
       slug: "13-fort-worden-guard-house",
       title: "Fort Worden guard house",
-      bottled: false
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.FortWordenGuardHouseLive
     }
   ]
 }

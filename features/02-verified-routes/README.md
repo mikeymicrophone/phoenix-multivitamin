@@ -4,21 +4,21 @@ The ~p sigil, compile-time path checking, static paths, query strings, and inter
 
 Official reference: [Verified routes](https://hexdocs.pm/phoenix/Phoenix.VerifiedRoutes.html)
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Point Wilson signal flags — planned
-02. Bush Point range board — planned
-03. Cattle Point fog logger — planned
-04. Slip Point light book — planned
-05. Ediz Hook current card — planned
-06. Marrowstone fog desk — planned
-07. Sequim Bay staff gate — planned
-08. Smith Island tide drum — planned
-09. Point Robinson bell relay — planned
-10. Edmonds ramp tickets — planned
-11. Mukilteo fare banner — planned
-12. Deception Pass fault line — planned
-13. Fort Worden guard house — planned
+01. [Alki Point signal flags](01-alki-point-signal-flags/) — available
+02. [Bush Point range board](02-bush-point-range-board/) — available
+03. [Patos Island fog logger](03-patos-island-fog-logger/) — available
+04. [Turn Point light book](04-turn-point-light-book/) — available
+05. [West Point current card](05-west-point-current-card/) — available
+06. [Browns Point fog desk](06-browns-point-fog-desk/) — available
+07. [Point No Point staff gate](07-point-no-point-staff-gate/) — available
+08. [Smith Island tide drum](08-smith-island-tide-drum/) — available
+09. [Point Robinson bell relay](09-point-robinson-bell-relay/) — available
+10. [Edmonds ramp tickets](10-edmonds-ramp-tickets/) — available
+11. [Mukilteo fare banner](11-mukilteo-fare-banner/) — available
+12. [Deception Pass fault line](12-deception-pass-fault-line/) — available
+13. [Fort Worden guard house](13-fort-worden-guard-house/) — available
 
 ## What each scenario adds
 
@@ -29,14 +29,13 @@ Official reference: [Verified routes](https://hexdocs.pm/phoenix/Phoenix.Verifie
 | 03 | Dynamic segments interpolated into a verified path |
 | 04 | Static asset paths through ~p |
 | 05 | A verified path used from a controller redirect |
-| 06 | A verified path used from a LiveView patch |
+| 06 | A verified path used from a LiveView patch and push_navigate |
 | 07 | Optional query params omitted versus present |
-| 08 | URL generation with a custom host from the endpoint |
+| 08 | URL generation with a custom host from the endpoint, a URI, or the conn |
 | 09 | Verified routes inside a mailer template |
 | 10 | Forwarded routes and the prefix the sigil must include |
-| 11 | A path helper retired in favor of ~p |
-| 12 | Compile-time failure when a route is removed, documented in the README |
+| 11 | A path helper retired in favor of ~p wrapped in a named function |
+| 12 | Compile-time warning when a route is removed, documented in the README |
 | 13 | Capstone: controller, LiveView, and mailer all share one ~p path |
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot in another feature.
