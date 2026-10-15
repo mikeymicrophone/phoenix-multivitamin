@@ -59,6 +59,48 @@ defmodule PhoenixMultivitaminWeb.Router do
 
     require PhoenixMultivitamin.Catalog
     PhoenixMultivitamin.Catalog.draw_live_routes()
+
+    # Extra URL shapes for verified-routes examples (interpolated segments,
+    # controller redirects, forwarded kiosks, sibling LiveView paths). Domain
+    # copy stays in each scenario folder; these entries only name the paths
+    # ~p has to check.
+    live "/features/02-verified-routes/01-alki-point-signal-flags/night",
+         PhoenixMultivitaminWeb.AlkiPointSignalFlagsLive,
+         :night
+
+    live "/features/02-verified-routes/03-patos-island-fog-logger/watches/:watch",
+         PhoenixMultivitaminWeb.PatosIslandFogLoggerLive
+
+    get "/features/02-verified-routes/05-west-point-current-card/drift",
+        PhoenixMultivitaminWeb.WestPointCurrentCardController,
+        :drift
+
+    live "/features/02-verified-routes/06-browns-point-fog-desk/horn-cabinet",
+         PhoenixMultivitaminWeb.BrownsPointFogDeskLive,
+         :horn
+
+    get "/features/02-verified-routes/08-smith-island-tide-drum/island-host",
+        PhoenixMultivitaminWeb.SmithIslandTideDrumController,
+        :island_host
+
+    forward "/features/02-verified-routes/10-edmonds-ramp-tickets/kiosk",
+            PhoenixMultivitaminWeb.EdmondsRampKiosk
+
+    live "/features/02-verified-routes/11-mukilteo-fare-banner/lanes/:lane",
+         PhoenixMultivitaminWeb.MukilteoFareBannerLive,
+         :lane
+
+    get "/features/02-verified-routes/13-fort-worden-guard-house/gate",
+        PhoenixMultivitaminWeb.FortWordenGuardHouseController,
+        :gate
+
+    live "/features/02-verified-routes/13-fort-worden-guard-house/relief",
+         PhoenixMultivitaminWeb.FortWordenGuardHouseLive,
+         :relief
+
+    live "/features/02-verified-routes/13-fort-worden-guard-house/passes/:pass",
+         PhoenixMultivitaminWeb.FortWordenGuardHouseLive,
+         :pass
   end
 
   # Feature 01 — Routing and plugs. Path slugs live here; domain copy and

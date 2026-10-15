@@ -64,6 +64,94 @@ the redirect having sent.
 
 **Seen in:** [Quillayute chart desk](features/01-routing-and-plugs/11-quillayute-chart-desk/).
 
+## Verified routes
+
+### A nil query value encodes as an empty `key=`, it is not omitted
+
+**What happens.** `~p"/gate?#{[]}"` and `~p"/gate?#{%{}}"` drop the `?`
+entirely. `~p"/gate?#{[crew: nil, tide: "ebb"]}"` does not drop `crew`.
+It becomes `?crew=&tide=ebb`. `handle_params/3` then sees `"crew" => ""`.
+`false` encodes as `"false"`.
+
+**Why it matters.** Passing `nil` looks like "leave this optional key
+off". The key is still there, and `value || "none"` will not treat `""`
+as missing because an empty string is truthy.
+
+**What to do.** Omit the key from the keyword list or map. Do not pass
+`nil` if you wanted the key gone.
+
+**Seen in:** [Point No Point staff gate](features/02-verified-routes/07-point-no-point-staff-gate/).
+
+### `url(~p)` uses the endpoint `url:` config, including a default port 4000
+
+**What happens.** `config :phoenix_multivitamin, Endpoint, url: [host: "localhost"]`
+has no port. `url(~p"/path")` still emits `http://localhost:4000/path`.
+The test listener is `http: [port: 4002]` and does not appear. A `%URI{}`
+or `put_router_url/2` is what changes the host.
+
+**Why it matters.** A mailer or an `assert` that expected `http://localhost/path`
+or `:4002` fails. The generated URL is not the listener the test conn talks to.
+
+**What to do.** Compare against `Endpoint.url() <> path`, or pass a `%URI{}`
+/`put_router_url/2` when the public host must differ.
+
+**Seen in:** [Smith Island tide drum](features/02-verified-routes/08-smith-island-tide-drum/),
+[Point Robinson bell relay](features/02-verified-routes/09-point-robinson-bell-relay/).
+
+### A static `~p` never asks the router, and never checks that the file exists
+
+**What happens.** `statics: ~w(assets fonts images favicon.ico robots.txt)`
+makes any path whose first segment matches that list call
+`Endpoint.static_path/1`. `~p"/images/missing-characteristic.svg"` compiles
+with no `no route path` warning. `static_integrity/2` is `nil` until
+`mix phx.digest`.
+
+**Why it matters.** A typo in a plate filename looks verified. The 404
+is a runtime miss, not a compile warning.
+
+**What to do.** Treat static `~p` as a prefix check. Assert the file is
+served, or keep names in one helper.
+
+**Seen in:** [Turn Point light book](features/02-verified-routes/04-turn-point-light-book/).
+
+### A list of binaries in one interpolation becomes extra path segments
+
+**What happens.** `~p"/watches/#{watch}"` with a `%PatosIslandWatch{}` is
+one segment. The same sigil with `["dawn", "dusk"]` becomes
+`/watches/dawn/dusk`. Compile-time verification substitutes `"1"` for the
+interpolation, so it still matches `/watches/:watch`. A slash inside a
+binary is `%2F`, not a new segment.
+
+**Why it matters.** A watch list interpolated "to be helpful" compiles
+clean and 404s at runtime. The extra segment was never in the router.
+
+**What to do.** Interpolate one `Phoenix.Param` value per dynamic segment.
+Do not pass a list unless you mean extra segments.
+
+**Seen in:** [Patos Island fog logger](features/02-verified-routes/03-patos-island-fog-logger/),
+[Deception Pass fault line](features/02-verified-routes/12-deception-pass-fault-line/).
+
+### `/features/#{a}/#{b}` does not warn: the stand-in matches the planned catch-all
+
+**What happens.** Verification replaces interpolations with `"1"`.
+`~p"/features/#{feature}/#{span}"` is checked as `/features/1/1`, which
+matches `live "/features/:feature/:example"`. A retired nested path such
+as `/features/02-verified-routes/12-deception-pass-fault-line/collapsed-span`
+hidden behind those two dynamics does not warn. A path with enough static
+segments (`~p"/features/02-verified-routes/12-deception-pass-fault-line/collapsed-span"`)
+does: `no route path ... matches "/.../collapsed-span"`.
+
+**Why it matters.** The docs' "dynamic segments skip the warning" is easy
+to read as "dynamics are never checked". They are checked, against the
+stand-in. A catch-all two segments under `/features` makes a whole family
+of paths look verified.
+
+**What to do.** Keep a static prefix long enough to miss the catch-all
+when the extra folder is gone. Compile a throwaway module in the test if
+you need to show the warning; `mix precommit` treats warnings as errors.
+
+**Seen in:** [Deception Pass fault line](features/02-verified-routes/12-deception-pass-fault-line/).
+
 ## Function components and HEEx
 
 ### Passing nil does not restore an attr default
