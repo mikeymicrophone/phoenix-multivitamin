@@ -4,39 +4,38 @@ attr, slot, embed_templates, declarative assigns, and composing HEEx without a L
 
 Official reference: [Function components and HEEx](https://hexdocs.pm/phoenix_live_view/Phoenix.Component.html)
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Seed packet label press — planned
-02. Totten Inlet nursery tags — planned
-03. Chimacum cider labels — planned
-04. Dungeness crab pot tags — planned
-05. Port Angeles mill tickets — planned
-06. Sequim lavender sachets — planned
-07. Port Hadlock boat shop cards — planned
-08. Irondale foundry heat slips — planned
-09. Discovery Bay tile board — planned
-10. Kaleetan trail permits — planned
-11. Elwha hatchery trays — planned
-12. Hoko River smolt tags — planned
-13. Skokomish weir cards — planned
+01. [Seed packet label press](01-seed-packet-label-press/) — available
+02. [Totten Inlet nursery tags](02-totten-inlet-nursery-tags/) — available
+03. [Chimacum cider labels](03-chimacum-cider-labels/) — available
+04. [Dungeness crab pot tags](04-dungeness-crab-pot-tags/) — available
+05. [Port Angeles mill tickets](05-port-angeles-mill-tickets/) — available
+06. [Sequim lavender sachets](06-sequim-lavender-sachets/) — available
+07. [Port Hadlock boat shop cards](07-port-hadlock-boat-shop-cards/) — available
+08. [Irondale foundry heat slips](08-irondale-foundry-heat-slips/) — available
+09. [Discovery Bay tile board](09-discovery-bay-tile-board/) — available
+10. [Kaleetan trail permits](10-kaleetan-trail-permits/) — available
+11. [Elwha hatchery trays](11-elwha-hatchery-trays/) — available
+12. [Hoko River smolt tags](12-hoko-river-smolt-tags/) — available
+13. [Skokomish weir cards](13-skokomish-weir-cards/) — available
 
 ## What each scenario adds
 
 | Slot | What it adds |
 | --- | --- |
-| 01 | attr with types, defaults, and required |
-| 02 | A named slot versus the inner_block |
-| 03 | embed_templates for a card the HEEx file owns |
-| 04 | Declarative assigns versus map assigns |
-| 05 | Rest attributes passed through to a table |
-| 06 | A component that renders another component |
-| 07 | Conditional slots with render_slot/2 |
-| 08 | HEEx :if, :for, and :key on a ledger |
-| 09 | Colocated function components in one module |
-| 10 | doc on attr and the story it tells |
-| 11 | A component that raises on a missing assign |
-| 12 | HTML safety and interpolated versus raw text |
-| 13 | Capstone: attrs, slots, and nested cards on one press sheet |
+| 01 | attr with types, defaults, values, and required |
+| 02 | Named slots versus inner_block, with slot attrs |
+| 03 | embed_templates for a label the HEEx file owns |
+| 04 | HEEx :for, :if, :key, and :let |
+| 05 | Global attributes and rest |
+| 06 | Dynamic attributes and class lists |
+| 07 | render_slot/2 with arguments |
+| 08 | A component that renders another component |
+| 09 | HEEx change tracking: Map.put versus assign |
+| 10 | Phoenix.Component helpers: assign_new, update, dynamic_tag, intersperse, to_form, used_input? |
+| 11 | values: at compile time versus a dynamic assign |
+| 12 | HTML safety: interpolated versus raw versus {:safe, _} |
+| 13 | Capstone: attrs, slots, nested cards, rest, and class lists on one weir sheet |
 
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

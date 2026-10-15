@@ -13,7 +13,7 @@ and
 | Servings per feature | 13 |
 | Features | 25 |
 | Scenarios | 325 |
-| Bottled | 13 of 325 |
+| Bottled | 26 of 325 |
 | Active ingredient | Phoenix 1.8.15 |
 | LiveView | 1.2 |
 | Database | SQLite (`ecto_sqlite3`) |
@@ -34,7 +34,7 @@ the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is just opening: 25 features, 13 scenarios each, 13 of 325 bottled.
+The bottle is just opening: 25 features, 13 scenarios each, 26 of 325 bottled.
 The reference scenario that later ones copy is
 [LiveView lifecycle and events · 01 · New Dungeness watch log](features/06-liveview-lifecycle-and-events/01-new-dungeness-watch-log/).
 
@@ -95,7 +95,7 @@ the story.
 1. [Routing and plugs](features/01-routing-and-plugs/) — 0 of 13 bottled
 2. [Verified routes](features/02-verified-routes/) — 0 of 13 bottled
 3. [Controllers and JSON](features/03-controllers-and-json/) — 0 of 13 bottled
-4. [Function components and HEEx](features/04-function-components-and-heex/) — 0 of 13 bottled
+4. [Function components and HEEx](features/04-function-components-and-heex/) — 13 of 13 bottled
 5. [Core components and layouts](features/05-core-components-and-layouts/) — 0 of 13 bottled
 6. [LiveView lifecycle and events](features/06-liveview-lifecycle-and-events/) — 13 of 13 bottled
 7. [LiveView navigation](features/07-liveview-navigation/) — 0 of 13 bottled

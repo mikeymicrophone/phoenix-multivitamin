@@ -11,9 +11,10 @@ defmodule PhoenixMultivitaminWeb.CatalogLiveTest do
     bottled = Catalog.bottled_slots()
 
     assert html =~ "Phoenix Multivitamin"
-    assert html =~ "13 of 325"
+    assert html =~ "26 of 325"
     assert html =~ "Routing and plugs"
     assert html =~ "LiveView lifecycle and events"
+    assert html =~ "Function components and HEEx"
     assert html =~ "Testing"
     assert Enum.all?(bottled, &(html =~ &1.title))
   end

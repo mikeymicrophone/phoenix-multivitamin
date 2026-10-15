@@ -8,6 +8,91 @@ is written here until a test has shown it.
 Each entry has a short title, what happens, why it matters, what to do about
 it, and a link to the scenario that shows it.
 
+## Function components and HEEx
+
+### Passing nil does not restore an attr default
+
+**What happens.** `attr :grams, :integer, default: 3` fills grams when the
+caller omits the attr. Passing `grams={nil}` writes `nil` onto the assigns
+map. The lima packet then reads "scale empty", not "3 g".
+`Map.merge(defaults, assigns)` lets an explicit nil win.
+
+**Why it matters.** Clearing a field with `nil` looks like "use the default"
+and instead blanks the packet.
+
+**What to do.** Omit the attr, or pass the default value again. Do not pass
+nil if you wanted the default.
+
+**Seen in:** [Seed packet label press](features/04-function-components-and-heex/01-seed-packet-label-press/).
+
+### A caller class replaces the global rest default class
+
+**What happens.** `attr :rest, :global, default: %{class: "mill-ticket"}`
+applies `mill-ticket` only when the caller omits `class`. Passing
+`class="rush-load"` replaces that default. The two names are not
+concatenated. Writing `class="scale-slip"` on the same tag as `{@rest}`
+emits a second class attribute; the HTML parser keeps the first, so the
+cedar ticket shows `scale-slip` and never `mill-ticket`.
+
+**Why it matters.** The docs say the default map is "merged". Map merge
+replaces the `class` key. A static class on the same tag hides the rest
+class entirely.
+
+**What to do.** Put the class on rest, not also on the tag. Concatenate
+caller and default classes yourself if you need both names.
+
+**Seen in:** [Port Angeles mill tickets](features/04-function-components-and-heex/05-port-angeles-mill-tickets/).
+
+### Map.put on component assigns freezes that key after the first render
+
+**What happens.** Inside a function component, `Map.put(assigns, :fired_pass, ...)`
+updates the Elixir map but does not mark `__changed__`. `{@fired_pass}`
+keeps the first pass even while `{@kiln_temp}` updates.
+`Phoenix.Component.assign/3` marks the key, so the assign chip's pass
+moves. A quiet chip that was never passed `kiln_temp` does not recompute
+its pass when only the kiln changes.
+
+**Why it matters.** A firing pass, timestamp, or generated id written with
+`Map.put/3` looks live in the first paint and then never moves.
+
+**What to do.** Use `assign/3`, `assign_new/3`, or `update/3` inside
+function components, never `Map.put/3`, if the template should see later
+values.
+
+**Seen in:** [Discovery Bay tile board](features/04-function-components-and-heex/09-discovery-bay-tile-board/).
+
+### values: does not reject a dynamic assign at runtime
+
+**What happens.** `attr :species, :atom, values: [:chinook, :coho, :steelhead]`
+warns at compile time for a literal outside the list. `species={@species}`
+with `@species == :chum` still renders. A direct `incubation_tray/1` call
+missing `:species` raises `KeyError` from `@species`, not an
+`ArgumentError` from `attr/3`. Defaults still apply on that direct call.
+
+**Why it matters.** `values:` looks like a guard. A hatchery load from a
+form or assign will print an unlisted species without a warning.
+
+**What to do.** Do not treat `values:` as a runtime guard. Check the assign
+in Elixir if the tray must refuse an unlisted species.
+
+**Seen in:** [Elwha hatchery trays](features/04-function-components-and-heex/11-elwha-hatchery-trays/).
+
+### Seeding to_form/2 with the field value makes used_input?/1 true
+
+**What happens.** `used_input?/1` is true when the field is present in form
+params without an `_unused_` sibling. `to_form(%{"ranger" => "Thea"}, as: :permit)`
+therefore reports the ranger field as used on first paint, before anyone
+typed. Starting from `to_form(%{}, as: :permit)` keeps it untouched until
+`phx-change` sends the field.
+
+**Why it matters.** Prefilling the ranger name to show a default also
+unlocks "used" errors and copy on first paint.
+
+**What to do.** Seed `to_form/2` with an empty params map if you need the
+untouched state. Put the displayed name in a separate assign.
+
+**Seen in:** [Kaleetan trail permits](features/04-function-components-and-heex/10-kaleetan-trail-permits/).
+
 ## LiveView lifecycle and events
 
 ### The disconnected render does not spawn a LiveView process
