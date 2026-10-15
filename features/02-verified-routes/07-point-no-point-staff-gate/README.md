@@ -8,10 +8,10 @@ the `?`. A `false` relief flag stays on the URL.
 
 - `~p"/gate?#{[]}"` and `~p"/gate?#{%{}}"` produce the bare path. The
   sigil omits `?` when the encoded query is `""`.
-- `Plug.Conn.Query.encode/2` drops `nil` values, so
-  `~p"/gate?#{[crew: nil, tide: "ebb"]}"` is `?tide=ebb`.
-- `false` encodes as `"false"`. Optional-and-absent is `nil` or a missing
-  key, not `false`.
+- `nil` does **not** drop the key. `~p"/gate?#{[crew: nil, tide: "ebb"]}"`
+  is `?crew=&tide=ebb`. Leave the key out (`tide: "ebb"` only) to omit it.
+- `false` encodes as `"false"`. Empty `crew=` arrives in params as `""`,
+  which is truthy, so `value || "none"` will not treat it as missing.
 - The same LiveView patches between those URLs. `handle_params/3` sees
   whichever keys survived encoding.
 

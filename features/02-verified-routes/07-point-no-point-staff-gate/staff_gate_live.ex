@@ -2,9 +2,9 @@
 #
 # Teaches:
 # - An empty query map or keyword list omits the ? entirely
-# - nil values are dropped by Plug.Conn.Query.encode/2
+# - nil values encode as an empty value (crew=), they are not dropped
 # - false still encodes as "false"; it is not omitted
-# - A present crew or tide key is a different verified URL from the bare gate
+# - Leave a key out of the keyword list to omit it; do not pass nil
 
 defmodule PhoenixMultivitaminWeb.PointNoPointStaffGateLive do
   @moduledoc false
@@ -71,8 +71,8 @@ defmodule PhoenixMultivitaminWeb.PointNoPointStaffGateLive do
       <h1>Point No Point staff gate</h1>
       <p class="lede">
         Keeper {@keeper} works the staff gate at {@station} on the
-        Kitsap shore. Optional query keys drop off the URL when they are
-        empty or nil. A false relief flag does not.
+        Kitsap shore. An empty query drops the ?. A nil crew becomes crew=.
+        Leave the key out to omit it. A false relief flag stays on the URL.
       </p>
 
       <dl class="station-meta">
@@ -81,9 +81,9 @@ defmodule PhoenixMultivitaminWeb.PointNoPointStaffGateLive do
         <dt>Keeper</dt>
         <dd id="keeper-name">{@keeper}</dd>
         <dt>Crew</dt>
-        <dd id="gate-crew">{@crew || "none"}</dd>
+        <dd id="gate-crew">{blank_to_none(@crew)}</dd>
         <dt>Tide</dt>
-        <dd id="gate-tide">{@tide || "unposted"}</dd>
+        <dd id="gate-tide">{blank_to_unposted(@tide)}</dd>
         <dt>Relief flag</dt>
         <dd id="gate-relief">{@relief? || "omitted"}</dd>
         <dt>Bare gate</dt>
@@ -91,7 +91,9 @@ defmodule PhoenixMultivitaminWeb.PointNoPointStaffGateLive do
         <dt>Crew query</dt>
         <dd id="crew-gate-path">{@crew_path}</dd>
         <dt>Nil crew, ebb</dt>
-        <dd id="omitted-gate-path">{@omitted_path}</dd>
+        <dd id="nil-crew-gate-path">{@omitted_path}</dd>
+        <dt>Ebb only</dt>
+        <dd id="ebb-only-gate-path">{gate_path(tide: "ebb")}</dd>
         <dt>Relief false</dt>
         <dd id="false-gate-path">{@false_path}</dd>
         <dt>Crew and tide</dt>
@@ -110,10 +112,16 @@ defmodule PhoenixMultivitaminWeb.PointNoPointStaffGateLive do
       <div class="scenario">
         <h2>Gate</h2>
         <p id="gate-copy">
-          Staff gate at Point No Point. Crew {@crew || "none"}, tide {@tide || "unposted"}.
+          Staff gate at Point No Point. Crew {blank_to_none(@crew)}, tide {blank_to_unposted(@tide)}.
         </p>
       </div>
     </Layouts.catalog>
     """
   end
+
+  defp blank_to_none(value) when value in [nil, ""], do: "none"
+  defp blank_to_none(value), do: value
+
+  defp blank_to_unposted(value) when value in [nil, ""], do: "unposted"
+  defp blank_to_unposted(value), do: value
 end

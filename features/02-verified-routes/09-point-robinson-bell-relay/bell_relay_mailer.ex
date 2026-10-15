@@ -27,12 +27,15 @@ defmodule PhoenixMultivitaminWeb.PointRobinsonBellRelayMailer do
       |> Phoenix.HTML.Safe.to_iodata()
       |> IO.iodata_to_binary()
 
-    new()
-    |> to({keeper_name, keeper_email})
-    |> from({"Point Robinson Light", "bell@pointrobinson.wa.gov"})
-    |> subject("Bell watch for #{keeper_name}")
-    |> html_body(html)
-    |> text_body("The bell watch is posted at #{board_url}")
-    |> Mailer.deliver()
+    email =
+      new()
+      |> to({keeper_name, keeper_email})
+      |> from({"Point Robinson Light", "bell@pointrobinson.wa.gov"})
+      |> subject("Bell watch for #{keeper_name}")
+      |> html_body(html)
+      |> text_body("The bell watch is posted at #{board_url}")
+
+    {:ok, _metadata} = Mailer.deliver(email)
+    {:ok, email}
   end
 end

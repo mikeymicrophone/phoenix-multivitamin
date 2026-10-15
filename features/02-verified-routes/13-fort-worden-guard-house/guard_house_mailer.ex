@@ -28,12 +28,15 @@ defmodule PhoenixMultivitaminWeb.FortWordenGuardHouseMailer do
       |> Phoenix.HTML.Safe.to_iodata()
       |> IO.iodata_to_binary()
 
-    new()
-    |> to({sentry_name, sentry_email})
-    |> from({"Fort Worden guard house", "sentry@fortworden.wa.gov"})
-    |> subject("Battery #{pass} pass for #{sentry_name}")
-    |> html_body(html)
-    |> text_body("Board #{board_url} · pass #{pass_url}")
-    |> Mailer.deliver()
+    email =
+      new()
+      |> to({sentry_name, sentry_email})
+      |> from({"Fort Worden guard house", "sentry@fortworden.wa.gov"})
+      |> subject("Battery #{pass} pass for #{sentry_name}")
+      |> html_body(html)
+      |> text_body("Board #{board_url} · pass #{pass_url}")
+
+    {:ok, _metadata} = Mailer.deliver(email)
+    {:ok, email}
   end
 end

@@ -12,7 +12,7 @@ defmodule PhoenixMultivitaminWeb.FortWordenGuardHouseLiveTest do
   @gate "/features/02-verified-routes/13-fort-worden-guard-house/gate"
   @relief "/features/02-verified-routes/13-fort-worden-guard-house/relief"
   @kinzie "/features/02-verified-routes/13-fort-worden-guard-house/passes/kinzie"
-  @board_url "http://localhost#{@board}"
+  @board_url PhoenixMultivitaminWeb.Endpoint.url() <> @board
 
   test "controller, LiveView, and mailer share the board ~p" do
     assert FortWordenGuardHouseLive.board_path() == @board
@@ -20,7 +20,9 @@ defmodule PhoenixMultivitaminWeb.FortWordenGuardHouseLiveTest do
     assert FortWordenGuardHouseLive.relief_path() == @relief
     assert FortWordenGuardHouseLive.pass_path("kinzie") == @kinzie
     assert FortWordenGuardHouseMailer.board_url() == @board_url
-    assert FortWordenGuardHouseMailer.pass_url("kinzie") == "http://localhost#{@kinzie}"
+
+    assert FortWordenGuardHouseMailer.pass_url("kinzie") ==
+             PhoenixMultivitaminWeb.Endpoint.url() <> @kinzie
   end
 
   test "the gate controller redirects onto the verified board with query params", %{conn: conn} do
@@ -38,7 +40,7 @@ defmodule PhoenixMultivitaminWeb.FortWordenGuardHouseLiveTest do
 
     assert email.subject == "Battery kinzie pass for Corin"
     assert email.html_body =~ ~s(href="#{@board_url}")
-    assert email.html_body =~ ~s(href="http://localhost#{@kinzie}")
+    assert email.html_body =~ ~s(href="#{PhoenixMultivitaminWeb.Endpoint.url() <> @kinzie}")
     assert email.text_body =~ @board_url
   end
 

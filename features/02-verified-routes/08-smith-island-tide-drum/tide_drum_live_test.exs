@@ -13,7 +13,10 @@ defmodule PhoenixMultivitaminWeb.SmithIslandTideDrumLiveTest do
     assert SmithIslandTideDrumLive.drum_path() == @path
 
     assert url(~p"/features/02-verified-routes/08-smith-island-tide-drum") ==
-             "http://localhost#{@path}"
+             PhoenixMultivitaminWeb.Endpoint.url() <> @path
+
+    assert url(~p"/features/02-verified-routes/08-smith-island-tide-drum") =~ ":4000"
+    refute url(~p"/features/02-verified-routes/08-smith-island-tide-drum") =~ "4002"
 
     assert url(
              SmithIslandTideDrumLive.island_uri(),
@@ -35,9 +38,10 @@ defmodule PhoenixMultivitaminWeb.SmithIslandTideDrumLiveTest do
     assert html =~ "Smith Island Light"
     assert html =~ "Calder"
     assert has_element?(view, "#drum-path", @path)
-    assert has_element?(view, "#endpoint-url", "http://localhost#{@path}")
+    assert has_element?(view, "#endpoint-url", PhoenixMultivitaminWeb.Endpoint.url() <> @path)
     assert has_element?(view, "#island-url", "https://tidedrum.smithisland.wa.gov#{@path}")
     assert has_element?(view, "#island-host-path", @island_host)
     refute has_element?(view, "#endpoint-url", "4002")
+    assert has_element?(view, "#endpoint-url", ":4000")
   end
 end

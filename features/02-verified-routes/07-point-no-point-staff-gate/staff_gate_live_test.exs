@@ -14,8 +14,11 @@ defmodule PhoenixMultivitaminWeb.PointNoPointStaffGateLiveTest do
     refute PointNoPointStaffGateLive.gate_path([]) =~ "?"
   end
 
-  test "nil query values are omitted; false still encodes" do
-    assert PointNoPointStaffGateLive.gate_path(crew: nil, tide: "ebb") == "#{@path}?tide=ebb"
+  test "nil query values encode as empty; false still encodes; missing keys omit" do
+    assert PointNoPointStaffGateLive.gate_path(crew: nil, tide: "ebb") ==
+             "#{@path}?crew=&tide=ebb"
+
+    assert PointNoPointStaffGateLive.gate_path(tide: "ebb") == "#{@path}?tide=ebb"
     assert PointNoPointStaffGateLive.gate_path(relief: false) == "#{@path}?relief=false"
 
     assert PointNoPointStaffGateLive.gate_path(crew: "relief boat") ==
@@ -29,7 +32,8 @@ defmodule PhoenixMultivitaminWeb.PointNoPointStaffGateLiveTest do
     assert html =~ "Willa"
     assert has_element?(view, "#bare-gate-path", @path)
     refute has_element?(view, "#bare-gate-path", "?")
-    assert has_element?(view, "#omitted-gate-path", "#{@path}?tide=ebb")
+    assert has_element?(view, "#nil-crew-gate-path", "#{@path}?crew=&tide=ebb")
+    assert has_element?(view, "#ebb-only-gate-path", "#{@path}?tide=ebb")
     assert has_element?(view, "#false-gate-path", "#{@path}?relief=false")
     assert has_element?(view, "#gate-crew", "none")
 
@@ -38,7 +42,7 @@ defmodule PhoenixMultivitaminWeb.PointNoPointStaffGateLiveTest do
     assert has_element?(view, "#gate-crew", "relief boat")
 
     view |> element("#log-ebb") |> render_click()
-    assert_patch(view, "#{@path}?tide=ebb")
+    assert_patch(view, "#{@path}?crew=&tide=ebb")
     assert has_element?(view, "#gate-tide", "ebb")
     assert has_element?(view, "#gate-crew", "none")
 

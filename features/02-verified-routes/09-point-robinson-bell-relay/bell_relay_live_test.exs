@@ -8,7 +8,7 @@ defmodule PhoenixMultivitaminWeb.PointRobinsonBellRelayLiveTest do
   alias PhoenixMultivitaminWeb.PointRobinsonBellRelayMailer
 
   @path "/features/02-verified-routes/09-point-robinson-bell-relay"
-  @board_url "http://localhost#{@path}"
+  @board_url PhoenixMultivitaminWeb.Endpoint.url() <> @path
 
   test "the mailer puts url(~p) in both HTML and text bodies" do
     assert PointRobinsonBellRelayMailer.board_url() == @board_url

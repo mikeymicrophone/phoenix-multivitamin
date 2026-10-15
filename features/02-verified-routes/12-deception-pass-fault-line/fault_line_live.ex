@@ -24,7 +24,7 @@ defmodule PhoenixMultivitaminWeb.DeceptionPassFaultLineLive do
   def current_span_path, do: ~p"/features/02-verified-routes/12-deception-pass-fault-line"
 
   def warning_example do
-    ~s|warning: no route path for PhoenixMultivitaminWeb.Router matches ~p"/features/02-verified-routes/12-deception-pass-fault-line/collapsed-span"|
+    ~s|warning: no route path for PhoenixMultivitaminWeb.Router matches "/features/02-verified-routes/12-deception-pass-fault-line/collapsed-span"|
   end
 
   @impl true

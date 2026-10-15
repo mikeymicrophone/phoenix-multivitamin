@@ -7,9 +7,9 @@ Juan de Fuca. `~p` is a path. `url/1` hangs the endpoint host on it. A
 
 **What it teaches**
 
-- `url(~p"/path")` reads the endpoint `url:` config (`host`, scheme, port).
-  The `http:` listener port is not used, so tests see `http://localhost`
-  without `:4002`.
+- `url(~p"/path")` reads the endpoint `url:` config. With only
+  `host: "localhost"` it still emits port **4000** (Phoenix's default),
+  not the test listener `http: [port: 4002]`.
 - `url(%URI{scheme: "https", host: "tidedrum.smithisland.wa.gov", port: 443}, ~p"/path")`
   substitutes that host at runtime. Port 443 is omitted on https.
 - `Phoenix.Controller.put_router_url/2` stores an override on the conn.

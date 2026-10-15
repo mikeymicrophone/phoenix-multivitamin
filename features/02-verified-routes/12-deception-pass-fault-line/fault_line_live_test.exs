@@ -55,7 +55,7 @@ defmodule PhoenixMultivitaminWeb.DeceptionPassFaultLineLiveTest do
     assert mod.unverifiable_span_path(
              "02-verified-routes",
              "12-deception-pass-fault-line/collapsed-span"
-           ) == "/features/02-verified-routes/12-deception-pass-fault-line/collapsed-span"
+           ) == "/features/02-verified-routes/12-deception-pass-fault-line%2Fcollapsed-span"
   end
 
   test "the fault line board shows the current span and the captured warning copy", %{
@@ -82,7 +82,7 @@ defmodule PhoenixMultivitaminWeb.DeceptionPassFaultLineLiveTest do
     end
     """
 
-    {diagnostics, {stderr, _compiled}} =
+    {{stderr, _compiled}, diagnostics} =
       Code.with_diagnostics(fn ->
         stderr = capture_io(:stderr, fn -> Code.compile_string(source) end)
         {stderr, :ok}
