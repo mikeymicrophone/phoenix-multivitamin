@@ -8,6 +8,62 @@ is written here until a test has shown it.
 Each entry has a short title, what happens, why it matters, what to do about
 it, and a link to the scenario that shows it.
 
+## Routing and plugs
+
+### assign_new copies a pipeline assign only on the disconnected render
+
+**What happens.** A router pipeline plug assigns `:shift` onto the conn.
+The controller tape prints it. A LiveView `assign_new(:shift, fn -> "no
+shift from the plug" end)` copies that assign on a disconnected `get/2` of
+the silo. `socket.assigns` did not already have `:shift`. After `live/2`,
+the connected mount runs the fallback. The graveyard shift is gone.
+
+**Why it matters.** Loading a current user, a watch, or a ticket in a
+pipeline plug and then `assign_new/3` in the LiveView looks shared. It is
+shared only for the static HTML. The LiveView process starts without the
+conn and without that assign.
+
+**What to do.** Put shared auth in the session, or load it again in
+`mount/3` when `connected?(socket)` is true. Do not treat a pipeline
+assign as a socket assign.
+
+**Seen in:** [Kalama elevator tape](features/01-routing-and-plugs/06-kalama-elevator-tape/).
+
+### plug_init_mode :runtime re-runs init/1 on every request in test
+
+**What happens.** `plug BallardLockPlug, chambers: 2` still turns the
+keyword list into a map in `init/1`. This app sets
+`config :phoenix, :plug_init_mode, :runtime` in `config/test.exs`. Two
+GETs therefore get two different `init/1` timestamps. `Phoenix.plug_init_mode/0`
+is `:runtime`. Production defaults to `:compile`.
+
+**Why it matters.** Guides talk about `init/1` as compile-time. Under
+`mix test` and `mix phx.server` here, it is per request. A test that
+expected one captured timestamp fails. Code that reads `Application.get_env`
+in `init/1` will see live config in test and a frozen snapshot in prod.
+
+**What to do.** Keep `init/1` a pure transform of options. Read runtime
+config in `call/2`. Do not assert uniqueness of `init/1` in tests unless
+you set `:plug_init_mode` to `:compile`.
+
+**Seen in:** [Ballard lock house](features/01-routing-and-plugs/10-ballard-lock-house/).
+
+### redirect/2 without halt/1 still runs the action
+
+**What happens.** `Phoenix.Controller.redirect/2` sends the 302 body.
+Without `halt/1`, the next plug — the action — still runs. The leaky chart
+desk then renders and raises `Plug.Conn.AlreadySentError`. The halted desk
+never assigns `:charts_opened`.
+
+**Why it matters.** A session plug that "just redirects" looks finished.
+The action still opens the drawer and then crashes trying to send a second
+response.
+
+**What to do.** Pipe `halt()` after `redirect/2` in a plug. Do not rely on
+the redirect having sent.
+
+**Seen in:** [Quillayute chart desk](features/01-routing-and-plugs/11-quillayute-chart-desk/).
+
 ## Function components and HEEx
 
 ### Passing nil does not restore an attr default

@@ -4,16 +4,18 @@ Operator Rhea reads the grain tape at the Kalama export elevator on the
 Columbia. A pipeline plug assigns the shift (`day`, `swing`, or
 `graveyard`) onto the conn. The controller tape prints that assign as-is.
 The same LiveView mounted on the catalog path has no pipeline plug, so
-`assign_new(:shift, ...)` falls back to "no shift from the plug". Mounted
-behind the plug at `/silo`, `assign_new/3` copies the conn assign — but
-`socket.assigns` did not already have `:shift`.
+`assign_new(:shift, ...)` falls back to "no shift from the plug". A
+disconnected GET of `/silo` copies the plug's shift. The connected mount
+runs the fallback again: pipeline plugs do not run on the socket, and
+`assign_new/3` does not keep the conn value after connect.
 
 **What it teaches**
 
 - Router pipeline assigns are on the conn when a controller renders.
 - They are not already keys on the LiveView socket.
-- `assign_new/3` copies a conn assign on the disconnected render. The
-  fallback function runs when that key was never on the conn.
+- `assign_new/3` copies a conn assign on the disconnected HTTP render.
+- The connected mount runs the fallback. A shift stamped by a plug does
+  not survive into the LiveView process.
 
 **Files**
 

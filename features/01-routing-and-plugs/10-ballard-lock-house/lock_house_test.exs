@@ -3,7 +3,7 @@ defmodule PhoenixMultivitaminWeb.BallardLockHouseTest do
 
   @locks "/features/01-routing-and-plugs/10-ballard-lock-house/locks"
 
-  test "two lockages reuse the init/1 timestamp and get a fresh call/2 timestamp", %{conn: conn} do
+  test "two lockages get a fresh init/1 under test's :runtime plug_init_mode", %{conn: conn} do
     first = get(conn, @locks)
     first_html = html_response(first, 200)
 
@@ -14,9 +14,10 @@ defmodule PhoenixMultivitaminWeb.BallardLockHouseTest do
     second = get(conn, @locks)
     _second_html = html_response(second, 200)
 
-    assert first.assigns.plug_compiled_at == second.assigns.plug_compiled_at
+    assert first.assigns.plug_compiled_at != second.assigns.plug_compiled_at
     assert first.assigns.plug_called_at != second.assigns.plug_called_at
     assert second.assigns.plug_called_at > first.assigns.plug_called_at
+    assert Phoenix.plug_init_mode() == :runtime
   end
 
   test "init/1 returns a map that already includes compiled_at" do

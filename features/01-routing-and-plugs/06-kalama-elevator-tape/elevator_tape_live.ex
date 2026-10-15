@@ -3,6 +3,7 @@
 # Teaches:
 # - Pipeline assigns sit on the conn, not automatically on the LiveView socket
 # - assign_new/3 copies a conn assign on the disconnected render
+# - The connected mount runs the fallback; the plug's shift does not survive
 # - Without assign_new/3, socket.assigns does not already have the plug's key
 
 defmodule PhoenixMultivitaminWeb.KalamaElevatorTapeLive do

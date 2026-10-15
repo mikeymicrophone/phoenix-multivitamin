@@ -15,7 +15,8 @@ defmodule PhoenixMultivitaminWeb.CapeFlatteryPipelineTest do
     assert html =~ "Makah"
     assert html =~ "Chenoa"
     assert html =~ "cape"
-    refute html =~ "lookout"
+    refute html =~ "id=\"trace-lookout\""
+    refute html =~ "Tatoosh Island lookout"
   end
 
   test "a missing Tatoosh ticket halts after the cape plug has already stamped", %{conn: conn} do

@@ -2,17 +2,19 @@
 
 Keeper Soren works the two chambers at the Hiram M. Chittenden Locks, the
 Ballard lock house on the Lake Washington Ship Canal. `plug BallardLockPlug,
-chambers: 2` runs `init/1` when the controller compiles. That timestamp is
-reused on every lockage. `call/2` stamps a fresh time for each request.
+chambers: 2` still turns the keyword list into a map in `init/1`. This app
+sets `config :phoenix, :plug_init_mode, :runtime` in `config/test.exs` and
+`config/dev.exs`, so `init/1` runs on every lockage under `mix test`.
+Production defaults to `:compile`, where `init/1` would be captured once.
 
 **What it teaches**
 
-- `init/1` runs at compile time (when the controller that declares the plug
-  is compiled). Its return value is captured.
-- `call/2` runs per request and receives that captured map, not the original
-  keyword list.
-- A timestamp taken in `init/1` is identical across two requests; a
-  timestamp taken in `call/2` is not.
+- `init/1` transforms options; `call/2` receives that map, not the keyword
+  list.
+- `Phoenix.plug_init_mode/0` is `:runtime` in this bottle's test and dev
+  configs, so two requests get two `init/1` timestamps.
+- Production defaults to `:compile`. Do not treat a passing uniqueness
+  assertion in `mix test` as proof of compile-time init.
 
 **Files**
 

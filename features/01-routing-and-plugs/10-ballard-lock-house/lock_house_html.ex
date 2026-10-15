@@ -12,8 +12,10 @@ defmodule PhoenixMultivitaminWeb.BallardLockHouseHTML do
       <h1>Ballard lock house</h1>
       <p class="lede">
         Keeper {@keeper} works {@chambers} chambers at {@lock} on the {@cut}.
-        The chamber count was an <code>init/1</code> option, captured when this
-        controller compiled.
+        The chamber count is an <code>init/1</code>
+        option. In mix test, <code>plug_init_mode</code>
+        is <code>:runtime</code>, so init runs
+        again on the next lockage.
       </p>
 
       <dl class="station-meta">

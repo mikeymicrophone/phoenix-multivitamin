@@ -1,9 +1,9 @@
 # Routing and plugs · 10 · Ballard lock house
 #
 # Teaches:
-# - init/1 runs when the controller compiles; its return value is reused
-# - call/2 runs on every request, so called_at moves while compiled_at does not
-# - call/2 receives the map from init/1, not the original keyword list
+# - init/1 transforms options; call/2 receives that map
+# - config :phoenix, :plug_init_mode, :runtime makes init/1 run on every lockage in test
+# - Production defaults to :compile, so mix test is not proof of compile-time init
 
 defmodule PhoenixMultivitaminWeb.BallardLockHouseController do
   @moduledoc false

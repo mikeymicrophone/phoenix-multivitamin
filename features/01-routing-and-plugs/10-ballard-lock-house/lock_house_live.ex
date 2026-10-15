@@ -1,7 +1,7 @@
 # Routing and plugs · 10 · Ballard lock house
 #
 # Teaches:
-# - init/1 is captured at compile time; call/2 runs per lockage
+# - init/1 transforms options; under :runtime plug_init_mode it runs per lockage
 
 defmodule PhoenixMultivitaminWeb.BallardLockHouseLive do
   @moduledoc false
@@ -26,7 +26,8 @@ defmodule PhoenixMultivitaminWeb.BallardLockHouseLive do
       <h1>Ballard lock house</h1>
       <p class="lede">
         {@lock} lifts boats between Puget Sound and Lake Union. The chamber
-        count is compiled into the plug; the call timestamp is not.
+        count is an init option. Under this app's test config, init itself
+        runs on every lockage.
       </p>
 
       <div class="watch-switcher">

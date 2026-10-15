@@ -33,6 +33,7 @@ defmodule PhoenixMultivitaminWeb.QuillayuteChartDeskController do
     |> assign(:page_title, "Quillayute chart desk")
     |> assign(:flash, conn.assigns[:flash] || %{})
     |> assign(:station, "Quillayute River Coast Guard Station")
+    |> assign(:officer, conn.assigns[:officer] || "the drawer latch")
     |> assign(:chart, "La Push bar approaches")
     |> assign(:charts_opened, true)
     |> render(:desk)

@@ -15,9 +15,9 @@ defmodule PhoenixMultivitaminWeb.AdmiraltyInletTideGateTest do
     assert html =~ "Maren"
     assert html =~ "GET"
 
-    inlet_at = :binary.match(html, "inlet-pipeline")
-    window_at = :binary.match(html, "gate-window")
-    meta_at = :binary.match(html, "request-meta")
+    inlet_at = :binary.match(html, "trace-inlet-pipeline")
+    window_at = :binary.match(html, "trace-gate-window")
+    meta_at = :binary.match(html, "trace-request-meta")
 
     assert elem(inlet_at, 0) < elem(window_at, 0)
     assert elem(window_at, 0) < elem(meta_at, 0)

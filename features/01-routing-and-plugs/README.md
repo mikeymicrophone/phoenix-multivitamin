@@ -29,11 +29,11 @@ Official reference: [Routing and plugs](https://hexdocs.pm/phoenix/routing.html)
 | 03 | Sibling scopes sharing resources, with path params that stay strings |
 | 04 | `forward/2` into another router: `script_name`, `path_info`, `request_path` |
 | 05 | Plug options from the controller pipeline, transformed in `init/1` |
-| 06 | Pipeline assigns on a controller versus `assign_new/3` on a LiveView |
+| 06 | Pipeline assigns on a controller; `assign_new/3` copies them only on the disconnected render |
 | 07 | Halt versus continue, and the later plug that never runs |
 | 08 | Browser versus API pipelines, `accepts/2`, and a 406 |
 | 09 | `assign/3` for the template versus `put_private/3` that the board cannot see |
-| 10 | `init/1` captured once versus `call/2` on every lockage |
+| 10 | `init/1` versus `call/2`, and `:runtime` plug_init_mode in test |
 | 11 | A session plug that redirects; without `halt/1` the action still runs |
 | 12 | Nested scopes, concatenated prefixes, additive `pipe_through` |
 | 13 | Capstone: pipelines, halt, forward, nested scopes, and resources together |
