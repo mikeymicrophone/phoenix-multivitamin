@@ -43,3 +43,6 @@ npm-debug.log
 /.elixir_ls/
 /.lexical/
 
+
+# Private files retained by upload scenarios
+/priv/uploads/

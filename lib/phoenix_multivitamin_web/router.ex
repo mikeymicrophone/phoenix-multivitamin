@@ -148,6 +148,12 @@ defmodule PhoenixMultivitaminWeb.Router do
         :show
   end
 
+  # The external uploader uses a short-lived signed capability instead of a
+  # browser session. Octet-stream bodies bypass the endpoint's JSON parser.
+  scope "/features/14-uploads/10-samarkand-silk-upload" do
+    put "/archive/:token", PhoenixMultivitaminWeb.SamarkandArchiveController, :create
+  end
+
   # Feature 03 — Controllers and JSON. Path slugs live here; domain copy
   # lives in each scenario folder.
   scope "/features/03-controllers-and-json" do
