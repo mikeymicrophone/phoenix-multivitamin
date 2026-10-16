@@ -48,16 +48,21 @@ defmodule PhoenixMultivitaminWeb.KaohsiungLoveRiverScopeLive do
       </p>
       <.scenario_identity clerk={@clerk} craft={@craft} />
 
-      <%= if @connected_mount? do %>
-        <div id="love-river-scope" phx-hook=".RiverScope" phx-update="ignore" class="scenario mt-6">
-          <canvas width="360" height="180" class="max-w-full" role="img" aria-label="Love River training scope">
-            River rescue training scope.
-          </canvas>
-          <p data-scope-reply aria-live="polite">Waiting for the scope handshake.</p>
-        </div>
-      <% else %>
-        <p id="scope-static" class="mount-banner static-mount">Connect to arm the Love River scope.</p>
-      <% end %>
+      <div
+        :if={@connected_mount?}
+        id="love-river-scope"
+        phx-hook=".RiverScope"
+        phx-update="ignore"
+        class="scenario mt-6"
+      >
+        <canvas width="360" height="180" class="max-w-full" role="img" aria-label="Love River training scope">
+          River rescue training scope.
+        </canvas>
+        <p data-scope-reply aria-live="polite">Waiting for the scope handshake.</p>
+      </div>
+      <p :if={!@connected_mount?} id="scope-static" class="mount-banner static-mount">
+        Connect to arm the Love River scope.
+      </p>
       <p id="river-scope-status" role="status">{@scope_status}</p>
 
       <script :type={Phoenix.LiveView.ColocatedHook} name=".RiverScope">
