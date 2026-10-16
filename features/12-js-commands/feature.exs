@@ -8,81 +8,94 @@
   slots: [
     %{
       number: 1,
-      slug: "01-colombo-katunayake-toggle",
-      title: "Colombo Katunayake toggle",
-      bottled: false
+      slug: "01-qaarsut-frost-toggle",
+      title: "Qaarsut frost toggle",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.QaarsutFrostToggleLive
     },
     %{
       number: 2,
-      slug: "02-kochi-backwater-hide",
-      title: "Kochi backwater hide",
-      bottled: false
+      slug: "02-saint-pierre-ticket-hide",
+      title: "Saint-Pierre ticket hide",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.SaintPierreTicketHideLive
     },
     %{
       number: 3,
-      slug: "03-hyderabad-charminar-push",
-      title: "Hyderabad Charminar push",
-      bottled: false
+      slug: "03-kutaisi-lamp-fade",
+      title: "Kutaisi lamp fade",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.KutaisiLampFadeLive
     },
     %{
       number: 4,
-      slug: "04-jaipur-pink-city-focus",
-      title: "Jaipur pink-city focus",
-      bottled: false
+      slug: "04-gyumri-brief-push",
+      title: "Gyumri brief push",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.GyumriBriefPushLive
     },
     %{
       number: 5,
-      slug: "05-pokhara-annapurna-scroll",
-      title: "Pokhara Annapurna scroll",
-      bottled: false
+      slug: "05-mary-class-desk",
+      title: "Mary class desk",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.MaryClassDeskLive
     },
     %{
       number: 6,
-      slug: "06-dhaka-jamuna-transition",
-      title: "Dhaka Jamuna transition",
-      bottled: false
+      slug: "06-bukhara-fog-flag",
+      title: "Bukhara fog flag",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.BukharaFogFlagLive
     },
     %{
       number: 7,
-      slug: "07-yangon-shwedagon-exec",
-      title: "Yangon Shwedagon exec",
-      bottled: false
+      slug: "07-sinop-focus-pad",
+      title: "Sinop focus pad",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.SinopFocusPadLive
     },
     %{
       number: 8,
-      slug: "08-bangkok-don-mueang-cmd",
-      title: "Bangkok Don Mueang cmd",
-      bottled: false
+      slug: "08-trabzon-dispatch-bell",
+      title: "Trabzon dispatch bell",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.TrabzonDispatchBellLive
     },
     %{
       number: 9,
-      slug: "09-chiang-mai-doi-suthep-js",
-      title: "Chiang Mai Doi Suthep JS",
-      bottled: false
+      slug: "09-bitola-target-lamp",
+      title: "Bitola target lamp",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.BitolaTargetLampLive
     },
     %{
       number: 10,
-      slug: "10-siem-reap-angkor-hide",
-      title: "Siem Reap Angkor hide",
-      bottled: false
+      slug: "10-tulcea-pipe-board",
+      title: "Tulcea pipe board",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.TulceaPipeBoardLive
     },
     %{
       number: 11,
-      slug: "11-hanoi-long-bien-toggle",
-      title: "Hanoi Long Biên toggle",
-      bottled: false
+      slug: "11-ittoqqortoormiit-ignore",
+      title: "Ittoqqortoormiit ignore",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.IttoqqortoormiitIgnoreLive
     },
     %{
       number: 12,
-      slug: "12-da-nang-marble-push",
-      title: "Da Nang Marble push",
-      bottled: false
+      slug: "12-grytviken-exec-brief",
+      title: "Grytviken exec brief",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.GrytvikenExecBriefLive
     },
     %{
       number: 13,
-      slug: "13-manila-intramuros-focus",
-      title: "Manila Intramuros focus",
-      bottled: false
+      slug: "13-barentsburg-capstone-board",
+      title: "Barentsburg capstone board",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.BarentsburgCapstoneBoardLive
     }
   ]
 }

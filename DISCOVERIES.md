@@ -591,3 +591,67 @@ way.
 exercise the recover clause.
 
 **Seen in:** [Ivalo recover desk](features/09-forms-and-changesets/07-ivalo-recover-desk/).
+
+## LiveComponents
+
+### `update_many/1` is the batch callback; `preload/1` is gone
+
+**What happens.** Three Murmansk QNH cells render in one pass.
+`update_many/1` receives the list of `{assigns, socket}` pairs. Each
+cell reports batch size 3 and its own QNH. There is no `preload/1`.
+
+**Why it matters.** Older guides still name `preload/1` as the way to
+batch a query across sibling components. LiveView 1.2 removed it. A
+module that defines `preload/1` never runs that function.
+
+**What to do.** Implement `update_many/1`. Return one socket per pair.
+Do not define `preload/1`.
+
+**Seen in:** [Murmansk batch rack](features/11-live-components/06-murmansk-batch-rack/),
+[Petropavlovsk capstone rack](features/11-live-components/13-petropavlovsk-capstone-rack/).
+
+### `send_update/3` writes the child; `update_component/3` is gone
+
+**What happens.** Karaganda lifts the cell QNH from 1012 to 1024 with
+`send_update(KaragandaQnhCell, id: "qnh-cell", qnh: "1024")`. The parent
+assign stays 1012. `update_component/3` is not defined.
+
+**Why it matters.** The old name looks like the current API. It is not.
+Calling it fails to compile.
+
+**What to do.** Call `send_update/3` with the module, `id:`, and the
+assigns to merge. Leave the parent assign alone if the child owns the
+value.
+
+**Seen in:** [Karaganda send update](features/11-live-components/08-karaganda-send-update/).
+
+## JS commands
+
+### `JS.set_attribute/1` encodes as `set_attr`
+
+**What happens.** The Bukhara button calls
+`JS.set_attribute({"data-fog", "thick"}, to: "#fog-flag")`. The rendered
+`phx-click` JSON names `set_attr`, not `set_attribute`.
+
+**Why it matters.** A test or hook that greps the Elixir function name
+misses the command that actually shipped to the browser.
+
+**What to do.** Assert `set_attr` in HTML. Keep `JS.set_attribute/1` in
+the template.
+
+**Seen in:** [Bukhara fog flag](features/12-js-commands/06-bukhara-fog-flag/).
+
+### `JS.ignore_attributes/1` encodes as `ignore_attrs`
+
+**What happens.** The Ittoqqortoormiit dialog mounts
+`JS.ignore_attributes(["open"], to: "#icing-dialog")`. The rendered
+command is `ignore_attrs`. A later tick still leaves the dialog in the
+DOM.
+
+**Why it matters.** Same name drift as `set_attr`. The Elixir function
+and the client opcode are not spelled the same.
+
+**What to do.** Assert `ignore_attrs` in HTML. Keep
+`JS.ignore_attributes/1` in the template.
+
+**Seen in:** [Ittoqqortoormiit ignore](features/12-js-commands/11-ittoqqortoormiit-ignore/).
