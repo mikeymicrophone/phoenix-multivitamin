@@ -23,8 +23,12 @@ defmodule PhoenixMultivitaminWeb.AshgabatKarakumScanLiveTest do
     refute has_element?(view, "#stored-plates li", "superseded.pdf")
     refute has_element?(view, "#plates-queue article")
 
-    [destination] = view |> render() |> LazyHTML.from_fragment()
-      |> LazyHTML.filter("#stored-plates li") |> LazyHTML.attribute("data-path")
+    [destination] =
+      view
+      |> render()
+      |> LazyHTML.from_fragment()
+      |> LazyHTML.query("#stored-plates li")
+      |> LazyHTML.attribute("data-path")
     on_exit(fn -> File.rm_rf(Path.dirname(destination)) end)
     assert String.starts_with?(destination, Archive.root() <> "/")
     refute String.ends_with?(destination, "karakum.pdf")
