@@ -118,6 +118,22 @@ defmodule PhoenixMultivitaminWeb.Router do
     live "/features/05-core-components-and-layouts/11-schiphol-print-ticket/print",
          PhoenixMultivitaminWeb.SchipholPrintTicketLive,
          :print
+
+    live "/features/07-liveview-navigation/02-rovaniemi-aurora-desk/cabin",
+         PhoenixMultivitaminWeb.RovaniemiAuroraCabinLive
+
+    live "/features/07-liveview-navigation/04-iqaluit-medevac-navigate/hold",
+         PhoenixMultivitaminWeb.IqaluitMedevacHoldLive
+
+    live "/features/07-liveview-navigation/08-banjul-hold-navigate/stack",
+         PhoenixMultivitaminWeb.BanjulHoldStackLive
+
+    live "/features/07-liveview-navigation/10-narsarsuaq-parent-patch/pads/:pad",
+         PhoenixMultivitaminWeb.NarsarsuaqParentPatchLive,
+         :pad
+
+    live "/features/07-liveview-navigation/13-rio-grande-fuegian-watch/relief",
+         PhoenixMultivitaminWeb.RioGrandeReliefBoardLive
   end
 
   # Feature 03 — Controllers and JSON. Path slugs live here; domain copy

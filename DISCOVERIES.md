@@ -497,3 +497,65 @@ misses the suffix. Retitling the assign does not move ` · Phoenix`.
 document title is the behavior.
 
 **Seen in:** [Prestwick Atlantic title](features/05-core-components-and-layouts/06-prestwick-atlantic-title/).
+
+## LiveView navigation
+
+### The first `handle_params/3` after `live/2` is still the mount run
+
+**What happens.** `live/2` connects the socket and runs `handle_params/3`.
+A counter that starts at 0 still records that run as `:mount`, not
+`:patch`. The sahel button is the first `:patch`.
+
+**Why it matters.** A test that treats "already connected" as "already
+patched" will expect the wrong via on the first paint.
+
+**What to do.** Count params runs. The first is mount. Only a later
+`push_patch` is a patch.
+
+**Seen in:** [Timbuktu dust params](features/07-liveview-navigation/06-timbuktu-dust-params/).
+
+### A query key survives a patch only if the new `~p` still lists it
+
+**What happens.** QNH 1021 is in the URL. Patching the watch with
+`~p"...?#{[qnh: socket.assigns.qnh, watch: "evening"]}"` keeps 1021.
+Leaving `qnh` out of the keyword list would drop it.
+
+**Why it matters.** "The rest of the query string stays" looks true. It
+is only true when the patch builds the query again.
+
+**What to do.** Pass every key you still want. Do not expect the old
+query to merge.
+
+**Seen in:** [Gelephu QNH query](features/07-liveview-navigation/09-gelephu-qnh-query/).
+
+## Async assigns
+
+### `assign_async/3` does not start on the disconnected mount
+
+**What happens.** A `get` of the Puerto Natales desk shows the loading
+copy and no `32022G34KT`. `live/2` plus `render_async/2` then fills the
+wind.
+
+**Why it matters.** The dead HTML looks like "the fetch already ran and
+is waiting." The task has not started. There is no result to cache.
+
+**What to do.** Treat the static paint as loading. Assert the value
+only after `render_async/2`.
+
+**Seen in:** [Puerto Natales wind fetch](features/08-async-assigns/01-puerto-natales-wind-fetch/).
+
+### `{:error, reason}` lands in `.failed` as `{:error, reason}`
+
+**What happens.** The function returns `{:error, :sounding_timeout}`.
+`@sounding.failed` is `{:error, :sounding_timeout}`, not the bare atom.
+An exiting task is `{:exit, :hoist_cable_snap}`.
+
+**Why it matters.** A template or test that matches only
+`:sounding_timeout` misses the tagged tuple LiveView actually stored.
+
+**What to do.** Inspect or pattern-match the tagged tuple. Retry by
+starting `assign_async` again.
+
+**Seen in:** [Walvis Bay timeout](features/08-async-assigns/12-walvis-bay-timeout/),
+[Norilsk hoist exit](features/08-async-assigns/11-norilsk-hoist-exit/),
+[Van icing retry](features/08-async-assigns/04-van-icing-retry/).

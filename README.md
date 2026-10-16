@@ -13,7 +13,7 @@ and
 | Servings per feature | 13 |
 | Features | 25 |
 | Scenarios | 325 |
-| Bottled | 78 of 325 |
+| Bottled | 104 of 325 |
 | Active ingredient | Phoenix 1.8.15 |
 | LiveView | 1.2 |
 | Database | SQLite (`ecto_sqlite3`) |
@@ -34,7 +34,7 @@ so you can see the same feature applied in thirteen different shapes.
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
-The bottle is just opening: 25 features, 13 scenarios each, 78 of 325 bottled.
+The bottle is just opening: 25 features, 13 scenarios each, 104 of 325 bottled.
 The reference scenario that later ones copy is
 [LiveView lifecycle and events · 01 · Akureyri night watch](features/06-liveview-lifecycle-and-events/01-akureyri-night-watch/).
 
@@ -98,8 +98,8 @@ the story.
 4. [Function components and HEEx](features/04-function-components-and-heex/) — 13 of 13 bottled
 5. [Core components and layouts](features/05-core-components-and-layouts/) — 13 of 13 bottled
 6. [LiveView lifecycle and events](features/06-liveview-lifecycle-and-events/) — 13 of 13 bottled
-7. [LiveView navigation](features/07-liveview-navigation/) — 0 of 13 bottled
-8. [Async assigns](features/08-async-assigns/) — 0 of 13 bottled
+7. [LiveView navigation](features/07-liveview-navigation/) — 13 of 13 bottled
+8. [Async assigns](features/08-async-assigns/) — 13 of 13 bottled
 9. [Forms and changesets](features/09-forms-and-changesets/) — 0 of 13 bottled
 10. [Streams](features/10-streams/) — 0 of 13 bottled
 11. [LiveComponents](features/11-live-components/) — 0 of 13 bottled

@@ -4,21 +4,21 @@ assign_async, start_async, handle_async, and the loading, ok, and failed shapes 
 
 Official reference: [Async assigns](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html#assign_async/3)
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Ajaccio maestral fetch — planned
-02. Olbia Costa Smeralda await — planned
-03. Trapani scirocco assign — planned
-04. Catania Etna ash async — planned
-05. Brindisi Adriatic cancel — planned
-06. Podgorica Balkan timeout — planned
-07. Skopje Vardar reload — planned
-08. Tirana Adriatic stream — planned
-09. Sofia Balkan start_async — planned
-10. Cluj Transylvanian task — planned
-11. Ostrava Silesian cancel — planned
-12. Sylt Wadden assign_async — planned
-13. Groningen Eemshaven await — planned
+01. [Puerto Natales wind fetch](01-puerto-natales-wind-fetch/) — available
+02. [Mawlamyine monsoon loading](02-mawlamyine-monsoon-loading/) — available
+03. [Quetta ok board](03-quetta-ok-board/) — available
+04. [Van icing retry](04-van-icing-retry/) — available
+05. [Goma ash task](05-goma-ash-task/) — available
+06. [Nouakchott harmattan handle](06-nouakchott-harmattan-handle/) — available
+07. [Upernavik triple fetch](07-upernavik-triple-fetch/) — available
+08. [Aktau cancel watch](08-aktau-cancel-watch/) — available
+09. [Kangerlussuaq sounding shelf](09-kangerlussuaq-sounding-shelf/) — available
+10. [Tamanrasset density reset](10-tamanrasset-density-reset/) — available
+11. [Norilsk hoist exit](11-norilsk-hoist-exit/) — available
+12. [Walvis Bay timeout](12-walvis-bay-timeout/) — available
+13. [Balmaceda capstone desk](13-balmaceda-capstone-desk/) — available
 
 ## What each scenario adds
 
@@ -37,6 +37,3 @@ Official reference: [Async assigns](https://hexdocs.pm/phoenix_live_view/Phoenix
 | 11 | An async linked to a process that exits |
 | 12 | Timeouts and the failed reason you actually get |
 | 13 | Capstone: two boards, a failure, and a retry on one desk |
-
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
