@@ -1,8 +1,8 @@
 # Async assigns · 11 · Norilsk hoist exit
 #
 # Teaches:
-# - An async function that exits fails the assign
-# - The failed reason is {:exit, :hoist_cable_snap}
+# - Process.exit/2 inside assign_async is linked to the LiveView
+# - The LiveView exits with :hoist_cable_snap; it is not a failed assign
 
 defmodule PhoenixMultivitaminWeb.NorilskHoistExitLive do
   @moduledoc false
@@ -31,7 +31,7 @@ defmodule PhoenixMultivitaminWeb.NorilskHoistExitLive do
       <h1>Norilsk hoist exit</h1>
       <p class="lede">
         Clerk {@clerk} starts a hoist on the {@craft}. The async process
-        exits. The LiveView stays up and paints the reason.
+        exits. Because it is linked, this LiveView exits too.
       </p>
 
       <p id="clerk-name">{@clerk}</p>

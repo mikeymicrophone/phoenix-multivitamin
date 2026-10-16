@@ -5,14 +5,12 @@ defmodule PhoenixMultivitaminWeb.NorilskHoistExitLiveTest do
 
   @path "/features/08-async-assigns/11-norilsk-hoist-exit"
 
-  test "an exiting async process fails the hoist without killing the LiveView", %{conn: conn} do
-    {:ok, view, _html} = live(conn, @path)
-    html = render_async(view)
+  test "an exit from the async process takes down the LiveView", %{conn: conn} do
+    html = html_response(get(conn, @path), 200)
+    assert html =~ "Norilsk hoist exit"
     assert html =~ "Gavril"
-    assert html =~ "hoist_cable_snap"
-    assert has_element?(view, "#hoist-failed", "hoist_cable_snap")
-    assert has_element?(view, "#clerk-name", "Gavril")
-    assert has_element?(view, "#craft-name", "Mil Mi-26")
-    refute has_element?(view, "#hoist-loading")
+    assert html =~ "Mil Mi-26"
+
+    assert catch_exit(live(conn, @path)) == :hoist_cable_snap
   end
 end

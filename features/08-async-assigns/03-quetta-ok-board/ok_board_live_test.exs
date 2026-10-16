@@ -6,10 +6,12 @@ defmodule PhoenixMultivitaminWeb.QuettaOkBoardLiveTest do
   @path "/features/08-async-assigns/03-quetta-ok-board"
 
   test "the ok tuple fills QNH on the board", %{conn: conn} do
-    {:ok, view, html} = live(conn, @path)
+    html = html_response(get(conn, @path), 200)
     assert html =~ "Zarmina"
-    assert has_element?(view, "#qnh-ok", "pending")
+    assert html =~ "pending"
+    refute html =~ "1019"
 
+    {:ok, view, _html} = live(conn, @path)
     html = render_async(view)
     assert html =~ "1019"
     assert has_element?(view, "#qnh-ok", "ok")

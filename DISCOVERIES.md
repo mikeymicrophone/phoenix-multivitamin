@@ -548,7 +548,6 @@ only after `render_async/2`.
 
 **What happens.** The function returns `{:error, :sounding_timeout}`.
 `@sounding.failed` is `{:error, :sounding_timeout}`, not the bare atom.
-An exiting task is `{:exit, :hoist_cable_snap}`.
 
 **Why it matters.** A template or test that matches only
 `:sounding_timeout` misses the tagged tuple LiveView actually stored.
@@ -557,5 +556,19 @@ An exiting task is `{:exit, :hoist_cable_snap}`.
 starting `assign_async` again.
 
 **Seen in:** [Walvis Bay timeout](features/08-async-assigns/12-walvis-bay-timeout/),
-[Norilsk hoist exit](features/08-async-assigns/11-norilsk-hoist-exit/),
 [Van icing retry](features/08-async-assigns/04-van-icing-retry/).
+
+### `Process.exit/2` inside `assign_async` takes down the LiveView
+
+**What happens.** The hoist function calls
+`Process.exit(self(), :hoist_cable_snap)`. The dead `get` still renders.
+`live/2` exits `:hoist_cable_snap`. The assign never becomes `.failed`.
+
+**Why it matters.** Guides say LiveView wraps async errors. A raw exit
+of the linked task is not a wrapped failure. It is the LiveView dying.
+
+**What to do.** Return `{:error, reason}` or `raise` if you want a failed
+assign. Do not `Process.exit/2` the async process unless you mean to
+kill the page.
+
+**Seen in:** [Norilsk hoist exit](features/08-async-assigns/11-norilsk-hoist-exit/).

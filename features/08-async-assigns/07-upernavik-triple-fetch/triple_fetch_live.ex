@@ -35,7 +35,7 @@ defmodule PhoenixMultivitaminWeb.UpernavikTripleFetchLive do
 
       <p id="clerk-name">{@clerk}</p>
       <p id="craft-name">{@craft}</p>
-      <p :if={@wind.loading or @temp.loading or @qnh.loading} id="triple-loading">
+      <p :if={not @wind.ok?} id="triple-loading">
         Triple fetch still out over Baffin Bay.
       </p>
       <p :if={@wind.ok?} id="wind-value">{@wind.result}</p>
