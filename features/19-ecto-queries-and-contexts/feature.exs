@@ -39,7 +39,7 @@
     %{
       number: 6,
       slug: "06-alpe-dhuez-altiport-query",
-      title: "Alpe d'Huez altiport query",
+      title: "Alpe-d-Huez altiport query",
       bottled: false
     },
     %{
@@ -51,7 +51,7 @@
     %{
       number: 8,
       slug: "08-nice-cote-azur-query",
-      title: "Nice Côte d'Azur query",
+      title: "Nice Cote-d-Azur query",
       bottled: false
     },
     %{

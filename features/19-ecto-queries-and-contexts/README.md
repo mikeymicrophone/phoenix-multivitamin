@@ -11,9 +11,9 @@ Official reference: [Ecto queries and contexts](https://hexdocs.pm/ecto/Ecto.Que
 03. Samedan Engadin context — planned
 04. Zermatt heliport query — planned
 05. Megève altiport context — planned
-06. Alpe d'Huez altiport query — planned
+06. Alpe-d-Huez altiport query — planned
 07. Chambéry Savoie context — planned
-08. Nice Côte d'Azur query — planned
+08. Nice Cote-d-Azur query — planned
 09. Monaco heliport context — planned
 10. Andorra La Seu query — planned
 11. Reus Gaudí context — planned

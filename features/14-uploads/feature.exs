@@ -21,7 +21,7 @@
     %{
       number: 3,
       slug: "03-shenzhen-baoan-weight-scan",
-      title: "Shenzhen Bao'an weight scan",
+      title: "Shenzhen Baoan weight scan",
       bottled: false
     },
     %{

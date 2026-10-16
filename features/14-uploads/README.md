@@ -8,7 +8,7 @@ Official reference: [Uploads](https://hexdocs.pm/phoenix_live_view/uploads.html)
 
 01. Centrair Tokoname plate scan — planned
 02. Macau Taipa logbook upload — planned
-03. Shenzhen Bao'an weight scan — planned
+03. Shenzhen Baoan weight scan — planned
 04. Chengdu panda chart upload — planned
 05. Ürümqi silk-road scan — planned
 06. Harbin ice-city upload — planned
