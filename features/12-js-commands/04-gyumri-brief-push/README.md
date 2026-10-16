@@ -5,6 +5,8 @@ Clerk Ani opens an Ilyushin Il-62 brief on the client and pushes the log to the 
 **What it teaches**
 
 - `JS.show/1` pipes into `JS.push/1` on one click.
+- `JS.push` sends a stand in `value:`, selects the owning LiveView with `target:`, and locks the loading button.
+- The event head matches the payload and guards the Shirak stand.
 
 **Files**
 

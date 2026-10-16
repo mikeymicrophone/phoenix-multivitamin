@@ -1,7 +1,8 @@
 # Streams · 04 · Jomsom delete stream
 #
 # Teaches:
-# - stream_delete/3 removing a finished row
+# - stream_delete_by_dom_id/3 removes a row without fetching its record
+# - Binary pattern matching checks the stream's DOM ID prefix
 
 defmodule PhoenixMultivitaminWeb.JomsomDeleteStreamLive do
   @moduledoc false
@@ -11,9 +12,7 @@ defmodule PhoenixMultivitaminWeb.JomsomDeleteStreamLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Jomsom delete stream")
-     |> assign(:clerk, "Dorje")
-     |> assign(:craft, "Cessna 206 Stationair")
+     |> assign_scenario("Jomsom delete stream", "Dorje", "Cessna 206 Stationair")
      |> stream(:legs, [
        %{id: "mustang", name: "Mustang"},
        %{id: "kali", name: "Kali Gandaki"}
@@ -21,14 +20,19 @@ defmodule PhoenixMultivitaminWeb.JomsomDeleteStreamLive do
   end
 
   @impl true
+  def handle_event("finish_mustang", %{"dom_id" => "legs-" <> leg_id = dom_id}, socket)
+      when leg_id in ["mustang", "kali"] do
+    {:noreply, stream_delete_by_dom_id(socket, :legs, dom_id)}
+  end
+
   def handle_event("finish_mustang", _params, socket) do
-    {:noreply, stream_delete(socket, :legs, %{id: "mustang", name: "Mustang"})}
+    {:noreply, put_flash(socket, :error, "Choose a posted Jomsom leg.")}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 04 · Jomsom delete stream
       </p>
@@ -38,10 +42,14 @@ defmodule PhoenixMultivitaminWeb.JomsomDeleteStreamLive do
         Clerk {@clerk} pulls a finished {@craft} Mustang leg off the Jomsom board.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
-      <button id="finish-mustang" type="button" phx-click="finish_mustang">
+      <button
+        id="finish-mustang"
+        type="button"
+        phx-click="finish_mustang"
+        phx-value-dom_id="legs-mustang"
+      >
         Finish Mustang
       </button>
 
@@ -50,7 +58,7 @@ defmodule PhoenixMultivitaminWeb.JomsomDeleteStreamLive do
           <span id={"leg-" <> leg.id}>{leg.name}</span>
         </div>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

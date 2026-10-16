@@ -1,8 +1,11 @@
+# Compiles the app and runs the LiveView example tests.
 name: test
 
+# Run on every pull request, and on pushes to main (after a merge).
 on:
-  push:
   pull_request:
+  push:
+    branches: [main]
 
 jobs:
   test:
@@ -11,13 +14,31 @@ jobs:
       MIX_ENV: test
     steps:
       - uses: actions/checkout@v4
+
+      # Install Erlang/OTP and Elixir at the versions pinned in .tool-versions.
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: "27"
-          elixir-version: "1.20.4"
-      - name: Install dependencies
+          version-file: .tool-versions
+          version-type: strict
+
+      # Cache downloaded deps and compiled build output. The key changes
+      # whenever mix.lock changes, so a dependency bump starts fresh.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            deps
+            _build
+          key: mix-${{ runner.os }}-${{ hashFiles('.tool-versions', 'mix.lock') }}
+          restore-keys: mix-${{ runner.os }}-
+
+      - name: Fetch dependencies
         run: mix deps.get
+
+      # Treat compiler warnings as failures, so unused variables and
+      # similar slips are caught in review.
       - name: Compile
         run: mix compile --warnings-as-errors
-      - name: Test
+
+      # The `test` alias in mix.exs creates and migrates the SQLite test DB first.
+      - name: Run tests
         run: mix test

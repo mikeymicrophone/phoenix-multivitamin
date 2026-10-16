@@ -4,7 +4,8 @@ Clerk Dorje pulls a finished Cessna 206 Stationair Mustang leg off the Jomsom bo
 
 **What it teaches**
 
-- `stream_delete/3` removes a finished row.
+- `stream_delete_by_dom_id/3` removes a finished row without fetching its record.
+- `phx-value-dom_id` sends the computed row ID; binary matching and a guard restrict it to the known legs.
 
 **Files**
 

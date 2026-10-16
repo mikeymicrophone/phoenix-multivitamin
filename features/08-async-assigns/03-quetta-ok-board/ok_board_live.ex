@@ -12,16 +12,14 @@ defmodule PhoenixMultivitaminWeb.QuettaOkBoardLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Quetta ok board")
-     |> assign(:clerk, "Zarmina")
-     |> assign(:craft, "Ilyushin Il-18")
+     |> assign_scenario("Quetta ok board", "Zarmina", "Ilyushin Il-18")
      |> assign_async(:qnh, fn -> {:ok, %{qnh: 1019}} end)}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 03 · Quetta ok board
       </p>
@@ -32,11 +30,10 @@ defmodule PhoenixMultivitaminWeb.QuettaOkBoardLive do
         the board.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p id="qnh-ok">{if @qnh.ok?, do: "ok", else: "pending"}</p>
       <p :if={@qnh.ok?} id="qnh-value">{@qnh.result}</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

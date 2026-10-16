@@ -11,9 +11,7 @@ defmodule PhoenixMultivitaminWeb.CalamaInsertAfterLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Calama insert after")
-     |> assign(:clerk, "Rocío")
-     |> assign(:craft, "Boeing 787-8")
+     |> assign_scenario("Calama insert after", "Rocío", "Boeing 787-8")
      |> stream(:sectors, [
        %{id: "north", name: "Chuquicamata north"},
        %{id: "south", name: "Loa south"}
@@ -28,7 +26,7 @@ defmodule PhoenixMultivitaminWeb.CalamaInsertAfterLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 11 · Calama insert after
       </p>
@@ -38,8 +36,7 @@ defmodule PhoenixMultivitaminWeb.CalamaInsertAfterLive do
         Clerk {@clerk} slides a mid sector for the {@craft} after Chuquicamata north.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button id="insert-mid" type="button" phx-click="insert_mid">
         Insert Calama mid
@@ -48,7 +45,7 @@ defmodule PhoenixMultivitaminWeb.CalamaInsertAfterLive do
       <div id="sectors" phx-update="stream">
         <p :for={{id, sector} <- @streams.sectors} id={id}>{sector.name}</p>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

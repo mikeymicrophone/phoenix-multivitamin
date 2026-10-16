@@ -5,6 +5,8 @@ Clerk Aigul filters Antonov An-28 legs at Osh and resets the stream.
 **What it teaches**
 
 - `stream/4` with `reset: true` replaces the board after a filter.
+- Guarded helper clauses accept all, east, or west; a filtered `for` selects the requested legs.
+- `with` leaves the current stream intact when the direction is unsupported.
 
 **Files**
 

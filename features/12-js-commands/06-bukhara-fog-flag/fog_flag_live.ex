@@ -11,15 +11,13 @@ defmodule PhoenixMultivitaminWeb.BukharaFogFlagLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Bukhara fog flag")
-     |> assign(:clerk, "Nodira")
-     |> assign(:craft, "Antonov An-140")}
+     |> assign_scenario("Bukhara fog flag", "Nodira", "Antonov An-140")}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 06 · Bukhara fog flag
       </p>
@@ -29,8 +27,7 @@ defmodule PhoenixMultivitaminWeb.BukharaFogFlagLive do
         Clerk {@clerk} sets a fog attribute on the {@craft} flag.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button
         id="set-fog"
@@ -41,7 +38,7 @@ defmodule PhoenixMultivitaminWeb.BukharaFogFlagLive do
       </button>
 
       <p id="fog-flag" data-fog="clear">Kalyan fog flag.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

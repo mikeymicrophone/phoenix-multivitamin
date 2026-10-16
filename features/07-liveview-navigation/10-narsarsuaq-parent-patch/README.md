@@ -6,6 +6,7 @@ Clerk Naja walks a Dash 7 onto the east pad at Narsarsuaq, then patches back to 
 
 - A child pad path patches back to the parent board.
 - The same LiveView handles both live_actions.
+- Socket patterns distinguish the board and pad actions; a guard accepts the east pad and redirects unsupported pads to the board.
 
 **Files**
 

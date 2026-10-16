@@ -11,9 +11,7 @@ defmodule PhoenixMultivitaminWeb.InuvikMapRowsLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Inuvik map rows")
-     |> assign(:clerk, "Qajaq")
-     |> assign(:craft, "DHC-4 Caribou")
+     |> assign_scenario("Inuvik map rows", "Qajaq", "DHC-4 Caribou")
      |> stream_configure(:metars, dom_id: &"metar-#{&1.hour}")
      |> stream(:metars, [%{hour: "18z", wind: "31024KT"}])}
   end
@@ -26,7 +24,7 @@ defmodule PhoenixMultivitaminWeb.InuvikMapRowsLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 06 · Inuvik map rows
       </p>
@@ -37,15 +35,14 @@ defmodule PhoenixMultivitaminWeb.InuvikMapRowsLive do
         The DOM id comes from the hour.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button id="add-21z" type="button" phx-click="add_21z">Add 21Z</button>
 
       <div id="metars" phx-update="stream">
         <p :for={{id, metar} <- @streams.metars} id={id}>{metar.hour} {metar.wind}</p>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

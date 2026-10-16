@@ -11,9 +11,7 @@ defmodule PhoenixMultivitaminWeb.NadiStreamContainerLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Nadi stream container")
-     |> assign(:clerk, "Litia")
-     |> assign(:craft, "Boeing 737-800")
+     |> assign_scenario("Nadi stream container", "Litia", "Boeing 737-800")
      |> stream(:slots, [%{id: "nadi-west", label: "Nadi west"}])}
   end
 
@@ -25,7 +23,7 @@ defmodule PhoenixMultivitaminWeb.NadiStreamContainerLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 05 · Nadi stream container
       </p>
@@ -36,15 +34,14 @@ defmodule PhoenixMultivitaminWeb.NadiStreamContainerLive do
         phx-update="stream".
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button id="add-momi" type="button" phx-click="add_momi">Add Momi</button>
 
       <div id="slots" phx-update="stream">
         <p :for={{id, slot} <- @streams.slots} id={id}>{slot.label}</p>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

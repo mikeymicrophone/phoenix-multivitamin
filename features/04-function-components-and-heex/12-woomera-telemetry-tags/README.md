@@ -13,6 +13,10 @@ tuple and is not escaped.
 - `raw(@note)` and `{@glyph}` when glyph is `{:safe, html}` skip escaping.
   Only trusted range glyphs belong in `{:safe, _}`.
 
+- `attr :rest, :global` forwards the escaped `data-note` attribute.
+- A named `stamp` slot declares a label attribute and receives the code through `:let`.
+- Function heads choose raw or escaped notes without a template conditional.
+
 **Files**
 
 | File | Role |

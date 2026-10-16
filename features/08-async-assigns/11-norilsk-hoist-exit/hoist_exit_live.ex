@@ -12,9 +12,7 @@ defmodule PhoenixMultivitaminWeb.NorilskHoistExitLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Norilsk hoist exit")
-     |> assign(:clerk, "Gavril")
-     |> assign(:craft, "Mil Mi-26")
+     |> assign_scenario("Norilsk hoist exit", "Gavril", "Mil Mi-26")
      |> assign_async(:hoist, fn ->
        Process.exit(self(), :hoist_cable_snap)
      end)}
@@ -23,7 +21,7 @@ defmodule PhoenixMultivitaminWeb.NorilskHoistExitLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 11 · Norilsk hoist exit
       </p>
@@ -34,11 +32,10 @@ defmodule PhoenixMultivitaminWeb.NorilskHoistExitLive do
         exits. Because it is linked, this LiveView exits too.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p :if={@hoist.loading} id="hoist-loading">Hoist still on the cable.</p>
       <p :if={@hoist.failed} id="hoist-failed">{inspect(@hoist.failed)}</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

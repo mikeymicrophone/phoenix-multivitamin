@@ -1,7 +1,8 @@
 # JS commands · 04 · Gyumri brief push
 #
 # Teaches:
-# - JS.push/1 combined with a client command
+# - JS.push value, target, and loading options combined with a client command
+# - A guarded event head reads the stand from the pushed payload
 
 defmodule PhoenixMultivitaminWeb.GyumriBriefPushLive do
   @moduledoc false
@@ -11,21 +12,24 @@ defmodule PhoenixMultivitaminWeb.GyumriBriefPushLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Gyumri brief push")
-     |> assign(:clerk, "Ani")
-     |> assign(:craft, "Ilyushin Il-62")
+     |> assign_scenario("Gyumri brief push", "Ani", "Ilyushin Il-62")
      |> assign(:logged, "quiet")}
   end
 
   @impl true
-  def handle_event("log_brief", _params, socket) do
+  def handle_event("log_brief", %{"stand" => stand}, socket)
+      when is_binary(stand) and stand == "Shirak" do
     {:noreply, assign(socket, :logged, "Shirak wave")}
+  end
+
+  def handle_event("log_brief", _params, socket) do
+    {:noreply, put_flash(socket, :error, "Choose the Shirak stand for this brief.")}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 04 · Gyumri brief push
       </p>
@@ -36,20 +40,28 @@ defmodule PhoenixMultivitaminWeb.GyumriBriefPushLive do
         log to the server.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p id="logged-brief">{@logged}</p>
 
       <button
         id="open-brief"
         type="button"
-        phx-click={JS.show(to: "#shirak-brief") |> JS.push("log_brief")}
+        aria-controls="shirak-brief"
+        phx-click={
+          JS.remove_attribute("hidden", to: "#shirak-brief")
+          |> JS.show(to: "#shirak-brief")
+          |> JS.push("log_brief",
+            value: %{stand: "Shirak"},
+            target: "#logged-brief",
+            loading: "#open-brief"
+          )
+        }
       >
         Open brief
       </button>
 
       <p id="shirak-brief" hidden>Shirak wave on the climb.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

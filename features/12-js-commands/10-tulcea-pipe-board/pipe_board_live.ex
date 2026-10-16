@@ -11,9 +11,7 @@ defmodule PhoenixMultivitaminWeb.TulceaPipeBoardLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Tulcea pipe board")
-     |> assign(:clerk, "Doina")
-     |> assign(:craft, "Saab 2000")
+     |> assign_scenario("Tulcea pipe board", "Doina", "Saab 2000")
      |> assign(:marked, "quiet")}
   end
 
@@ -25,7 +23,7 @@ defmodule PhoenixMultivitaminWeb.TulceaPipeBoardLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 10 · Tulcea pipe board
       </p>
@@ -35,8 +33,7 @@ defmodule PhoenixMultivitaminWeb.TulceaPipeBoardLive do
         Clerk {@clerk} pipes show, class, and push for the {@craft} delta card.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p id="marked-card">{@marked}</p>
 
       <button
@@ -52,7 +49,7 @@ defmodule PhoenixMultivitaminWeb.TulceaPipeBoardLive do
       </button>
 
       <p id="delta-card" hidden>Danube delta card.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

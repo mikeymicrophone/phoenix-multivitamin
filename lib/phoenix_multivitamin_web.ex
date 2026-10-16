@@ -51,6 +51,7 @@ defmodule PhoenixMultivitaminWeb do
   def live_view do
     quote do
       use Phoenix.LiveView
+      import PhoenixMultivitaminWeb.ScenarioHelpers
 
       unquote(html_helpers())
     end

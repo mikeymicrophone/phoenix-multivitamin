@@ -11,9 +11,7 @@ defmodule PhoenixMultivitaminWeb.BarentsburgCapstoneBoardLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Barentsburg capstone board")
-     |> assign(:clerk, "Lars")
-     |> assign(:craft, "Eurocopter AS332 Super Puma")
+     |> assign_scenario("Barentsburg capstone board", "Lars", "Eurocopter AS332 Super Puma")
      |> assign(:logged, "quiet")}
   end
 
@@ -25,7 +23,7 @@ defmodule PhoenixMultivitaminWeb.BarentsburgCapstoneBoardLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 13 · Barentsburg capstone board
       </p>
@@ -36,8 +34,7 @@ defmodule PhoenixMultivitaminWeb.BarentsburgCapstoneBoardLive do
         a log on the {@craft} board.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p id="logged-grumant">{@logged}</p>
 
       <button
@@ -54,7 +51,7 @@ defmodule PhoenixMultivitaminWeb.BarentsburgCapstoneBoardLive do
 
       <div id="grumant-drawer">Grumant drawer.</div>
       <p id="coal-lamp">Coal lamp.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

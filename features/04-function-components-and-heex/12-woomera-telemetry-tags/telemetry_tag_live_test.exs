@@ -13,6 +13,7 @@ defmodule PhoenixMultivitaminWeb.WoomeraTelemetryTagsLiveTest do
     assert html =~ "&lt;range-stamp lot=&quot;WO-24-8&quot;&gt;"
     refute html =~ ~r/<range-stamp[^>]*>/
     assert has_element?(view, "#range-glyph", "WO")
+    assert has_element?(view, "#range-stamp-code", "WO-4418")
     assert html =~ ~s(data-note="&lt;range-stamp lot=&quot;WO-24-8&quot;&gt;)
   end
 

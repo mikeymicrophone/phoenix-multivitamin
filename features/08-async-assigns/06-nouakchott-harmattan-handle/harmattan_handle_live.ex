@@ -14,9 +14,7 @@ defmodule PhoenixMultivitaminWeb.NouakchottHarmattanHandleLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Nouakchott harmattan handle")
-     |> assign(:clerk, "Mariem")
-     |> assign(:craft, "Boeing 737-500")
+     |> assign_scenario("Nouakchott harmattan handle", "Mariem", "Boeing 737-500")
      |> assign(:visibility, AsyncResult.loading())
      |> start_async(:harmattan, fn -> "800 metres in dust" end)}
   end
@@ -34,7 +32,7 @@ defmodule PhoenixMultivitaminWeb.NouakchottHarmattanHandleLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 06 · Nouakchott harmattan handle
       </p>
@@ -45,11 +43,10 @@ defmodule PhoenixMultivitaminWeb.NouakchottHarmattanHandleLive do
         receives the metres.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p :if={@visibility.loading} id="visibility-loading">Harmattan still blowing.</p>
       <p :if={@visibility.ok?} id="visibility-value">{@visibility.result}</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

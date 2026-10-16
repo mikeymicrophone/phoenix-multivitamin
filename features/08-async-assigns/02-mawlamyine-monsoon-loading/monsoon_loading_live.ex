@@ -12,16 +12,14 @@ defmodule PhoenixMultivitaminWeb.MawlamyineMonsoonLoadingLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Mawlamyine monsoon loading")
-     |> assign(:clerk, "Su")
-     |> assign(:craft, "Fokker 70")
+     |> assign_scenario("Mawlamyine monsoon loading", "Su", "Fokker 70")
      |> assign_async(:sounding, fn -> {:ok, %{sounding: "broken 012, rain"}} end)}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 02 · Mawlamyine monsoon loading
       </p>
@@ -32,8 +30,7 @@ defmodule PhoenixMultivitaminWeb.MawlamyineMonsoonLoadingLive do
         loading slot paints until the task returns.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <.async_result :let={sounding} assign={@sounding}>
         <:loading>
@@ -44,7 +41,7 @@ defmodule PhoenixMultivitaminWeb.MawlamyineMonsoonLoadingLive do
         </:failed>
         <p id="sounding-value">{sounding}</p>
       </.async_result>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

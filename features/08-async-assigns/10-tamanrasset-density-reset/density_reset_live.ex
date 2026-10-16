@@ -12,9 +12,7 @@ defmodule PhoenixMultivitaminWeb.TamanrassetDensityResetLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Tamanrasset density reset")
-     |> assign(:clerk, "Yasmina")
-     |> assign(:craft, "CASA C-295")
+     |> assign_scenario("Tamanrasset density reset", "Yasmina", "CASA C-295")
      |> assign(:oat_c, 34)
      |> fetch_card(reset?: false)}
   end
@@ -30,7 +28,7 @@ defmodule PhoenixMultivitaminWeb.TamanrassetDensityResetLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 10 · Tamanrasset density reset
       </p>
@@ -41,13 +39,12 @@ defmodule PhoenixMultivitaminWeb.TamanrassetDensityResetLive do
         clears the last card while the next one loads.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p :if={@card.loading} id="card-loading">Density card resetting.</p>
       <p :if={@card.ok?} id="card-value">{@card.result}</p>
 
       <button id="recompute-card" type="button" phx-click="recompute_card">Recompute</button>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 

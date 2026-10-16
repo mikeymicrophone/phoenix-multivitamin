@@ -11,15 +11,13 @@ defmodule PhoenixMultivitaminWeb.TrabzonDispatchBellLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Trabzon dispatch bell")
-     |> assign(:clerk, "Aylin")
-     |> assign(:craft, "Airbus A310")}
+     |> assign_scenario("Trabzon dispatch bell", "Aylin", "Airbus A310")}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 08 · Trabzon dispatch bell
       </p>
@@ -29,8 +27,7 @@ defmodule PhoenixMultivitaminWeb.TrabzonDispatchBellLive do
         Clerk {@clerk} dispatches a chime event toward the {@craft} bell.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button
         id="strike-chime"
@@ -41,7 +38,7 @@ defmodule PhoenixMultivitaminWeb.TrabzonDispatchBellLive do
       </button>
 
       <p id="chime-bell">Pontic chime.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

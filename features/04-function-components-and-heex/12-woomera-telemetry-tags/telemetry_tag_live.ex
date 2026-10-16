@@ -4,6 +4,7 @@
 # - HEEx interpolates binaries as escaped HTML
 # - raw/1 and {:safe, _} skip escaping
 # - Attribute interpolation escapes quotes so a note cannot break out of the attr
+# - Global attributes, a named slot with attributes, and a slot argument
 
 defmodule PhoenixMultivitaminWeb.WoomeraTelemetryTagsLive do
   @moduledoc false
@@ -35,27 +36,34 @@ defmodule PhoenixMultivitaminWeb.WoomeraTelemetryTagsLive do
   attr :glyph, :any, required: true
   attr :raw_note?, :boolean, default: false
   attr :id, :string, required: true
+  attr :rest, :global, include: ~w(data-note)
+
+  slot :stamp do
+    attr :label, :string, required: true
+  end
 
   def telemetry_tag(assigns) do
     ~H"""
-    <article id={@id} class="scenario" data-note={@note}>
+    <article id={@id} class="scenario" {@rest}>
       <h2>Brant {@code}</h2>
       <p id={"#{@id}-note"}>
-        <%= if @raw_note? do %>
-          {raw(@note)}
-        <% else %>
-          {@note}
-        <% end %>
+        {printable_note(@raw_note?, @note)}
       </p>
       <p id={"#{@id}-glyph"}>{@glyph}</p>
+      <footer :for={stamp <- @stamp}>
+        <span>{stamp.label}</span> {render_slot(stamp, @code)}
+      </footer>
     </article>
     """
   end
 
+  defp printable_note(true, note), do: raw(note)
+  defp printable_note(false, note), do: note
+
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link>
         · Function components and HEEx · 12 · Woomera telemetry tags
@@ -81,8 +89,13 @@ defmodule PhoenixMultivitaminWeb.WoomeraTelemetryTagsLive do
         note={@note}
         glyph={@glyph}
         raw_note?={@show_raw?}
-      />
-    </Layouts.catalog>
+        data-note={@note}
+      >
+        <:stamp :let={code} label="Range stamp">
+          <span id="range-stamp-code">{code}</span>
+        </:stamp>
+      </.telemetry_tag>
+    </Layouts.app>
     """
   end
 end

@@ -2,7 +2,8 @@
 
 Every scenario in this catalog follows the same conventions. The reference
 scenario, [LiveView lifecycle and events · 01 · Akureyri night watch](features/06-liveview-lifecycle-and-events/01-akureyri-night-watch/),
-follows all of them; copy its shape when you add a new one.
+illustrates those conventions. Preserve the conventions while choosing a
+different code shape for each new scenario.
 
 ## The rules
 
@@ -97,6 +98,41 @@ each scenario self-contained:
 - `Catalog` reads `features/*/feature.exs`. It should not mention a station,
   a craft, or a cabinet.
 
+## Idioms checklist
+
+Read the sibling examples before adding a scenario. A different API call or
+place name alone does not give readers a different Elixir idiom. Check the
+feature as a whole; each scenario should teach a few well-chosen techniques.
+
+- [ ] Extract repeated presentation setup with `assign_scenario/4` and
+  `<.scenario_identity>` from
+  [`ScenarioHelpers`](lib/phoenix_multivitamin_web/scenario_helpers.ex).
+  Keep character names, craft, places, and sample content in the scenario folder.
+- [ ] Vary function heads: destructure event params, match socket actions,
+  and use guards for domain constraints. Include the rejected-input behavior.
+- [ ] Choose among `with` for fallible steps, `case` for result shapes, and
+  `cond` for predicates; avoid repeating the same callback skeleton.
+- [ ] Vary collection work: filtered `for` comprehensions, captures,
+  `Enum.reduce/3`, and pipelines that transform domain values.
+- [ ] Mix maps, tuples, and `defstruct` with `@enforce_keys` where appropriate.
+  Use protocols such as `String.Chars` when a domain type needs a shared operation;
+  keep modules and protocol implementations in separate files.
+- [ ] Vary streams beyond literal inserts: parameter-driven deletion with
+  `stream_delete_by_dom_id/3`, reset, custom DOM IDs, update-only inserts,
+  and positive versus negative limits. Always give stream children their DOM IDs.
+- [ ] Vary async work: `assign_async`, `stream_async`, and `start_async` with
+  explicit result handling. Show `<.async_result>` loading and failed slots,
+  successful values, and empty results. Keep stream containers mounted while loading.
+- [ ] Vary HEEx components with global attributes, named slots, slot attributes,
+  and `:let`. Use `<Layouts.app flash={@flash} variant={:catalog}>` for catalog pages.
+- [ ] Compose JS commands where useful. Demonstrate `JS.push` payload, target,
+  and loading options, plus deliberate transitions, durations, or blocking options.
+- [ ] Update the scenario's teaching header and README to match its final code.
+  Keep existing behavior checks and add focused tests for new branches.
+- [ ] Run touched features' tests while working, then `mix precommit` once for
+  the final full suite. Keep the output to failures and the summary. Report any
+  unavailable toolchain or check without claiming it passed.
+
 ## Folder layout
 
 ```
@@ -126,10 +162,10 @@ features/06-liveview-lifecycle-and-events/
 
 1. Pick the next open slot in the feature's `README.md`. The planned titles
    are proposals; replace one if you have a better scenario.
-2. Create the scenario folder following the reference scenario.
+2. Create the scenario folder using the conventions and idioms checklist above.
 3. In the feature's `feature.exs`, set `bottled: true` and `live_module`.
 4. In the feature's `README.md`, link the slot, mark it "available", and
    update the "N of 13 bottled" count.
 5. In the root `README.md`, update that feature's "N of 13 bottled" count
    and the bottle's "Bottled" fact.
-6. Run `mix test` on the new file, then `mix test`.
+6. Run `mix test` on the new file, then `mix precommit` for the final suite.

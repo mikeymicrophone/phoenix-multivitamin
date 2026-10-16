@@ -15,16 +15,14 @@ defmodule PhoenixMultivitaminWeb.ResoluteDepartureStreamLive do
 
     {:ok,
      socket
-     |> assign(:page_title, "Resolute departure stream")
-     |> assign(:clerk, "Aaluk")
-     |> assign(:craft, "DHC-5 Buffalo")
+     |> assign_scenario("Resolute departure stream", "Aaluk", "DHC-5 Buffalo")
      |> stream(:departures, departures)}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 01 · Resolute departure stream
       </p>
@@ -35,8 +33,7 @@ defmodule PhoenixMultivitaminWeb.ResoluteDepartureStreamLive do
         not an assign list.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <div id="departures" phx-update="stream">
         <div :for={{id, row} <- @streams.departures} id={id}>
@@ -44,7 +41,7 @@ defmodule PhoenixMultivitaminWeb.ResoluteDepartureStreamLive do
           <span id={"wind-" <> row.id}>{row.wind}</span>
         </div>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

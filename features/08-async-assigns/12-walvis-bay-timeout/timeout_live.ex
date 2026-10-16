@@ -12,9 +12,7 @@ defmodule PhoenixMultivitaminWeb.WalvisBayTimeoutLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Walvis Bay timeout")
-     |> assign(:clerk, "Ndapewa")
-     |> assign(:craft, "CRJ700")
+     |> assign_scenario("Walvis Bay timeout", "Ndapewa", "CRJ700")
      |> assign_async(:sounding, fn ->
        receive do
          :never -> {:ok, %{sounding: "late fog"}}
@@ -27,7 +25,7 @@ defmodule PhoenixMultivitaminWeb.WalvisBayTimeoutLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 12 · Walvis Bay timeout
       </p>
@@ -38,11 +36,10 @@ defmodule PhoenixMultivitaminWeb.WalvisBayTimeoutLive do
         The failed reason is the atom the function returned.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p :if={@sounding.loading} id="sounding-loading">Sounding still over the desert fog.</p>
       <p :if={@sounding.failed} id="sounding-failed">{inspect(@sounding.failed)}</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

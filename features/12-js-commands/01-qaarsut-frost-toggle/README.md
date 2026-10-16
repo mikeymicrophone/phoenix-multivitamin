@@ -5,6 +5,8 @@ Clerk Paniloo toggles the frost drawer on a Sikorsky S-76 without a hook.
 **What it teaches**
 
 - `JS.toggle/1` targets the frost drawer.
+- Entrance and exit transition tuples use `time: 200`.
+- A chained `JS.toggle_attribute/2` keeps `aria-expanded` in step with the drawer.
 
 **Files**
 

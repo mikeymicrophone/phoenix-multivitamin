@@ -11,15 +11,13 @@ defmodule PhoenixMultivitaminWeb.MaryClassDeskLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Mary class desk")
-     |> assign(:clerk, "Maral")
-     |> assign(:craft, "Boeing 757-200")}
+     |> assign_scenario("Mary class desk", "Maral", "Boeing 757-200")}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 05 · Mary class desk
       </p>
@@ -29,8 +27,7 @@ defmodule PhoenixMultivitaminWeb.MaryClassDeskLive do
         Clerk {@clerk} paints and clears a heat class on the {@craft} vane.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button
         id="add-heat"
@@ -48,7 +45,7 @@ defmodule PhoenixMultivitaminWeb.MaryClassDeskLive do
       </button>
 
       <p id="merv-vane">Merv vane.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end
