@@ -23,7 +23,8 @@ defmodule PhoenixMultivitaminWeb.NarsarsuaqParentPatchLive do
     {:noreply, assign(socket, pad: pad, surface: :pad)}
   end
 
-  def handle_params(_params, _uri, %{assigns: %{live_action: :board}} = socket) do
+  def handle_params(_params, _uri, %{assigns: %{live_action: action}} = socket)
+      when action != :pad do
     {:noreply, assign(socket, pad: nil, surface: :board)}
   end
 
