@@ -134,6 +134,18 @@ defmodule PhoenixMultivitaminWeb.Router do
 
     live "/features/07-liveview-navigation/13-rio-grande-fuegian-watch/relief",
          PhoenixMultivitaminWeb.RioGrandeReliefBoardLive
+
+    get "/features/09-forms-and-changesets/08-dili-controller-slip/slips/new",
+        PhoenixMultivitaminWeb.DiliControllerSlipController,
+        :new
+
+    post "/features/09-forms-and-changesets/08-dili-controller-slip/slips",
+         PhoenixMultivitaminWeb.DiliControllerSlipController,
+         :create
+
+    get "/features/09-forms-and-changesets/08-dili-controller-slip/slips/:destination",
+        PhoenixMultivitaminWeb.DiliControllerSlipController,
+        :show
   end
 
   # Feature 03 — Controllers and JSON. Path slugs live here; domain copy
