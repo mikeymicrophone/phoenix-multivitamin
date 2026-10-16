@@ -1,12 +1,14 @@
 defmodule PhoenixMultivitaminWeb.LhasaOxygenPlanTest do
   use PhoenixMultivitaminWeb.ConnCase
 
+  import Phoenix.LiveViewTest
+
   @map "/features/03-controllers-and-json/11-lhasa-oxygen-plan"
   @ticket @map <> "/ticket"
 
   test "the catalog page links the oxygen ticket", %{conn: conn} do
-    {:ok, view, _html} = Phoenix.LiveViewTest.live(conn, @map)
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-ticket")
+    {:ok, view, _html} = live(conn, @map)
+    assert has_element?(view, "#open-ticket")
   end
 
   test "send_resp/3 writes a text ticket without an HTML view", %{conn: conn} do

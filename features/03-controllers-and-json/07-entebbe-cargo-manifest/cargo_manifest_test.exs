@@ -1,15 +1,17 @@
 defmodule PhoenixMultivitaminWeb.EntebbeCargoManifestTest do
   use PhoenixMultivitaminWeb.ConnCase
 
+  import Phoenix.LiveViewTest
+
   @map "/features/03-controllers-and-json/07-entebbe-cargo-manifest"
   @new @map <> "/manifests/new"
   @create @map <> "/manifests"
   @show @map <> "/manifests/brussels-il76"
 
   test "the catalog page links new and the Brussels pallet", %{conn: conn} do
-    {:ok, view, _html} = Phoenix.LiveViewTest.live(conn, @map)
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-new-manifest")
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-brussels-manifest")
+    {:ok, view, _html} = live(conn, @map)
+    assert has_element?(view, "#open-new-manifest")
+    assert has_element?(view, "#open-brussels-manifest")
   end
 
   test "show/2 renders the filed Il-76 pallet", %{conn: conn} do

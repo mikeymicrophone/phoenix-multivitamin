@@ -1,15 +1,17 @@
 defmodule PhoenixMultivitaminWeb.PuntaArenasAustralLoadTest do
   use PhoenixMultivitaminWeb.ConnCase
 
+  import Phoenix.LiveViewTest
+
   @map "/features/03-controllers-and-json/13-punta-arenas-austral-load"
   @index @map <> "/loads"
   @show @map <> "/loads/teniente"
   @missing @map <> "/loads/missing"
 
   test "the catalog page links the index and the Teniente pallet", %{conn: conn} do
-    {:ok, view, _html} = Phoenix.LiveViewTest.live(conn, @map)
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-loads")
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-teniente-load")
+    {:ok, view, _html} = live(conn, @map)
+    assert has_element?(view, "#open-loads")
+    assert has_element?(view, "#open-teniente-load")
   end
 
   test "index/2 is a JSON collection of austral loads", %{conn: conn} do

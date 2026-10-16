@@ -1,12 +1,14 @@
 defmodule PhoenixMultivitaminWeb.MarrakechAtisFeedTest do
   use PhoenixMultivitaminWeb.ConnCase
 
+  import Phoenix.LiveViewTest
+
   @map "/features/03-controllers-and-json/03-marrakech-atis-feed"
   @atis @map <> "/atis"
 
   test "the catalog page links the ATIS board", %{conn: conn} do
-    {:ok, view, _html} = Phoenix.LiveViewTest.live(conn, @map)
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-atis")
+    {:ok, view, _html} = live(conn, @map)
+    assert has_element?(view, "#open-atis")
   end
 
   test "show/2 renders the current information Bravo", %{conn: conn} do

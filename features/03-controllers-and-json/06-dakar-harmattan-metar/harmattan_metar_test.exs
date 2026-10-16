@@ -1,12 +1,14 @@
 defmodule PhoenixMultivitaminWeb.DakarHarmattanMetarTest do
   use PhoenixMultivitaminWeb.ConnCase
 
+  import Phoenix.LiveViewTest
+
   @map "/features/03-controllers-and-json/06-dakar-harmattan-metar"
   @metar @map <> "/metar"
 
   test "the catalog page links the harmattan METAR", %{conn: conn} do
-    {:ok, view, _html} = Phoenix.LiveViewTest.live(conn, @map)
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-metar")
+    {:ok, view, _html} = live(conn, @map)
+    assert has_element?(view, "#open-metar")
   end
 
   test "a browser Accept renders HTML and get_format/1 is html", %{conn: conn} do

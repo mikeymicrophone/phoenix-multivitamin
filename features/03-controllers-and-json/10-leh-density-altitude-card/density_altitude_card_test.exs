@@ -1,12 +1,14 @@
 defmodule PhoenixMultivitaminWeb.LehDensityAltitudeCardTest do
   use PhoenixMultivitaminWeb.ConnCase
 
+  import Phoenix.LiveViewTest
+
   @map "/features/03-controllers-and-json/10-leh-density-altitude-card"
   @card @map <> "/card"
 
   test "the catalog page links the card", %{conn: conn} do
-    {:ok, view, _html} = Phoenix.LiveViewTest.live(conn, @map)
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-card")
+    {:ok, view, _html} = live(conn, @map)
+    assert has_element?(view, "#open-card")
   end
 
   test "show/2 renders the empty card board", %{conn: conn} do

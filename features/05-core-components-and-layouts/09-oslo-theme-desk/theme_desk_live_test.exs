@@ -13,8 +13,14 @@ defmodule PhoenixMultivitaminWeb.OsloThemeDeskLiveTest do
     assert html =~ ~s(data-phx-theme="system")
     assert html =~ ~s(data-phx-theme="light")
     assert html =~ ~s(data-phx-theme="dark")
-    refute html =~ "#desk-surface" <> ~s( data-phx-theme)
-    desk = LazyHTML.filter(LazyHTML.from_fragment(html), "#desk-surface")
-    refute to_string(desk) =~ "data-phx-theme"
+    refute has_element?(view, "#desk-surface[data-phx-theme]")
+
+    desk_html =
+      html
+      |> LazyHTML.from_document()
+      |> LazyHTML.filter("#desk-surface")
+      |> LazyHTML.to_html()
+
+    refute desk_html =~ "data-phx-theme"
   end
 end

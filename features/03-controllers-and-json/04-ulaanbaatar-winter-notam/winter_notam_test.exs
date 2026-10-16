@@ -1,16 +1,18 @@
 defmodule PhoenixMultivitaminWeb.UlaanbaatarWinterNotamTest do
   use PhoenixMultivitaminWeb.ConnCase
 
+  import Phoenix.LiveViewTest
+
   @map "/features/03-controllers-and-json/04-ulaanbaatar-winter-notam"
   @ice @map <> "/notams/ubbn-ice"
   @missing @map <> "/notams/missing"
   @explode @map <> "/explode"
 
   test "the catalog page links ice, missing, and explode", %{conn: conn} do
-    {:ok, view, _html} = Phoenix.LiveViewTest.live(conn, @map)
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-ice-notam")
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-missing-notam")
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-explode")
+    {:ok, view, _html} = live(conn, @map)
+    assert has_element?(view, "#open-ice-notam")
+    assert has_element?(view, "#open-missing-notam")
+    assert has_element?(view, "#open-explode")
   end
 
   test "a known series is JSON from the action", %{conn: conn} do

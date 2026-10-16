@@ -1,14 +1,16 @@
 defmodule PhoenixMultivitaminWeb.MaleAtollSlotListTest do
   use PhoenixMultivitaminWeb.ConnCase
 
+  import Phoenix.LiveViewTest
+
   @map "/features/03-controllers-and-json/09-male-atoll-slot-list"
   @known @map <> "/slots/hulhule-14"
   @missing @map <> "/slots/missing"
 
   test "the catalog page links a known slot and a missing one", %{conn: conn} do
-    {:ok, view, _html} = Phoenix.LiveViewTest.live(conn, @map)
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-hulhule-slot")
-    assert Phoenix.LiveViewTest.has_element?(view, "#open-missing-slot")
+    {:ok, view, _html} = live(conn, @map)
+    assert has_element?(view, "#open-hulhule-slot")
+    assert has_element?(view, "#open-missing-slot")
   end
 
   test "a known water slot is JSON", %{conn: conn} do

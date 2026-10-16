@@ -7,7 +7,7 @@ defmodule PhoenixMultivitaminWeb.PragueGettextFlashLiveTest do
 
   test "the layout flash group already ships gettext reconnect copy", %{conn: conn} do
     {:ok, _view, html} = live(conn, @path)
-    assert html =~ "We can't find the internet"
+    assert html =~ "We can&#39;t find the internet"
     assert html =~ "Attempting to reconnect"
     assert html =~ "Jana"
   end

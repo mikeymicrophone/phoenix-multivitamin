@@ -11,15 +11,10 @@ defmodule PhoenixMultivitaminWeb.BillundApronCardLiveTest do
     assert has_element?(view, "#craft-name", "CRJ900")
     assert html =~ "Billund apron card"
 
-    brand = LazyHTML.filter(LazyHTML.from_fragment(html), ".catalog-brand")
-    brand_text = brand |> LazyHTML.text() |> IO.iodata_to_binary()
-    assert brand_text =~ "Phoenix Multivitamin"
-    refute brand_text =~ "Billund"
-    refute brand_text =~ "Mads"
-    refute brand_text =~ "CRJ900"
-
-    nav = LazyHTML.filter(LazyHTML.from_fragment(html), ".catalog-nav")
-    nav_text = nav |> LazyHTML.text() |> IO.iodata_to_binary()
-    refute nav_text =~ "Billund"
+    assert has_element?(view, ".catalog-brand", "Phoenix Multivitamin")
+    refute has_element?(view, ".catalog-brand", "Billund")
+    refute has_element?(view, ".catalog-brand", "Mads")
+    refute has_element?(view, ".catalog-brand", "CRJ900")
+    refute has_element?(view, ".catalog-nav", "Billund")
   end
 end

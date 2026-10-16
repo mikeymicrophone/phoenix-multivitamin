@@ -14,8 +14,11 @@ defmodule PhoenixMultivitaminWeb.PrestwickAtlanticTitleLiveTest do
   end
 
   test "retitling keeps the layout suffix", %{conn: conn} do
-    {:ok, view, _html} = live(conn, @path)
-    html = render_click(element(view, "#retitle-crossing"))
-    assert html =~ "Prestwick A380 crossing"
+    {:ok, view, html} = live(conn, @path)
+    assert page_title(view) == "Prestwick Atlantic title · Phoenix"
+    assert html =~ ~s(data-suffix=" · Phoenix")
+    render_click(element(view, "#retitle-crossing"))
+    assert page_title(view) == "Prestwick A380 crossing"
+    assert html =~ ~s(data-suffix=" · Phoenix")
   end
 end
