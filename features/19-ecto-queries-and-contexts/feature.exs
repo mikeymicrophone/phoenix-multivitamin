@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-harbor-tide-context",
-      title: "Harbor tide context",
+      slug: "01-strasbourg-rhine-context",
+      title: "Strasbourg Rhine context",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-cannery-floor-context",
-      title: "Cannery floor context",
+      slug: "02-mulhouse-euroairport-query",
+      title: "Mulhouse EuroAirport query",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-lens-cabinet-context",
-      title: "Lens cabinet context",
+      slug: "03-samedan-engadin-context",
+      title: "Samedan Engadin context",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-ferry-sailing-context",
-      title: "Ferry sailing context",
+      slug: "04-zermatt-heliport-query",
+      title: "Zermatt heliport query",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-lock-chamber-context",
-      title: "Lock chamber context",
+      slug: "05-megeve-altiport-context",
+      title: "Megève altiport context",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-hatchery-round-context",
-      title: "Hatchery round context",
+      slug: "06-alpe-dhuez-altiport-query",
+      title: "Alpe d'Huez altiport query",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-seed-press-context",
-      title: "Seed press context",
+      slug: "07-chambery-savoie-context",
+      title: "Chambéry Savoie context",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-pilot-station-context",
-      title: "Pilot station context",
+      slug: "08-nice-cote-azur-query",
+      title: "Nice Côte d'Azur query",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-net-loft-context",
-      title: "Net loft context",
+      slug: "09-monaco-heliport-context",
+      title: "Monaco heliport context",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-buoy-depot-context",
-      title: "Buoy depot context",
+      slug: "10-andorra-la-seu-query",
+      title: "Andorra La Seu query",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-chart-desk-context",
-      title: "Chart desk context",
+      slug: "11-reus-gaudi-context",
+      title: "Reus Gaudí context",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-foghorn-tender-context",
-      title: "Foghorn tender context",
+      slug: "12-jerez-sherry-query",
+      title: "Jerez sherry query",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-watch-log-context",
-      title: "Watch log context",
+      slug: "13-almeria-tabernas-context",
+      title: "Almería Tabernas context",
       bottled: false
     }
   ]

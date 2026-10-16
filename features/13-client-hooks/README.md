@@ -6,19 +6,19 @@ Official reference: [Client hooks](https://hexdocs.pm/phoenix_live_view/js-inter
 
 ## Examples (0 of 13 bottled)
 
-01. Lighthouse watch clock — planned
-02. Tide staff reading needle — planned
-03. Bell buoy ledger chime — planned
-04. Wharf office chalk canvas — planned
-05. Cap Sante net loft ruler — planned
-06. Dosewallips tide gate crank — planned
-07. Coupled fog bells — planned
-08. Anacortes cannery retort gauges — planned
-09. Ferry sailing filter knobs — planned
-10. Keeper watch slate stylus — planned
-11. Fog signal oscilloscope — planned
-12. Hydrophone waterfall — planned
-13. Range light aligner — planned
+01. Cebu Mactan clock hook — planned
+02. Jakarta Halim needle hook — planned
+03. Denpasar Nusa chime hook — planned
+04. Yogyakarta Borobudur canvas — planned
+05. Kuching hornbill ruler — planned
+06. Penang George Town crank — planned
+07. Langkawi cable bells — planned
+08. Vientiane Mekong gauges — planned
+09. Luang Prabang Pak Ou knobs — planned
+10. Taipei Songshan stylus — planned
+11. Kaohsiung Love River scope — planned
+12. Busan Gwangalli waterfall — planned
+13. Kansai Izumisano aligner — planned
 
 ## What each scenario adds
 

@@ -14,40 +14,40 @@ defmodule PhoenixMultivitaminWeb.Router do
     plug :accepts, ["json"]
   end
 
-  pipeline :admiralty_inlet_tide do
-    plug PhoenixMultivitaminWeb.AdmiraltyInletTidePlug
+  pipeline :lukla_shear do
+    plug PhoenixMultivitaminWeb.LuklaShearPlug
   end
 
-  pipeline :port_townsend_hoist do
-    plug PhoenixMultivitaminWeb.PortTownsendHoistPlug
+  pipeline :tromso_sar_hoist do
+    plug PhoenixMultivitaminWeb.TromsoSarHoistPlug
   end
 
-  pipeline :friday_harbor_arrivals do
-    plug PhoenixMultivitaminWeb.FridayHarborInspectorPlug, lane: :arrivals
+  pipeline :incheon_arrivals do
+    plug PhoenixMultivitaminWeb.IncheonInspectorPlug, lane: :arrivals
   end
 
-  pipeline :friday_harbor_departures do
-    plug PhoenixMultivitaminWeb.FridayHarborInspectorPlug, lane: :departures
+  pipeline :incheon_departures do
+    plug PhoenixMultivitaminWeb.IncheonInspectorPlug, lane: :departures
   end
 
-  pipeline :kalama_elevator do
-    plug PhoenixMultivitaminWeb.KalamaElevatorPlug
+  pipeline :changi_hydrant do
+    plug PhoenixMultivitaminWeb.ChangiHydrantPlug
   end
 
-  pipeline :la_push_skiff do
-    plug PhoenixMultivitaminWeb.LaPushSkiffPlug
+  pipeline :oostwold_balloon do
+    plug PhoenixMultivitaminWeb.OostwoldBalloonPlug
   end
 
-  pipeline :rosario_strait do
-    plug PhoenixMultivitaminWeb.RosarioStraitPlug
+  pipeline :santa_maria_oceanic do
+    plug PhoenixMultivitaminWeb.SantaMariaOceanicPlug
   end
 
-  pipeline :rosario_watch do
-    plug PhoenixMultivitaminWeb.RosarioWatchPlug
+  pipeline :santa_maria_watch do
+    plug PhoenixMultivitaminWeb.SantaMariaWatchPlug
   end
 
-  pipeline :cape_flattery do
-    plug PhoenixMultivitaminWeb.CapeFlatteryCapePlug
+  pipeline :ushuaia_austral do
+    plug PhoenixMultivitaminWeb.UshuaiaAustralPlug
   end
 
   # Bottled LiveViews are drawn first so their static paths win over the
@@ -64,42 +64,42 @@ defmodule PhoenixMultivitaminWeb.Router do
     # controller redirects, forwarded kiosks, sibling LiveView paths). Domain
     # copy stays in each scenario folder; these entries only name the paths
     # ~p has to check.
-    live "/features/02-verified-routes/01-alki-point-signal-flags/night",
-         PhoenixMultivitaminWeb.AlkiPointSignalFlagsLive,
+    live "/features/02-verified-routes/01-la-ferte-alais-signal-flags/night",
+         PhoenixMultivitaminWeb.LaFerteAlaisSignalFlagsLive,
          :night
 
-    live "/features/02-verified-routes/03-patos-island-fog-logger/watches/:watch",
-         PhoenixMultivitaminWeb.PatosIslandFogLoggerLive
+    live "/features/02-verified-routes/03-ilulissat-ice-logger/watches/:watch",
+         PhoenixMultivitaminWeb.IlulissatIceLoggerLive
 
-    get "/features/02-verified-routes/05-west-point-current-card/drift",
-        PhoenixMultivitaminWeb.WestPointCurrentCardController,
+    get "/features/02-verified-routes/05-funchal-wind-card/drift",
+        PhoenixMultivitaminWeb.FunchalWindCardController,
         :drift
 
-    live "/features/02-verified-routes/06-browns-point-fog-desk/horn-cabinet",
-         PhoenixMultivitaminWeb.BrownsPointFogDeskLive,
-         :horn
+    live "/features/02-verified-routes/06-courchevel-altimeter-desk/altimeter-cabinet",
+         PhoenixMultivitaminWeb.CourchevelAltimeterDeskLive,
+         :cabinet
 
-    get "/features/02-verified-routes/08-smith-island-tide-drum/island-host",
-        PhoenixMultivitaminWeb.SmithIslandTideDrumController,
+    get "/features/02-verified-routes/08-mataveri-metar-drum/island-host",
+        PhoenixMultivitaminWeb.MataveriMetarDrumController,
         :island_host
 
-    forward "/features/02-verified-routes/10-edmonds-ramp-tickets/kiosk",
-            PhoenixMultivitaminWeb.EdmondsRampKiosk
+    forward "/features/02-verified-routes/10-addis-ramp-tickets/kiosk",
+            PhoenixMultivitaminWeb.AddisRampKiosk
 
-    live "/features/02-verified-routes/11-mukilteo-fare-banner/lanes/:lane",
-         PhoenixMultivitaminWeb.MukilteoFareBannerLive,
+    live "/features/02-verified-routes/11-nairobi-wilson-fare-banner/lanes/:lane",
+         PhoenixMultivitaminWeb.NairobiWilsonFareBannerLive,
          :lane
 
-    get "/features/02-verified-routes/13-fort-worden-guard-house/gate",
-        PhoenixMultivitaminWeb.FortWordenGuardHouseController,
+    get "/features/02-verified-routes/13-luqa-qra-guard-house/gate",
+        PhoenixMultivitaminWeb.LuqaQraGuardHouseController,
         :gate
 
-    live "/features/02-verified-routes/13-fort-worden-guard-house/relief",
-         PhoenixMultivitaminWeb.FortWordenGuardHouseLive,
+    live "/features/02-verified-routes/13-luqa-qra-guard-house/relief",
+         PhoenixMultivitaminWeb.LuqaQraGuardHouseLive,
          :relief
 
-    live "/features/02-verified-routes/13-fort-worden-guard-house/passes/:pass",
-         PhoenixMultivitaminWeb.FortWordenGuardHouseLive,
+    live "/features/02-verified-routes/13-luqa-qra-guard-house/passes/:pass",
+         PhoenixMultivitaminWeb.LuqaQraGuardHouseLive,
          :pass
   end
 
@@ -108,102 +108,102 @@ defmodule PhoenixMultivitaminWeb.Router do
   scope "/features/01-routing-and-plugs" do
     pipe_through :browser
 
-    scope "/01-admiralty-inlet-tide-gate" do
-      pipe_through :admiralty_inlet_tide
-      get "/inlet", PhoenixMultivitaminWeb.AdmiraltyInletTideGateController, :show
+    scope "/01-lukla-shear-gate" do
+      pipe_through :lukla_shear
+      get "/approach", PhoenixMultivitaminWeb.LuklaShearGateController, :show
     end
 
-    scope "/02-port-townsend-hoist-dispatch" do
-      pipe_through :port_townsend_hoist
-      get "/yard", PhoenixMultivitaminWeb.PortTownsendHoistDispatchController, :dispatch
+    scope "/02-tromso-sar-hoist" do
+      pipe_through :tromso_sar_hoist
+      get "/pad", PhoenixMultivitaminWeb.TromsoSarHoistController, :dispatch
     end
 
-    scope "/03-friday-harbor-customs-shed" do
+    scope "/03-incheon-bonded-shed" do
       scope "/arrivals" do
-        pipe_through :friday_harbor_arrivals
+        pipe_through :incheon_arrivals
 
-        resources "/declarations", PhoenixMultivitaminWeb.FridayHarborDeclarationsController,
+        resources "/declarations", PhoenixMultivitaminWeb.IncheonDeclarationsController,
           only: [:index, :show]
       end
 
       scope "/departures" do
-        pipe_through :friday_harbor_departures
+        pipe_through :incheon_departures
 
-        resources "/declarations", PhoenixMultivitaminWeb.FridayHarborDeclarationsController,
+        resources "/declarations", PhoenixMultivitaminWeb.IncheonDeclarationsController,
           only: [:index, :show]
       end
     end
 
-    get "/05-willapa-seed-barge-office/office",
-        PhoenixMultivitaminWeb.WillapaSeedBargeController,
+    get "/05-shannon-avgas-office/bowser",
+        PhoenixMultivitaminWeb.ShannonAvgasController,
         :show
 
-    scope "/06-kalama-elevator-tape" do
-      pipe_through :kalama_elevator
-      get "/tape", PhoenixMultivitaminWeb.KalamaElevatorTapeController, :show
-      live "/silo", PhoenixMultivitaminWeb.KalamaElevatorTapeLive
+    scope "/06-changi-hydrant-tape" do
+      pipe_through :changi_hydrant
+      get "/tape", PhoenixMultivitaminWeb.ChangiHydrantTapeController, :show
+      live "/hydrant", PhoenixMultivitaminWeb.ChangiHydrantTapeLive
     end
 
-    get "/07-colman-dock-shed/shed", PhoenixMultivitaminWeb.ColmanDockShedController, :show
+    get "/07-barra-beach-shed/shed", PhoenixMultivitaminWeb.BarraBeachShedController, :show
 
-    get "/08-anacortes-retort-floor/floor/cooks",
-        PhoenixMultivitaminWeb.AnacortesRetortFloorController,
+    get "/08-finkenwerder-jig-floor/floor/jigs",
+        PhoenixMultivitaminWeb.FinkenwerderJigFloorController,
         :index
 
-    get "/08-anacortes-retort-floor/floor/cooks/:cook_id",
-        PhoenixMultivitaminWeb.AnacortesRetortFloorController,
+    get "/08-finkenwerder-jig-floor/floor/jigs/:jig_id",
+        PhoenixMultivitaminWeb.FinkenwerderJigFloorController,
         :show
 
-    scope "/09-la-push-skiff-line" do
-      pipe_through :la_push_skiff
-      get "/line", PhoenixMultivitaminWeb.LaPushSkiffLineController, :show
+    scope "/09-oostwold-balloon-line" do
+      pipe_through :oostwold_balloon
+      get "/line", PhoenixMultivitaminWeb.OostwoldBalloonLineController, :show
     end
 
-    get "/10-ballard-lock-house/locks", PhoenixMultivitaminWeb.BallardLockHouseController, :show
+    get "/10-kiruna-deice-pad/pads", PhoenixMultivitaminWeb.KirunaDeicePadController, :show
 
-    get "/11-quillayute-chart-desk/roster",
-        PhoenixMultivitaminWeb.QuillayuteChartDeskController,
+    get "/11-bergen-briefing-desk/roster",
+        PhoenixMultivitaminWeb.BergenBriefingDeskController,
         :roster
 
-    get "/11-quillayute-chart-desk/desk",
-        PhoenixMultivitaminWeb.QuillayuteChartDeskController,
+    get "/11-bergen-briefing-desk/desk",
+        PhoenixMultivitaminWeb.BergenBriefingDeskController,
         :desk
 
-    get "/11-quillayute-chart-desk/leaky-desk",
-        PhoenixMultivitaminWeb.QuillayuteChartDeskController,
+    get "/11-bergen-briefing-desk/leaky-desk",
+        PhoenixMultivitaminWeb.BergenBriefingDeskController,
         :leaky_desk
 
-    scope "/12-rosario-watch-floor" do
-      pipe_through :rosario_strait
+    scope "/12-santa-maria-oceanic-floor" do
+      pipe_through :santa_maria_oceanic
 
       scope "/station/:station" do
-        pipe_through :rosario_watch
+        pipe_through :santa_maria_watch
 
         scope "/watch/:watch" do
-          get "/floor", PhoenixMultivitaminWeb.RosarioWatchFloorController, :show
+          get "/floor", PhoenixMultivitaminWeb.SantaMariaOceanicFloorController, :show
         end
       end
     end
 
-    scope "/12-rosario-watch-floor/relief" do
-      pipe_through :rosario_watch
-      get "/floor", PhoenixMultivitaminWeb.RosarioWatchFloorController, :relief
+    scope "/12-santa-maria-oceanic-floor/relief" do
+      pipe_through :santa_maria_watch
+      get "/floor", PhoenixMultivitaminWeb.SantaMariaOceanicFloorController, :relief
     end
 
-    scope "/13-cape-flattery-pipeline" do
-      pipe_through :cape_flattery
-      get "/cape", PhoenixMultivitaminWeb.CapeFlatteryPipelineController, :cape
-      forward "/lookout", PhoenixMultivitaminWeb.CapeFlatteryLookoutRouter
+    scope "/13-ushuaia-austral-pipeline" do
+      pipe_through :ushuaia_austral
+      get "/austral", PhoenixMultivitaminWeb.UshuaiaAustralPipelineController, :austral
+      forward "/lookout", PhoenixMultivitaminWeb.UshuaiaLookoutRouter
     end
 
-    forward "/04-neah-bay-entrance-log/entrance", PhoenixMultivitaminWeb.NeahBayEntranceLogRouter
+    forward "/04-paro-inbound-log/valley", PhoenixMultivitaminWeb.ParoInboundLogRouter
   end
 
-  scope "/features/01-routing-and-plugs/08-anacortes-retort-floor/api" do
+  scope "/features/01-routing-and-plugs/08-finkenwerder-jig-floor/api" do
     pipe_through :api
 
-    get "/cooks", PhoenixMultivitaminWeb.AnacortesRetortFloorController, :index
-    get "/cooks/:cook_id", PhoenixMultivitaminWeb.AnacortesRetortFloorController, :show
+    get "/jigs", PhoenixMultivitaminWeb.FinkenwerderJigFloorController, :index
+    get "/jigs/:jig_id", PhoenixMultivitaminWeb.FinkenwerderJigFloorController, :show
   end
 
   scope "/", PhoenixMultivitaminWeb do

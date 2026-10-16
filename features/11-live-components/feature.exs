@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-kelp-dryer-trays",
-      title: "Kelp dryer trays",
+      slug: "01-recife-recife-fuel-cell",
+      title: "Recife fuel cell",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-buoy-depot-paint-rack",
-      title: "Buoy depot paint rack",
+      slug: "02-brasilia-planalto-component",
+      title: "Brasília Planalto component",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-lummi-reefnet-tally",
-      title: "Lummi reefnet tally",
+      slug: "03-foz-iguacu-falls-card",
+      title: "Foz do Iguaçu falls card",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-terminal-shed-lamps",
-      title: "Terminal shed lamps",
+      slug: "04-windhoek-hosea-kutako-cell",
+      title: "Windhoek Hosea Kutako cell",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-strait-chart-locker",
-      title: "Strait chart locker",
+      slug: "05-cape-town-table-component",
+      title: "Cape Town Table component",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-seattle-traffic-board",
-      title: "Seattle traffic board",
+      slug: "06-casablanca-anfa-card",
+      title: "Casablanca Anfa card",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-port-gamble-tide-staff",
-      title: "Port Gamble tide staff",
+      slug: "07-tunis-carthage-cell",
+      title: "Tunis Carthage cell",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-coupeville-landing-slip",
-      title: "Coupeville landing slip",
+      slug: "08-cairo-sphinx-component",
+      title: "Cairo Sphinx component",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-samish-shellfish-ticket",
-      title: "Samish shellfish ticket",
+      slug: "09-kigali-virunga-card",
+      title: "Kigali Virunga card",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-lopez-freight-bell",
-      title: "Lopez freight bell",
+      slug: "10-dar-es-salaam-nyerere-cell",
+      title: "Dar es Salaam Nyerere cell",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-goose-point-retort-tickets",
-      title: "Goose Point retort tickets",
+      slug: "11-antananarivo-baobab-card",
+      title: "Antananarivo baobab card",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-la-conner-cannery-pass",
-      title: "La Conner cannery pass",
+      slug: "12-mauritius-ssr-component",
+      title: "Mauritius SSR component",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-admiralty-pilot-orders",
-      title: "Admiralty pilot orders",
+      slug: "13-mahe-seychelles-cell",
+      title: "Mahé Seychelles cell",
       bottled: false
     }
   ]

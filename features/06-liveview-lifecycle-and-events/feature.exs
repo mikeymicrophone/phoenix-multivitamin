@@ -8,94 +8,94 @@
   slots: [
     %{
       number: 1,
-      slug: "01-new-dungeness-watch-log",
-      title: "New Dungeness watch log",
+      slug: "01-akureyri-night-watch",
+      title: "Akureyri night watch",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.NewDungenessWatchLogLive
+      live_module: PhoenixMultivitaminWeb.AkureyriNightWatchLive
     },
     %{
       number: 2,
-      slug: "02-point-wilson-fog-signal-card",
-      title: "Point Wilson fog signal card",
+      slug: "02-kota-kinabalu-monsoon-card",
+      title: "Kota Kinabalu monsoon card",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.PointWilsonFogSignalCardLive
+      live_module: PhoenixMultivitaminWeb.KotaKinabaluMonsoonCardLive
     },
     %{
       number: 3,
-      slug: "03-cape-disappointment-lamp-round",
-      title: "Cape Disappointment lamp round",
+      slug: "03-overberg-lamp-round",
+      title: "Overberg lamp round",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.CapeDisappointmentLampRoundLive
+      live_module: PhoenixMultivitaminWeb.OverbergLampRoundLive
     },
     %{
       number: 4,
-      slug: "04-friday-harbor-berth-slate",
-      title: "Friday Harbor berth slate",
+      slug: "04-tivat-stand-slate",
+      title: "Tivat stand slate",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.FridayHarborBerthSlateLive
+      live_module: PhoenixMultivitaminWeb.TivatStandSlateLive
     },
     %{
       number: 5,
-      slug: "05-pacific-american-cannery-retort-card",
-      title: "Pacific American Cannery retort card",
+      slug: "05-gifu-autoclave-card",
+      title: "Gifu autoclave card",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.PacificAmericanCanneryRetortCardLive
+      live_module: PhoenixMultivitaminWeb.GifuAutoclaveCardLive
     },
     %{
       number: 6,
-      slug: "06-tatoosh-weather-round",
-      title: "Tatoosh weather round",
+      slug: "06-vagar-weather-round",
+      title: "Vágar weather round",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.TatooshWeatherRoundLive
+      live_module: PhoenixMultivitaminWeb.VagarWeatherRoundLive
     },
     %{
       number: 7,
-      slug: "07-destruction-island-relief-board",
-      title: "Destruction Island relief board",
+      slug: "07-st-helena-relief-board",
+      title: "St Helena relief board",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.DestructionIslandReliefBoardLive
+      live_module: PhoenixMultivitaminWeb.StHelenaReliefBoardLive
     },
     %{
       number: 8,
-      slug: "08-ediz-hook-current-table",
-      title: "Ediz Hook current table",
+      slug: "08-keflavik-jetstream-table",
+      title: "Keflavik jet-stream table",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.EdizHookCurrentTableLive
+      live_module: PhoenixMultivitaminWeb.KeflavikJetstreamTableLive
     },
     %{
       number: 9,
-      slug: "09-slip-point-bell-book",
-      title: "Slip Point bell book",
+      slug: "09-juist-windsock-book",
+      title: "Juist windsock book",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.SlipPointBellBookLive
+      live_module: PhoenixMultivitaminWeb.JuistWindsockBookLive
     },
     %{
       number: 10,
-      slug: "10-cattle-point-range-log",
-      title: "Cattle Point range log",
+      slug: "10-amari-range-log",
+      title: "Ämari range log",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.CattlePointRangeLogLive
+      live_module: PhoenixMultivitaminWeb.AmariRangeLogLive
     },
     %{
       number: 11,
-      slug: "11-marrowstone-horn-events",
-      title: "Marrowstone horn events",
+      slug: "11-andoya-rocket-events",
+      title: "Andøya rocket events",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.MarrowstoneHornEventsLive
+      live_module: PhoenixMultivitaminWeb.AndoyaRocketEventsLive
     },
     %{
       number: 12,
-      slug: "12-lime-kiln-hydrophone-watch",
-      title: "Lime Kiln hydrophone watch",
+      slug: "12-rarotonga-atis-watch",
+      title: "Rarotonga ATIS watch",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.LimeKilnHydrophoneWatchLive
+      live_module: PhoenixMultivitaminWeb.RarotongaAtisWatchLive
     },
     %{
       number: 13,
-      slug: "13-admiralty-inlet-night-board",
-      title: "Admiralty Inlet night board",
+      slug: "13-nuuk-night-board",
+      title: "Nuuk night board",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.AdmiraltyInletNightBoardLive
+      live_module: PhoenixMultivitaminWeb.NuukNightBoardLive
     }
   ]
 }

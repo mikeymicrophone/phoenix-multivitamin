@@ -26,17 +26,17 @@ snippets are deliberately small: a greeter, a hello controller, a counter.
 That is enough to learn the function names and not enough to see how a
 feature holds up inside a real job of work.
 
-Phoenix Multivitamin is a catalog of realistic scenarios: a harbor tide
-board, a seed packet press, a lighthouse watch log. Each feature gets
-thirteen of them, ranging from moderately complex to complex, so you can see
-the same feature applied in thirteen different shapes.
+Phoenix Multivitamin is a catalog of realistic scenarios: a shear gate at
+Lukla, a Roadster flight plate at Payerne, a night watch at Akureyri. Each
+feature gets thirteen of them, ranging from moderately complex to complex,
+so you can see the same feature applied in thirteen different shapes.
 
 Every scenario uses real, domain-meaningful names. You will not find
 placeholder names here.
 
 The bottle is just opening: 25 features, 13 scenarios each, 52 of 325 bottled.
 The reference scenario that later ones copy is
-[LiveView lifecycle and events · 01 · New Dungeness watch log](features/06-liveview-lifecycle-and-events/01-new-dungeness-watch-log/).
+[LiveView lifecycle and events · 01 · Akureyri night watch](features/06-liveview-lifecycle-and-events/01-akureyri-night-watch/).
 
 ## Run the examples locally
 
@@ -65,7 +65,7 @@ file under `test/` and `features/`.
 Run the reference scenario on its own:
 
 ```sh
-mix test features/06-liveview-lifecycle-and-events/01-new-dungeness-watch-log/watch_log_live_test.exs
+mix test features/06-liveview-lifecycle-and-events/01-akureyri-night-watch/night_watch_live_test.exs
 ```
 
 ## Layout
@@ -77,9 +77,9 @@ features/
   06-liveview-lifecycle-and-events/
     README.md                           what the feature covers, and its 13 slots
     feature.exs                         titles and bottled flag (not in lib/)
-    01-new-dungeness-watch-log/
-      watch_log_live.ex                 the LiveView
-      watch_log_live_test.exs
+    01-akureyri-night-watch/
+      night_watch_live.ex               the LiveView
+      night_watch_live_test.exs
       README.md
   01-routing-and-plugs/
   ...

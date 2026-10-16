@@ -6,19 +6,19 @@ Official reference: [Ecto migrations and multis](https://hexdocs.pm/ecto_sql/Ect
 
 ## Examples (0 of 13 bottled)
 
-01. Retort floor migration — planned
-02. Watch log migration — planned
-03. Berth ledger migration — planned
-04. Seed vault migration — planned
-05. Lens cabinet migration — planned
-06. Hatchery tray migration — planned
-07. Moorage invoice multi — planned
-08. Fog signal multi — planned
-09. Chart correction multi — planned
-10. Pilot order multi — planned
-11. Cannery pass multi — planned
-12. Lockage ticket multi — planned
-13. Overnight handover multi — planned
+01. Granada Sierra Nevada migration — planned
+02. Beja Alentejo migration — planned
+03. Vigo Rías Baixas migration — planned
+04. Santiago Compostela vault — planned
+05. A Coruña Hercules cabinet — planned
+06. Asturias Picos migration — planned
+07. Santander Cantabria multi — planned
+08. Pamplona San Fermín multi — planned
+09. Zaragoza Ebro multi — planned
+10. Salamanca Plaza Mayor multi — planned
+11. León Camino multi — planned
+12. Vitoria Basque multi — planned
+13. Logroño Rioja handover — planned
 
 ## What each scenario adds
 

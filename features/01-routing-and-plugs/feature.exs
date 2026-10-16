@@ -8,94 +8,94 @@
   slots: [
     %{
       number: 1,
-      slug: "01-admiralty-inlet-tide-gate",
-      title: "Admiralty Inlet tide gate",
+      slug: "01-lukla-shear-gate",
+      title: "Lukla shear gate",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.AdmiraltyInletTideGateLive
+      live_module: PhoenixMultivitaminWeb.LuklaShearGateLive
     },
     %{
       number: 2,
-      slug: "02-port-townsend-hoist-dispatch",
-      title: "Port Townsend hoist dispatch",
+      slug: "02-tromso-sar-hoist",
+      title: "Tromsø SAR hoist",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.PortTownsendHoistDispatchLive
+      live_module: PhoenixMultivitaminWeb.TromsoSarHoistLive
     },
     %{
       number: 3,
-      slug: "03-friday-harbor-customs-shed",
-      title: "Friday Harbor customs shed",
+      slug: "03-incheon-bonded-shed",
+      title: "Incheon bonded shed",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.FridayHarborCustomsShedLive
+      live_module: PhoenixMultivitaminWeb.IncheonBondedShedLive
     },
     %{
       number: 4,
-      slug: "04-neah-bay-entrance-log",
-      title: "Neah Bay entrance log",
+      slug: "04-paro-inbound-log",
+      title: "Paro inbound log",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.NeahBayEntranceLogLive
+      live_module: PhoenixMultivitaminWeb.ParoInboundLogLive
     },
     %{
       number: 5,
-      slug: "05-willapa-seed-barge-office",
-      title: "Willapa seed barge office",
+      slug: "05-shannon-avgas-office",
+      title: "Shannon avgas office",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.WillapaSeedBargeOfficeLive
+      live_module: PhoenixMultivitaminWeb.ShannonAvgasOfficeLive
     },
     %{
       number: 6,
-      slug: "06-kalama-elevator-tape",
-      title: "Kalama elevator tape",
+      slug: "06-changi-hydrant-tape",
+      title: "Changi hydrant tape",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.KalamaElevatorTapeLive
+      live_module: PhoenixMultivitaminWeb.ChangiHydrantTapeLive
     },
     %{
       number: 7,
-      slug: "07-colman-dock-shed",
-      title: "Colman Dock shed",
+      slug: "07-barra-beach-shed",
+      title: "Barra beach shed",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.ColmanDockShedLive
+      live_module: PhoenixMultivitaminWeb.BarraBeachShedLive
     },
     %{
       number: 8,
-      slug: "08-anacortes-retort-floor",
-      title: "Anacortes retort floor",
+      slug: "08-finkenwerder-jig-floor",
+      title: "Finkenwerder jig floor",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.AnacortesRetortFloorLive
+      live_module: PhoenixMultivitaminWeb.FinkenwerderJigFloorLive
     },
     %{
       number: 9,
-      slug: "09-la-push-skiff-line",
-      title: "La Push skiff line",
+      slug: "09-oostwold-balloon-line",
+      title: "Oostwold balloon line",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.LaPushSkiffLineLive
+      live_module: PhoenixMultivitaminWeb.OostwoldBalloonLineLive
     },
     %{
       number: 10,
-      slug: "10-ballard-lock-house",
-      title: "Ballard lock house",
+      slug: "10-kiruna-deice-pad",
+      title: "Kiruna de-ice pad",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.BallardLockHouseLive
+      live_module: PhoenixMultivitaminWeb.KirunaDeicePadLive
     },
     %{
       number: 11,
-      slug: "11-quillayute-chart-desk",
-      title: "Quillayute chart desk",
+      slug: "11-bergen-briefing-desk",
+      title: "Bergen briefing desk",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.QuillayuteChartDeskLive
+      live_module: PhoenixMultivitaminWeb.BergenBriefingDeskLive
     },
     %{
       number: 12,
-      slug: "12-rosario-watch-floor",
-      title: "Rosario watch floor",
+      slug: "12-santa-maria-oceanic-floor",
+      title: "Santa Maria oceanic floor",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.RosarioWatchFloorLive
+      live_module: PhoenixMultivitaminWeb.SantaMariaOceanicFloorLive
     },
     %{
       number: 13,
-      slug: "13-cape-flattery-pipeline",
-      title: "Cape Flattery pipeline",
+      slug: "13-ushuaia-austral-pipeline",
+      title: "Ushuaia austral pipeline",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.CapeFlatteryPipelineLive
+      live_module: PhoenixMultivitaminWeb.UshuaiaAustralPipelineLive
     }
   ]
 }

@@ -6,19 +6,19 @@ Official reference: [LiveView lifecycle and events](https://hexdocs.pm/phoenix_l
 
 ## Examples (13 of 13 bottled)
 
-01. [New Dungeness watch log](01-new-dungeness-watch-log/) — available
-02. [Point Wilson fog signal card](02-point-wilson-fog-signal-card/) — available
-03. [Cape Disappointment lamp round](03-cape-disappointment-lamp-round/) — available
-04. [Friday Harbor berth slate](04-friday-harbor-berth-slate/) — available
-05. [Pacific American Cannery retort card](05-pacific-american-cannery-retort-card/) — available
-06. [Tatoosh weather round](06-tatoosh-weather-round/) — available
-07. [Destruction Island relief board](07-destruction-island-relief-board/) — available
-08. [Ediz Hook current table](08-ediz-hook-current-table/) — available
-09. [Slip Point bell book](09-slip-point-bell-book/) — available
-10. [Cattle Point range log](10-cattle-point-range-log/) — available
-11. [Marrowstone horn events](11-marrowstone-horn-events/) — available
-12. [Lime Kiln hydrophone watch](12-lime-kiln-hydrophone-watch/) — available
-13. [Admiralty Inlet night board](13-admiralty-inlet-night-board/) — available
+01. [Akureyri night watch](01-akureyri-night-watch/) — available
+02. [Kota Kinabalu monsoon card](02-kota-kinabalu-monsoon-card/) — available
+03. [Overberg lamp round](03-overberg-lamp-round/) — available
+04. [Tivat stand slate](04-tivat-stand-slate/) — available
+05. [Gifu autoclave card](05-gifu-autoclave-card/) — available
+06. [Vágar weather round](06-vagar-weather-round/) — available
+07. [St Helena relief board](07-st-helena-relief-board/) — available
+08. [Keflavik jet-stream table](08-keflavik-jetstream-table/) — available
+09. [Juist windsock book](09-juist-windsock-book/) — available
+10. [Ämari range log](10-amari-range-log/) — available
+11. [Andøya rocket events](11-andoya-rocket-events/) — available
+12. [Rarotonga ATIS watch](12-rarotonga-atis-watch/) — available
+13. [Nuuk night board](13-nuuk-night-board/) — available
 
 ## What each scenario adds
 
@@ -28,7 +28,7 @@ Official reference: [LiveView lifecycle and events](https://hexdocs.pm/phoenix_l
 | 02 | phx-click with phx-value-*; values arrive as strings |
 | 03 | phx-change and the "_target" field that names the lamp that moved |
 | 04 | phx-change vs phx-submit on one form; submit has no "_target" |
-| 05 | phx-blur posting a retort reading when the field loses focus |
+| 05 | phx-blur posting a cure reading when the field loses focus |
 | 06 | phx-keydown with phx-key; LiveViewTest does not apply the client filter |
 | 07 | phx-debounce="500" and phx-debounce="blur"; render_change does not wait |
 | 08 | phx-throttle on repeated clicks; render_click still counts every one |

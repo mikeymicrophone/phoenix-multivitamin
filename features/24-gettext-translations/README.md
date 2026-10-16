@@ -6,26 +6,26 @@ Official reference: [Gettext translations](https://hexdocs.pm/gettext/Gettext.ht
 
 ## Examples (0 of 13 bottled)
 
-01. Watch log phrases — planned
-02. Retort cook phrases — planned
-03. Ferry terminal phrases — planned
-04. Lock house phrases — planned
-05. Fog signal phrases — planned
-06. Lens cabinet phrases — planned
-07. Hatchery round phrases — planned
-08. Seed press phrases — planned
-09. Pilot boarding phrases — planned
-10. Net loft phrases — planned
-11. Buoy depot phrases — planned
-12. Chart desk phrases — planned
-13. Overnight handover phrases — planned
+01. Dzaoudzi Shimaore button — planned
+02. Nouméa Kanak locale — planned
+03. Port Vila Bislama phrases — planned
+04. Honiara Pijin gettext — planned
+05. Suva Viti phrases — planned
+06. Nadi coral dngettext — planned
+07. Apia Polynesian locale — planned
+08. Nukuʻalofa Tongan phrases — planned
+09. Tarawa Gilbertese gettext — planned
+10. Majuro Marshallese locale — planned
+11. Koror Palauan phrases — planned
+12. Hagåtña Chamorro gettext — planned
+13. Pago Pago Samoan locale — planned
 
 ## What each scenario adds
 
 | Slot | What it adds |
 | --- | --- |
-| 01 | gettext/1 on a button the keeper presses |
-| 02 | ngettext/3 for a count of vessels |
+| 01 | gettext/1 on a button the controller presses |
+| 02 | ngettext/3 for a count of aircraft |
 | 03 | dgettext/2 in a domain other than default |
 | 04 | pgettext/2 with a context |
 | 05 | A locale plug that reads Accept-Language |

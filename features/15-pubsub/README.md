@@ -6,19 +6,19 @@ Official reference: [PubSub](https://hexdocs.pm/phoenix/Phoenix.PubSub.html)
 
 ## Examples (0 of 13 bottled)
 
-01. Point Wilson spoken handover — planned
-02. Cape Disappointment horn relief — planned
-03. New Dungeness watch relay — planned
-04. Tatoosh storm wire — planned
-05. Ediz Hook current alert — planned
-06. Ballard lock chamber call — planned
-07. Anacortes retort floor bell — planned
-08. Friday Harbor berth call — planned
-09. Port Townsend hoist hail — planned
-10. Mukilteo sailing board — planned
-11. Colman Dock hold wire — planned
-12. Neah Bay entrance hail — planned
-13. Admiralty Inlet storm warning — planned
+01. Baku Caspian handover — planned
+02. Tbilisi Mtatsminda relief — planned
+03. Yerevan Ararat relay — planned
+04. Tehran Alborz wire — planned
+05. Muscat khareef alert — planned
+06. Salalah monsoon call — planned
+07. Doha Pearl floor bell — planned
+08. Abu Dhabi Yas stand call — planned
+09. Sharjah creek hail — planned
+10. Jeddah Red Sea board — planned
+11. Madinah Hijaz hold wire — planned
+12. Amman Nabatean hail — planned
+13. Beirut cedars warning — planned
 
 ## What each scenario adds
 

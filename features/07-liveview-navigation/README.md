@@ -6,19 +6,19 @@ Official reference: [LiveView navigation](https://hexdocs.pm/phoenix_live_view/l
 
 ## Examples (0 of 13 bottled)
 
-01. Pilot boarding ladder — planned
-02. Port Angeles harbor rounds — planned
-03. Victoria Clipper gate — planned
-04. Coho ferry turnaround — planned
-05. Black Ball vehicle rows — planned
-06. Kenmore floatplane dock — planned
-07. Friday Harbor seaplane slip — planned
-08. Roche Harbor customs float — planned
-09. Orcas landing queue — planned
-10. Shaw Island freight bell — planned
-11. Lopez ferry pitfalls — planned
-12. Anacortes terminal lanes — planned
-13. Sidney berth rotation — planned
+01. Bodø sector hop — planned
+02. Alta fjord patches — planned
+03. Kirkenes border redirect — planned
+04. Whitehorse medevac patch — planned
+05. Yellowknife ice-road nav — planned
+06. Resolute polar push — planned
+07. Ísafjörður go-around patch — planned
+08. Sumburgh Shetland stack — planned
+09. Tiree machair navigate — planned
+10. Jersey Channel live session — planned
+11. Guernsey hold redirect — planned
+12. Quimper Breton patch — planned
+13. Biarritz surf navigate — planned
 
 ## What each scenario adds
 

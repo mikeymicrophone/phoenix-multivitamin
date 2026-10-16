@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-harbor-night-watch-drawer",
-      title: "Harbor night watch drawer",
+      slug: "01-colombo-katunayake-toggle",
+      title: "Colombo Katunayake toggle",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-pilot-boarding-board-flaps",
-      title: "Pilot boarding board flaps",
+      slug: "02-kochi-backwater-hide",
+      title: "Kochi backwater hide",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-tool-library-wall-latches",
-      title: "Tool library wall latches",
+      slug: "03-hyderabad-charminar-push",
+      title: "Hyderabad Charminar push",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-orchard-frost-lanterns",
-      title: "Orchard frost lanterns",
+      slug: "04-jaipur-pink-city-focus",
+      title: "Jaipur pink-city focus",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-canal-lock-queue-gates",
-      title: "Canal lock queue gates",
+      slug: "05-pokhara-annapurna-scroll",
+      title: "Pokhara Annapurna scroll",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-smokehouse-rack-doors",
-      title: "Smokehouse rack doors",
+      slug: "06-dhaka-jamuna-transition",
+      title: "Dhaka Jamuna transition",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-shortwave-listening-post",
-      title: "Shortwave listening post",
+      slug: "07-yangon-shwedagon-exec",
+      title: "Yangon Shwedagon exec",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-cranberry-receiving-dock",
-      title: "Cranberry receiving dock",
+      slug: "08-bangkok-don-mueang-cmd",
+      title: "Bangkok Don Mueang cmd",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-buoy-tender-charts",
-      title: "Buoy tender charts",
+      slug: "09-chiang-mai-doi-suthep-js",
+      title: "Chiang Mai Doi Suthep JS",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-grain-elevator-ledger",
-      title: "Grain elevator ledger",
+      slug: "10-siem-reap-angkor-hide",
+      title: "Siem Reap Angkor hide",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-letterpress-job-dockets",
-      title: "Letterpress job dockets",
+      slug: "11-hanoi-long-bien-toggle",
+      title: "Hanoi Long Biên toggle",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-municipal-compost-scale",
-      title: "Municipal compost scale",
+      slug: "12-da-nang-marble-push",
+      title: "Da Nang Marble push",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-shipyard-paint-booths",
-      title: "Shipyard paint booths",
+      slug: "13-manila-intramuros-focus",
+      title: "Manila Intramuros focus",
       bottled: false
     }
   ]

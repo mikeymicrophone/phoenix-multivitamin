@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-waadah-error-wire",
-      title: "Waadah error wire",
+      slug: "01-alderney-casquets-wire",
+      title: "Alderney Casquets wire",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-partridge-point-watch-talk",
-      title: "Partridge Point watch talk",
+      slug: "02-dinard-emeraude-talk",
+      title: "Dinard Émeraude talk",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-sekiu-pilot-orders",
-      title: "Sekiu pilot orders",
+      slug: "03-brest-iroise-orders",
+      title: "Brest Iroise orders",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-ozette-callback-gap",
-      title: "Ozette callback gap",
+      slug: "04-pau-pyrenees-callback",
+      title: "Pau Pyrenees callback",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-westport-retort-queue",
-      title: "Westport retort queue",
+      slug: "05-perpignan-tramontane-queue",
+      title: "Perpignan tramontane queue",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-hansville-isolation",
-      title: "Hansville isolation",
+      slug: "06-figari-bonifacio-isolation",
+      title: "Figari Bonifacio isolation",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-cape-disappointment-report-desk",
-      title: "Cape Disappointment report desk",
+      slug: "07-pantelleria-channel-desk",
+      title: "Pantelleria channel desk",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-deception-pass-talkback",
-      title: "Deception Pass talkback",
+      slug: "08-lampedusa-strait-talkback",
+      title: "Lampedusa strait talkback",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-tatoosh-radio-room",
-      title: "Tatoosh radio room",
+      slug: "09-kotor-bay-radio-room",
+      title: "Kotor bay radio room",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-destruction-island-channel",
-      title: "Destruction Island channel",
+      slug: "10-ohrid-lake-talk",
+      title: "Ohrid lake talk",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-ediz-hook-talkback",
-      title: "Ediz Hook talkback",
+      slug: "11-constanta-black-sea-wire",
+      title: "Constanța Black Sea wire",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-slip-point-join-desk",
-      title: "Slip Point join desk",
+      slug: "12-varna-golden-sands-talk",
+      title: "Varna Golden Sands talk",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-admiralty-inlet-channel-floor",
-      title: "Admiralty Inlet channel floor",
+      slug: "13-burgas-strandzha-orders",
+      title: "Burgas Strandzha orders",
       bottled: false
     }
   ]

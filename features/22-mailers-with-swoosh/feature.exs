@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-watch-brief-mailer",
-      title: "Watch brief mailer",
+      slug: "01-medellin-guatape-mailer",
+      title: "Medellín Guatapé mailer",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-retort-cook-complete-mailer",
-      title: "Retort cook complete mailer",
+      slug: "02-guayaquil-guayas-mailer",
+      title: "Guayaquil Guayas mailer",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-berth-assignment-mailer",
-      title: "Berth assignment mailer",
+      slug: "03-belem-ver-o-peso-mailer",
+      title: "Belém Ver-o-Peso mailer",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-fog-signal-outage-mailer",
-      title: "Fog signal outage mailer",
+      slug: "04-salvador-pelourinho-mailer",
+      title: "Salvador Pelourinho mailer",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-lens-cabinet-inventory-mailer",
-      title: "Lens cabinet inventory mailer",
+      slug: "05-belo-horizonte-pampulha-mailer",
+      title: "Belo Horizonte Pampulha mailer",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-chart-correction-mailer",
-      title: "Chart correction mailer",
+      slug: "06-curitiba-wire-mailer",
+      title: "Curitiba wire mailer",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-hatchery-release-mailer",
-      title: "Hatchery release mailer",
+      slug: "07-porto-alegre-gaucho-mailer",
+      title: "Porto Alegre gaúcho mailer",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-seed-press-proof-mailer",
-      title: "Seed press proof mailer",
+      slug: "08-florianopolis-ilha-mailer",
+      title: "Florianópolis ilha mailer",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-lockage-delay-mailer",
-      title: "Lockage delay mailer",
+      slug: "09-campo-grande-pantanal-mailer",
+      title: "Campo Grande Pantanal mailer",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-pilot-boarding-mailer",
-      title: "Pilot boarding mailer",
+      slug: "10-luxor-nile-mailer",
+      title: "Luxor Nile mailer",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-net-loft-ready-mailer",
-      title: "Net loft ready mailer",
+      slug: "11-khartoum-confluence-mailer",
+      title: "Khartoum confluence mailer",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-buoy-paint-cure-mailer",
-      title: "Buoy paint cure mailer",
+      slug: "12-kumasi-garden-mailer",
+      title: "Kumasi garden mailer",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-overnight-handover-mailer",
-      title: "Overnight handover mailer",
+      slug: "13-lalibela-rock-mailer",
+      title: "Lalibela rock mailer",
       bottled: false
     }
   ]

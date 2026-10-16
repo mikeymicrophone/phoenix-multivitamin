@@ -6,19 +6,19 @@ Official reference: [Async assigns](https://hexdocs.pm/phoenix_live_view/Phoenix
 
 ## Examples (0 of 13 bottled)
 
-01. Dungeness sounding halt — planned
-02. Strait barometer card — planned
-03. Portage Head current fetch — planned
-04. Hein Bank swell table — planned
-05. Race Rocks visibility — planned
-06. Protection Island radar overlay — planned
-07. Smith Island barometer fetch — planned
-08. Viti Rocks current atlas — planned
-09. Trial Island fog fetch — planned
-10. Discovery Island swell — planned
-11. Sisters Islands tide fetch — planned
-12. Chatham Islands wind aloft — planned
-13. Juan de Fuca forecast desk — planned
+01. Ajaccio maestral fetch — planned
+02. Olbia Costa Smeralda await — planned
+03. Trapani scirocco assign — planned
+04. Catania Etna ash async — planned
+05. Brindisi Adriatic cancel — planned
+06. Podgorica Balkan timeout — planned
+07. Skopje Vardar reload — planned
+08. Tirana Adriatic stream — planned
+09. Sofia Balkan start_async — planned
+10. Cluj Transylvanian task — planned
+11. Ostrava Silesian cancel — planned
+12. Sylt Wadden assign_async — planned
+13. Groningen Eemshaven await — planned
 
 ## What each scenario adds
 

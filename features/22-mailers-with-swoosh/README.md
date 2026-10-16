@@ -6,19 +6,19 @@ Official reference: [Mailers with Swoosh](https://hexdocs.pm/swoosh/Swoosh.html)
 
 ## Examples (0 of 13 bottled)
 
-01. Watch brief mailer — planned
-02. Retort cook complete mailer — planned
-03. Berth assignment mailer — planned
-04. Fog signal outage mailer — planned
-05. Lens cabinet inventory mailer — planned
-06. Chart correction mailer — planned
-07. Hatchery release mailer — planned
-08. Seed press proof mailer — planned
-09. Lockage delay mailer — planned
-10. Pilot boarding mailer — planned
-11. Net loft ready mailer — planned
-12. Buoy paint cure mailer — planned
-13. Overnight handover mailer — planned
+01. Medellín Guatapé mailer — planned
+02. Guayaquil Guayas mailer — planned
+03. Belém Ver-o-Peso mailer — planned
+04. Salvador Pelourinho mailer — planned
+05. Belo Horizonte Pampulha mailer — planned
+06. Curitiba wire mailer — planned
+07. Porto Alegre gaúcho mailer — planned
+08. Florianópolis ilha mailer — planned
+09. Campo Grande Pantanal mailer — planned
+10. Luxor Nile mailer — planned
+11. Khartoum confluence mailer — planned
+12. Kumasi garden mailer — planned
+13. Lalibela rock mailer — planned
 
 ## What each scenario adds
 

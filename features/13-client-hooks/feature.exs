@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-lighthouse-watch-clock",
-      title: "Lighthouse watch clock",
+      slug: "01-cebu-mactan-clock-hook",
+      title: "Cebu Mactan clock hook",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-tide-staff-reading-needle",
-      title: "Tide staff reading needle",
+      slug: "02-jakarta-halim-needle-hook",
+      title: "Jakarta Halim needle hook",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-bell-buoy-ledger-chime",
-      title: "Bell buoy ledger chime",
+      slug: "03-denpasar-nusa-chime-hook",
+      title: "Denpasar Nusa chime hook",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-wharf-office-chalk-canvas",
-      title: "Wharf office chalk canvas",
+      slug: "04-yogyakarta-borobudur-canvas",
+      title: "Yogyakarta Borobudur canvas",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-cap-sante-net-loft-ruler",
-      title: "Cap Sante net loft ruler",
+      slug: "05-kuching-hornbill-ruler",
+      title: "Kuching hornbill ruler",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-dosewallips-tide-gate-crank",
-      title: "Dosewallips tide gate crank",
+      slug: "06-penang-george-town-crank",
+      title: "Penang George Town crank",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-coupled-fog-bells",
-      title: "Coupled fog bells",
+      slug: "07-langkawi-cable-bells",
+      title: "Langkawi cable bells",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-anacortes-cannery-retort-gauges",
-      title: "Anacortes cannery retort gauges",
+      slug: "08-vientiane-mekong-gauges",
+      title: "Vientiane Mekong gauges",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-ferry-sailing-filter-knobs",
-      title: "Ferry sailing filter knobs",
+      slug: "09-luang-prabang-pak-ou-knobs",
+      title: "Luang Prabang Pak Ou knobs",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-keeper-watch-slate-stylus",
-      title: "Keeper watch slate stylus",
+      slug: "10-taipei-songshan-stylus",
+      title: "Taipei Songshan stylus",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-fog-signal-oscilloscope",
-      title: "Fog signal oscilloscope",
+      slug: "11-kaohsiung-love-river-scope",
+      title: "Kaohsiung Love River scope",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-hydrophone-waterfall",
-      title: "Hydrophone waterfall",
+      slug: "12-busan-gwangalli-waterfall",
+      title: "Busan Gwangalli waterfall",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-range-light-aligner",
-      title: "Range light aligner",
+      slug: "13-kansai-izumisano-aligner",
+      title: "Kansai Izumisano aligner",
       bottled: false
     }
   ]

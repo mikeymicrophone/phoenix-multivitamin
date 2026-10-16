@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-point-wilson-spoken-handover",
-      title: "Point Wilson spoken handover",
+      slug: "01-baku-caspian-handover",
+      title: "Baku Caspian handover",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-cape-disappointment-horn-relief",
-      title: "Cape Disappointment horn relief",
+      slug: "02-tbilisi-mtatsminda-relief",
+      title: "Tbilisi Mtatsminda relief",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-new-dungeness-watch-relay",
-      title: "New Dungeness watch relay",
+      slug: "03-yerevan-ararat-relay",
+      title: "Yerevan Ararat relay",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-tatoosh-storm-wire",
-      title: "Tatoosh storm wire",
+      slug: "04-tehran-alborz-wire",
+      title: "Tehran Alborz wire",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-ediz-hook-current-alert",
-      title: "Ediz Hook current alert",
+      slug: "05-muscat-khareef-alert",
+      title: "Muscat khareef alert",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-ballard-lock-chamber-call",
-      title: "Ballard lock chamber call",
+      slug: "06-salalah-monsoon-call",
+      title: "Salalah monsoon call",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-anacortes-retort-floor-bell",
-      title: "Anacortes retort floor bell",
+      slug: "07-doha-pearl-floor-bell",
+      title: "Doha Pearl floor bell",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-friday-harbor-berth-call",
-      title: "Friday Harbor berth call",
+      slug: "08-abu-dhabi-yas-berth-call",
+      title: "Abu Dhabi Yas stand call",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-port-townsend-hoist-hail",
-      title: "Port Townsend hoist hail",
+      slug: "09-sharjah-creek-hail",
+      title: "Sharjah creek hail",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-mukilteo-sailing-board",
-      title: "Mukilteo sailing board",
+      slug: "10-jeddah-red-sea-board",
+      title: "Jeddah Red Sea board",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-colman-dock-hold-wire",
-      title: "Colman Dock hold wire",
+      slug: "11-madinah-hijaz-hold-wire",
+      title: "Madinah Hijaz hold wire",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-neah-bay-entrance-hail",
-      title: "Neah Bay entrance hail",
+      slug: "12-amman-nabatean-hail",
+      title: "Amman Nabatean hail",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-admiralty-inlet-storm-warning",
-      title: "Admiralty Inlet storm warning",
+      slug: "13-beirut-cedars-warning",
+      title: "Beirut cedars warning",
       bottled: false
     }
   ]

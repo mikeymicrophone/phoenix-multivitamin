@@ -6,19 +6,19 @@ Official reference: [Testing](https://hexdocs.pm/phoenix/testing.html)
 
 ## Examples (0 of 13 bottled)
 
-01. Watch log assertions — planned
-02. Retort cook form test — planned
-03. Berth JSON test — planned
-04. Tide board stream test — planned
-05. Fog signal event test — planned
-06. Lens cabinet component test — planned
-07. Hatchery async test — planned
-08. Seed press upload test — planned
-09. Pilot channel test — planned
-10. Net loft presence test — planned
-11. Buoy mailer test — planned
-12. Chart scope test — planned
-13. Overnight handover suite — planned
+01. Port Moresby Jackson test — planned
+02. Cairns reef ConnCase — planned
+03. Darwin Top End async — planned
+04. Broome Cable Beach sandbox — planned
+05. Kalgoorlie Goldfields ExUnit — planned
+06. Hobart Derwent LiveViewTest — planned
+07. Launceston Tamar render — planned
+08. Dunedin Otago assert — planned
+09. Christchurch Plains element — planned
+10. Wellington Cook Strait has_element — planned
+11. Rotorua steam form test — planned
+12. Taupō volcanic submit — planned
+13. Auckland Waitematā suite — planned
 
 ## What each scenario adds
 

@@ -6,19 +6,19 @@ Official reference: [Routing and plugs](https://hexdocs.pm/phoenix/routing.html)
 
 ## Examples (13 of 13 bottled)
 
-01. [Admiralty Inlet tide gate](01-admiralty-inlet-tide-gate/) — available
-02. [Port Townsend hoist dispatch](02-port-townsend-hoist-dispatch/) — available
-03. [Friday Harbor customs shed](03-friday-harbor-customs-shed/) — available
-04. [Neah Bay entrance log](04-neah-bay-entrance-log/) — available
-05. [Willapa seed barge office](05-willapa-seed-barge-office/) — available
-06. [Kalama elevator tape](06-kalama-elevator-tape/) — available
-07. [Colman Dock shed](07-colman-dock-shed/) — available
-08. [Anacortes retort floor](08-anacortes-retort-floor/) — available
-09. [La Push skiff line](09-la-push-skiff-line/) — available
-10. [Ballard lock house](10-ballard-lock-house/) — available
-11. [Quillayute chart desk](11-quillayute-chart-desk/) — available
-12. [Rosario watch floor](12-rosario-watch-floor/) — available
-13. [Cape Flattery pipeline](13-cape-flattery-pipeline/) — available
+01. [Lukla shear gate](01-lukla-shear-gate/) — available
+02. [Tromsø SAR hoist](02-tromso-sar-hoist/) — available
+03. [Incheon bonded shed](03-incheon-bonded-shed/) — available
+04. [Paro inbound log](04-paro-inbound-log/) — available
+05. [Shannon avgas office](05-shannon-avgas-office/) — available
+06. [Changi hydrant tape](06-changi-hydrant-tape/) — available
+07. [Barra beach shed](07-barra-beach-shed/) — available
+08. [Finkenwerder jig floor](08-finkenwerder-jig-floor/) — available
+09. [Oostwold balloon line](09-oostwold-balloon-line/) — available
+10. [Kiruna de-ice pad](10-kiruna-deice-pad/) — available
+11. [Bergen briefing desk](11-bergen-briefing-desk/) — available
+12. [Santa Maria oceanic floor](12-santa-maria-oceanic-floor/) — available
+13. [Ushuaia austral pipeline](13-ushuaia-austral-pipeline/) — available
 
 ## What each scenario adds
 

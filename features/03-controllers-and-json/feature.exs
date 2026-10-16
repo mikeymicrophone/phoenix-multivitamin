@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-cape-disappointment-blast-card",
-      title: "Cape Disappointment blast card",
+      slug: "01-queenstown-metar-desk",
+      title: "Queenstown METAR desk",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-grays-harbor-retort-shift",
-      title: "Grays Harbor retort shift",
+      slug: "02-cusco-load-sheet",
+      title: "Cusco load sheet",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-westport-crab-ticket",
-      title: "Westport crab ticket",
+      slug: "03-marrakech-atis-feed",
+      title: "Marrakech ATIS feed",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-ilwaco-end-labeler",
-      title: "Ilwaco end labeler",
+      slug: "04-ulaanbaatar-winter-notam",
+      title: "Ulaanbaatar winter NOTAM",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-nahcotta-barge-watch",
-      title: "Nahcotta barge watch",
+      slug: "05-bariloche-chinook-brief",
+      title: "Bariloche Chinook brief",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-bay-center-ticket-load",
-      title: "Bay Center ticket load",
+      slug: "06-dakar-harmattan-metar",
+      title: "Dakar harmattan METAR",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-willapa-oyster-tally",
-      title: "Willapa oyster tally",
+      slug: "07-entebbe-cargo-manifest",
+      title: "Entebbe cargo manifest",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-tokeland-smokehouse-rack",
-      title: "Tokeland smokehouse rack",
+      slug: "08-zanzibar-spice-run-ticket",
+      title: "Zanzibar spice-run ticket",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-ocean-park-cranberry-dock",
-      title: "Ocean Park cranberry dock",
+      slug: "09-male-atoll-slot-list",
+      title: "Malé atoll slot list",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-long-beach-razor-ledger",
-      title: "Long Beach razor ledger",
+      slug: "10-leh-density-altitude-card",
+      title: "Leh density-altitude card",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-chinook-net-loft",
-      title: "Chinook net loft",
+      slug: "11-lhasa-oxygen-plan",
+      title: "Lhasa oxygen plan",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-altoona-cannery-pass",
-      title: "Altoona cannery pass",
+      slug: "12-baltra-biosecurity-pass",
+      title: "Baltra biosecurity pass",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-puget-island-ferry-slip",
-      title: "Puget Island ferry slip",
+      slug: "13-punta-arenas-austral-load",
+      title: "Punta Arenas austral load",
       bottled: false
     }
   ]

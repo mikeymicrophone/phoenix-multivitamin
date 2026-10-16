@@ -6,19 +6,19 @@ Official reference: [Telemetry and LiveDashboard](https://hexdocs.pm/phoenix_liv
 
 ## Examples (0 of 13 bottled)
 
-01. Watch log metrics — planned
-02. Retort cook duration — planned
-03. Ferry sailing counters — planned
-04. Lock chamber cycle time — planned
-05. Fog signal blast counts — planned
-06. Lens rotation span — planned
-07. Hatchery tray gauges — planned
-08. Seed press throughput — planned
-09. Pilot boarding wait — planned
-10. Net loft mend duration — planned
-11. Buoy paint cure gauge — planned
-12. Chart desk open tickets — planned
-13. Strait radio check metrics — planned
+01. Kisumu Winam metrics — planned
+02. Mombasa Moi duration — planned
+03. Pemba clove counters — planned
+04. Kilimanjaro Kibo cycle — planned
+05. Lilongwe lake counts — planned
+06. Lusaka Copperbelt span — planned
+07. Harare Highveld gauges — planned
+08. Gaborone Kalahari throughput — planned
+09. Maputo Indian Ocean wait — planned
+10. Beira Sofala duration — planned
+11. Toamasina vanilla gauge — planned
+12. Réunion Piton tickets — planned
+13. Mayotte lagoon metrics — planned
 
 ## What each scenario adds
 

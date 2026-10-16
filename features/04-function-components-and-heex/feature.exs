@@ -8,94 +8,94 @@
   slots: [
     %{
       number: 1,
-      slug: "01-seed-packet-label-press",
-      title: "Seed packet label press",
+      slug: "01-payerne-roadster-flight-plate",
+      title: "Payerne Roadster flight plate",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.SeedPacketLabelPressLive
+      live_module: PhoenixMultivitaminWeb.PayerneRoadsterFlightPlateLive
     },
     %{
       number: 2,
-      slug: "02-totten-inlet-nursery-tags",
-      title: "Totten Inlet nursery tags",
+      slug: "02-sao-jose-embraer-tags",
+      title: "São José Embraer tags",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.TottenInletNurseryTagsLive
+      live_module: PhoenixMultivitaminWeb.SaoJoseEmbraerTagsLive
     },
     %{
       number: 3,
-      slug: "03-chimacum-cider-labels",
-      title: "Chimacum cider labels",
+      slug: "03-filton-concorde-labels",
+      title: "Filton Concorde labels",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.ChimacumCiderLabelsLive
+      live_module: PhoenixMultivitaminWeb.FiltonConcordeLabelsLive
     },
     %{
       number: 4,
-      slug: "04-dungeness-crab-pot-tags",
-      title: "Dungeness crab pot tags",
+      slug: "04-tekapo-glider-tags",
+      title: "Tekapo glider tags",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.DungenessCrabPotTagsLive
+      live_module: PhoenixMultivitaminWeb.TekapoGliderTagsLive
     },
     %{
       number: 5,
-      slug: "05-port-angeles-mill-tickets",
-      title: "Port Angeles mill tickets",
+      slug: "05-tianjin-assembly-tickets",
+      title: "Tianjin assembly tickets",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.PortAngelesMillTicketsLive
+      live_module: PhoenixMultivitaminWeb.TianjinAssemblyTicketsLive
     },
     %{
       number: 6,
-      slug: "06-sequim-lavender-sachets",
-      title: "Sequim lavender sachets",
+      slug: "06-cranfield-saf-sachets",
+      title: "Cranfield SAF sachets",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.SequimLavenderSachetsLive
+      live_module: PhoenixMultivitaminWeb.CranfieldSafSachetsLive
     },
     %{
       number: 7,
-      slug: "07-port-hadlock-boat-shop-cards",
-      title: "Port Hadlock boat shop cards",
+      slug: "07-hahnweide-work-cards",
+      title: "Hahnweide work cards",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.PortHadlockBoatShopCardsLive
+      live_module: PhoenixMultivitaminWeb.HahnweideWorkCardsLive
     },
     %{
       number: 8,
-      slug: "08-irondale-foundry-heat-slips",
-      title: "Irondale foundry heat slips",
+      slug: "08-derby-trent-heat-slips",
+      title: "Derby Trent heat slips",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.IrondaleFoundryHeatSlipsLive
+      live_module: PhoenixMultivitaminWeb.DerbyTrentHeatSlipsLive
     },
     %{
       number: 9,
-      slug: "09-discovery-bay-tile-board",
-      title: "Discovery Bay tile board",
+      slug: "09-friedrichshafen-dope-board",
+      title: "Friedrichshafen dope board",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.DiscoveryBayTileBoardLive
+      live_module: PhoenixMultivitaminWeb.FriedrichshafenDopeBoardLive
     },
     %{
       number: 10,
-      slug: "10-kaleetan-trail-permits",
-      title: "Kaleetan trail permits",
+      slug: "10-milford-sound-permits",
+      title: "Milford Sound permits",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.KaleetanTrailPermitsLive
+      live_module: PhoenixMultivitaminWeb.MilfordSoundPermitsLive
     },
     %{
       number: 11,
-      slug: "11-elwha-hatchery-trays",
-      title: "Elwha hatchery trays",
+      slug: "11-linkoping-gripen-trays",
+      title: "Linköping Gripen trays",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.ElwhaHatcheryTraysLive
+      live_module: PhoenixMultivitaminWeb.LinkopingGripenTraysLive
     },
     %{
       number: 12,
-      slug: "12-hoko-river-smolt-tags",
-      title: "Hoko River smolt tags",
+      slug: "12-woomera-telemetry-tags",
+      title: "Woomera telemetry tags",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.HokoRiverSmoltTagsLive
+      live_module: PhoenixMultivitaminWeb.WoomeraTelemetryTagsLive
     },
     %{
       number: 13,
-      slug: "13-skokomish-weir-cards",
-      title: "Skokomish weir cards",
+      slug: "13-longyearbyen-polar-cards",
+      title: "Longyearbyen polar cards",
       bottled: true,
-      live_module: PhoenixMultivitaminWeb.SkokomishWeirCardsLive
+      live_module: PhoenixMultivitaminWeb.LongyearbyenPolarCardsLive
     }
   ]
 }

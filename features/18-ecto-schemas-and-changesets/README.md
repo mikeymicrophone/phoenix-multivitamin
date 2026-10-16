@@ -6,19 +6,19 @@ Official reference: [Ecto schemas and changesets](https://hexdocs.pm/ecto/Ecto.S
 
 ## Examples (0 of 13 bottled)
 
-01. Retort cook schema — planned
-02. Seed packet schema — planned
-03. Watch log entry schema — planned
-04. Berth assignment schema — planned
-05. Fog signal timing schema — planned
-06. Lens cabinet drawer schema — planned
-07. Hatchery tray schema — planned
-08. Moorage bill schema — planned
-09. Chart correction schema — planned
-10. Buoy paint batch schema — planned
-11. Tide gate reading schema — planned
-12. Cannery pass schema — planned
-13. Pilot order schema — planned
+01. Debrecen puszta schema — planned
+02. Košice Tatra schema — planned
+03. Poprad High Tatras entry — planned
+04. Brno Moravian assignment — planned
+05. Plzeň pilsner timing — planned
+06. Karlovy Vary spa drawer — planned
+07. Memmingen Allgäu schema — planned
+08. Altenburg Nobitz bill — planned
+09. Wangerooge dune correction — planned
+10. Borkum paint batch — planned
+11. Emden Ems reading — planned
+12. Liège cargo pass — planned
+13. Luxembourg Findel order — planned
 
 ## What each scenario adds
 
@@ -28,7 +28,7 @@ Official reference: [Ecto schemas and changesets](https://hexdocs.pm/ecto/Ecto.S
 | 02 | changeset/2 casting a known set of keys |
 | 03 | validate_required/3 on the fields the cook must fill |
 | 04 | validate_number/3 and validate_length/3 |
-| 05 | unique_constraint/3 after a race at the dock |
+| 05 | unique_constraint/3 after a race at the apron |
 | 06 | embeds_one and embeds_many |
 | 07 | belongs_to and has_many on a station and its watches |
 | 08 | virtual fields that never hit the table |

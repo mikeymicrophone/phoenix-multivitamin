@@ -6,19 +6,19 @@ Official reference: [Ecto queries and contexts](https://hexdocs.pm/ecto/Ecto.Que
 
 ## Examples (0 of 13 bottled)
 
-01. Harbor tide context — planned
-02. Cannery floor context — planned
-03. Lens cabinet context — planned
-04. Ferry sailing context — planned
-05. Lock chamber context — planned
-06. Hatchery round context — planned
-07. Seed press context — planned
-08. Pilot station context — planned
-09. Net loft context — planned
-10. Buoy depot context — planned
-11. Chart desk context — planned
-12. Foghorn tender context — planned
-13. Watch log context — planned
+01. Strasbourg Rhine context — planned
+02. Mulhouse EuroAirport query — planned
+03. Samedan Engadin context — planned
+04. Zermatt heliport query — planned
+05. Megève altiport context — planned
+06. Alpe d'Huez altiport query — planned
+07. Chambéry Savoie context — planned
+08. Nice Côte d'Azur query — planned
+09. Monaco heliport context — planned
+10. Andorra La Seu query — planned
+11. Reus Gaudí context — planned
+12. Jerez sherry query — planned
+13. Almería Tabernas context — planned
 
 ## What each scenario adds
 
@@ -28,7 +28,7 @@ Official reference: [Ecto queries and contexts](https://hexdocs.pm/ecto/Ecto.Que
 | 02 | where/3 on a named binding |
 | 03 | preload/3 of associations |
 | 04 | compose query functions that pipe |
-| 05 | Repo.aggregate/3 for a count on the dock |
+| 05 | Repo.aggregate/3 for a count on the apron |
 | 06 | select/3 of a map, not a struct |
 | 07 | dynamic/2 for optional filters |
 | 08 | join/5 versus preload after the fact |

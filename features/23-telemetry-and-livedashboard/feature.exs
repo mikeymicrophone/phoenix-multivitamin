@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-watch-log-metrics",
-      title: "Watch log metrics",
+      slug: "01-kisumu-winam-metrics",
+      title: "Kisumu Winam metrics",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-retort-cook-duration",
-      title: "Retort cook duration",
+      slug: "02-mombasa-moi-duration",
+      title: "Mombasa Moi duration",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-ferry-sailing-counters",
-      title: "Ferry sailing counters",
+      slug: "03-pemba-clove-counters",
+      title: "Pemba clove counters",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-lock-chamber-cycle-time",
-      title: "Lock chamber cycle time",
+      slug: "04-kilimanjaro-kibo-cycle",
+      title: "Kilimanjaro Kibo cycle",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-fog-signal-blast-counts",
-      title: "Fog signal blast counts",
+      slug: "05-lilongwe-lake-counts",
+      title: "Lilongwe lake counts",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-lens-rotation-span",
-      title: "Lens rotation span",
+      slug: "06-lusaka-copperbelt-span",
+      title: "Lusaka Copperbelt span",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-hatchery-tray-gauges",
-      title: "Hatchery tray gauges",
+      slug: "07-harare-highveld-gauges",
+      title: "Harare Highveld gauges",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-seed-press-throughput",
-      title: "Seed press throughput",
+      slug: "08-gaborone-kalahari-throughput",
+      title: "Gaborone Kalahari throughput",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-pilot-boarding-wait",
-      title: "Pilot boarding wait",
+      slug: "09-maputo-indian-ocean-wait",
+      title: "Maputo Indian Ocean wait",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-net-loft-mend-duration",
-      title: "Net loft mend duration",
+      slug: "10-beira-sofala-duration",
+      title: "Beira Sofala duration",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-buoy-paint-cure-gauge",
-      title: "Buoy paint cure gauge",
+      slug: "11-toamasina-vanilla-gauge",
+      title: "Toamasina vanilla gauge",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-chart-desk-open-tickets",
-      title: "Chart desk open tickets",
+      slug: "12-reunion-piton-tickets",
+      title: "Réunion Piton tickets",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-strait-radio-check-metrics",
-      title: "Strait radio check metrics",
+      slug: "13-mayotte-lagoon-metrics",
+      title: "Mayotte lagoon metrics",
       bottled: false
     }
   ]
