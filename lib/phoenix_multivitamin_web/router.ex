@@ -14,6 +14,15 @@ defmodule PhoenixMultivitaminWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :html_or_json do
+    plug :accepts, ["html", "json"]
+    plug :fetch_session
+    plug :fetch_live_flash
+    plug :put_root_layout, html: {PhoenixMultivitaminWeb.Layouts, :root}
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+  end
+
   pipeline :lukla_shear do
     plug PhoenixMultivitaminWeb.LuklaShearPlug
   end
@@ -101,6 +110,112 @@ defmodule PhoenixMultivitaminWeb.Router do
     live "/features/02-verified-routes/13-luqa-qra-guard-house/passes/:pass",
          PhoenixMultivitaminWeb.LuqaQraGuardHouseLive,
          :pass
+
+    live "/features/05-core-components-and-layouts/01-duxford-hangar-board/hangar",
+         PhoenixMultivitaminWeb.DuxfordHangarBoardLive,
+         :app
+
+    live "/features/05-core-components-and-layouts/11-schiphol-print-ticket/print",
+         PhoenixMultivitaminWeb.SchipholPrintTicketLive,
+         :print
+  end
+
+  # Feature 03 — Controllers and JSON. Path slugs live here; domain copy
+  # lives in each scenario folder.
+  scope "/features/03-controllers-and-json" do
+    pipe_through :browser
+
+    get "/01-queenstown-metar-desk/metar",
+        PhoenixMultivitaminWeb.QueenstownMetarDeskController,
+        :show
+
+    get "/03-marrakech-atis-feed/atis",
+        PhoenixMultivitaminWeb.MarrakechAtisFeedController,
+        :show
+
+    get "/05-bariloche-chinook-brief/brief",
+        PhoenixMultivitaminWeb.BarilocheChinookBriefController,
+        :show
+
+    get "/07-entebbe-cargo-manifest/manifests/new",
+        PhoenixMultivitaminWeb.EntebbeCargoManifestController,
+        :new
+
+    post "/07-entebbe-cargo-manifest/manifests",
+         PhoenixMultivitaminWeb.EntebbeCargoManifestController,
+         :create
+
+    get "/07-entebbe-cargo-manifest/manifests/:id",
+        PhoenixMultivitaminWeb.EntebbeCargoManifestController,
+        :show
+
+    get "/10-leh-density-altitude-card/card",
+        PhoenixMultivitaminWeb.LehDensityAltitudeCardController,
+        :show
+
+    get "/12-baltra-biosecurity-pass/passes/:kind",
+        PhoenixMultivitaminWeb.BaltraBiosecurityPassController,
+        :show
+
+    get "/13-punta-arenas-austral-load/loads/:id",
+        PhoenixMultivitaminWeb.PuntaArenasAustralLoadController,
+        :show
+  end
+
+  scope "/features/03-controllers-and-json" do
+    pipe_through :html_or_json
+
+    get "/06-dakar-harmattan-metar/metar",
+        PhoenixMultivitaminWeb.DakarHarmattanMetarController,
+        :show
+  end
+
+  scope "/features/03-controllers-and-json" do
+    pipe_through :api
+
+    get "/01-queenstown-metar-desk/metar/export",
+        PhoenixMultivitaminWeb.QueenstownMetarDeskController,
+        :export
+
+    get "/02-cusco-load-sheet/sheet",
+        PhoenixMultivitaminWeb.CuscoLoadSheetController,
+        :show
+
+    post "/03-marrakech-atis-feed/atis",
+         PhoenixMultivitaminWeb.MarrakechAtisFeedController,
+         :create
+
+    get "/04-ulaanbaatar-winter-notam/notams/:notam",
+        PhoenixMultivitaminWeb.UlaanbaatarWinterNotamController,
+        :show
+
+    get "/04-ulaanbaatar-winter-notam/explode",
+        PhoenixMultivitaminWeb.UlaanbaatarWinterNotamController,
+        :explode
+
+    get "/08-zanzibar-spice-run-ticket/tickets",
+        PhoenixMultivitaminWeb.ZanzibarSpiceRunTicketController,
+        :index
+
+    get "/09-male-atoll-slot-list/slots/:id",
+        PhoenixMultivitaminWeb.MaleAtollSlotListController,
+        :show
+
+    post "/10-leh-density-altitude-card/card",
+         PhoenixMultivitaminWeb.LehDensityAltitudeCardController,
+         :create
+
+    get "/11-lhasa-oxygen-plan/ticket",
+        PhoenixMultivitaminWeb.LhasaOxygenPlanController,
+        :show
+
+    get "/13-punta-arenas-austral-load/loads",
+        PhoenixMultivitaminWeb.PuntaArenasAustralLoadController,
+        :index
+
+    post "/13-punta-arenas-austral-load/loads",
+         PhoenixMultivitaminWeb.PuntaArenasAustralLoadController,
+         :create
   end
 
   # Feature 01 — Routing and plugs. Path slugs live here; domain copy and

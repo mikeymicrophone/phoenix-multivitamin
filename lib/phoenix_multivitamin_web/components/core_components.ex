@@ -95,7 +95,7 @@ defmodule PhoenixMultivitaminWeb.CoreComponents do
       <.button phx-click="go" variant="primary">Send!</.button>
       <.button navigate={~p"/"}>Home</.button>
   """
-  attr :rest, :global, include: ~w(href navigate patch method download name value disabled)
+  attr :rest, :global, include: ~w(href navigate patch method download name value disabled type)
   attr :class, :any
   attr :variant, :string, values: ~w(primary)
   slot :inner_block, required: true
@@ -396,6 +396,96 @@ defmodule PhoenixMultivitaminWeb.CoreComponents do
       </tbody>
     </table>
     """
+  end
+
+  @doc """
+  Renders a modal dialog.
+
+  ## Examples
+
+      <.modal id="confirm-hold" show={@show_hold} on_cancel={JS.push("close_hold")}>
+        <:title>Confirm the hold</:title>
+        Hold short of the threshold?
+        <:confirm phx-click="confirm_hold">Hold</:confirm>
+        <:cancel>Keep taxiing</:cancel>
+      </.modal>
+  """
+  attr :id, :string, required: true
+  attr :show, :boolean, default: false
+  attr :on_cancel, JS, default: %JS{}
+  slot :inner_block, required: true
+  slot :title
+  slot :subtitle
+
+  slot :confirm do
+    attr :id, :string
+  end
+
+  slot :cancel do
+    attr :id, :string
+  end
+
+  def modal(assigns) do
+    ~H"""
+    <div
+      id={@id}
+      phx-mounted={@show && show_modal(@id)}
+      phx-remove={hide_modal(@id)}
+      data-cancel={JS.exec(@on_cancel, "phx-remove")}
+      class={["relative z-50", !@show && "hidden"]}
+    >
+      <div
+        id={"#{@id}-bg"}
+        class="fixed inset-0 bg-zinc-900/40 transition-opacity"
+        aria-hidden="true"
+      />
+      <div
+        class="fixed inset-0 overflow-y-auto"
+        aria-labelledby={"#{@id}-title"}
+        aria-describedby={"#{@id}-description"}
+        role="dialog"
+        aria-modal="true"
+        tabindex="0"
+      >
+        <div class="flex min-h-full items-center justify-center p-4">
+          <div class="w-full max-w-lg rounded-xl border border-base-300 bg-base-100 p-6 shadow-xl">
+            <header :if={@title != []} class="mb-4">
+              <h2 id={"#{@id}-title"} class="text-lg font-semibold">{render_slot(@title)}</h2>
+              <p :if={@subtitle != []} id={"#{@id}-description"} class="mt-1 text-sm opacity-70">
+                {render_slot(@subtitle)}
+              </p>
+            </header>
+            <div id={"#{@id}-content"}>
+              {render_slot(@inner_block)}
+            </div>
+            <footer :if={@confirm != [] or @cancel != []} class="mt-6 flex justify-end gap-3">
+              <div :for={cancel <- @cancel} id={cancel[:id]}>
+                <button type="button" phx-click={JS.exec("data-cancel", to: "##{@id}")}>
+                  {render_slot(cancel)}
+                </button>
+              </div>
+              <div :for={confirm <- @confirm} id={confirm[:id]}>
+                {render_slot(confirm)}
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    """
+  end
+
+  def show_modal(js \\ %JS{}, id) when is_binary(id) do
+    js
+    |> JS.show(to: "##{id}")
+    |> JS.show(to: "##{id}-bg")
+    |> JS.focus_first(to: "##{id}-content")
+  end
+
+  def hide_modal(js \\ %JS{}, id) when is_binary(id) do
+    js
+    |> JS.hide(to: "##{id}-bg")
+    |> JS.hide(to: "##{id}")
   end
 
   @doc """

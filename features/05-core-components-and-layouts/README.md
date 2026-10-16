@@ -4,21 +4,21 @@ Root and app layouts, flash groups, core form and table components, and how a pa
 
 Official reference: [Core components and layouts](https://hexdocs.pm/phoenix/components.html)
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Itami stand board — planned
-02. Jeju windsock layout — planned
-03. Fukuoka flash card — planned
-04. Sapporo ice-alert banner — planned
-05. Naha typhoon strip — planned
-06. Ishigaki coral approach — planned
-07. Matsumoto alpine card — planned
-08. Hakodate night layout — planned
-09. Kagoshima ash desk — planned
-10. Sendai alternate strip — planned
-11. Hiroshima fly-in board — planned
-12. Toyama Tateyama card — planned
-13. Chofu GA apron — planned
+01. [Duxford hangar board](01-duxford-hangar-board/) — available
+02. [Guadalajara fuel flash](02-guadalajara-fuel-flash/) — available
+03. [Johannesburg QRA table](03-johannesburg-qra-table/) — available
+04. [Eilat desert banner](04-eilat-desert-banner/) — available
+05. [Oaxaca bare plate](05-oaxaca-bare-plate/) — available
+06. [Prestwick Atlantic title](06-prestwick-atlantic-title/) — available
+07. [Istanbul cargo modal](07-istanbul-cargo-modal/) — available
+08. [Kathmandu breadcrumb](08-kathmandu-breadcrumb/) — available
+09. [Oslo theme desk](09-oslo-theme-desk/) — available
+10. [Prague gettext flash](10-prague-gettext-flash/) — available
+11. [Schiphol print ticket](11-schiphol-print-ticket/) — available
+12. [Billund apron card](12-billund-apron-card/) — available
+13. [Copenhagen capstone desk](13-copenhagen-capstone-desk/) — available
 
 ## What each scenario adds
 
@@ -37,6 +37,3 @@ Official reference: [Core components and layouts](https://hexdocs.pm/phoenix/com
 | 11 | Nested layouts for a print ticket |
 | 12 | A layout that does not mention any scenario name |
 | 13 | Capstone: layout, flash, core table, and a modal on one desk |
-
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
