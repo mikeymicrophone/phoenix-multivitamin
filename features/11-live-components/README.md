@@ -6,19 +6,19 @@ Official reference: [LiveComponents](https://hexdocs.pm/phoenix_live_view/Phoeni
 
 ## Examples (0 of 13 bottled)
 
-01. Kelp dryer trays — planned
-02. Buoy depot paint rack — planned
-03. Lummi reefnet tally — planned
-04. Terminal shed lamps — planned
-05. Strait chart locker — planned
-06. Seattle traffic board — planned
-07. Port Gamble tide staff — planned
-08. Coupeville landing slip — planned
-09. Samish shellfish ticket — planned
-10. Lopez freight bell — planned
-11. Goose Point retort tickets — planned
-12. La Conner cannery pass — planned
-13. Admiralty pilot orders — planned
+01. Recife fuel cell — planned
+02. Brasília Planalto component — planned
+03. Foz do Iguaçu falls card — planned
+04. Windhoek Hosea Kutako cell — planned
+05. Cape Town Table component — planned
+06. Casablanca Anfa card — planned
+07. Tunis Carthage cell — planned
+08. Cairo Sphinx component — planned
+09. Kigali Virunga card — planned
+10. Dar es Salaam Nyerere cell — planned
+11. Antananarivo baobab card — planned
+12. Mauritius SSR component — planned
+13. Mahé Seychelles cell — planned
 
 ## What each scenario adds
 

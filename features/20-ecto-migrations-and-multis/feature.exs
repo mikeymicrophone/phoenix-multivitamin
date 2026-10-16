@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-retort-floor-migration",
-      title: "Retort floor migration",
+      slug: "01-granada-sierra-nevada-migration",
+      title: "Granada Sierra Nevada migration",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-watch-log-migration",
-      title: "Watch log migration",
+      slug: "02-beja-alentejo-migration",
+      title: "Beja Alentejo migration",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-berth-ledger-migration",
-      title: "Berth ledger migration",
+      slug: "03-vigo-rias-baixas-migration",
+      title: "Vigo Rías Baixas migration",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-seed-vault-migration",
-      title: "Seed vault migration",
+      slug: "04-santiago-compostela-vault",
+      title: "Santiago Compostela vault",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-lens-cabinet-migration",
-      title: "Lens cabinet migration",
+      slug: "05-a-coruna-tower-of-hercules",
+      title: "A Coruña Hercules cabinet",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-hatchery-tray-migration",
-      title: "Hatchery tray migration",
+      slug: "06-asturias-picos-migration",
+      title: "Asturias Picos migration",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-moorage-invoice-multi",
-      title: "Moorage invoice multi",
+      slug: "07-santander-cantabria-multi",
+      title: "Santander Cantabria multi",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-fog-signal-multi",
-      title: "Fog signal multi",
+      slug: "08-pamplona-san-fermin-multi",
+      title: "Pamplona San Fermín multi",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-chart-correction-multi",
-      title: "Chart correction multi",
+      slug: "09-zaragoza-ebro-multi",
+      title: "Zaragoza Ebro multi",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-pilot-order-multi",
-      title: "Pilot order multi",
+      slug: "10-salamanca-plaza-mayor-multi",
+      title: "Salamanca Plaza Mayor multi",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-cannery-pass-multi",
-      title: "Cannery pass multi",
+      slug: "11-leon-camino-multi",
+      title: "León Camino multi",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-lockage-ticket-multi",
-      title: "Lockage ticket multi",
+      slug: "12-vitoria-basque-multi",
+      title: "Vitoria Basque multi",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-overnight-handover-multi",
-      title: "Overnight handover multi",
+      slug: "13-logrono-rioja-handover",
+      title: "Logroño Rioja handover",
       bottled: false
     }
   ]

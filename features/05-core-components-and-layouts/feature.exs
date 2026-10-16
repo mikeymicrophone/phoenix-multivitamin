@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-fresnel-lens-cabinet",
-      title: "Fresnel lens cabinet",
+      slug: "01-itami-stand-board",
+      title: "Itami stand board",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-new-dungeness-lamp-desk",
-      title: "New Dungeness lamp desk",
+      slug: "02-jeju-windsock-layout",
+      title: "Jeju windsock layout",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-tatoosh-incident-book",
-      title: "Tatoosh incident book",
+      slug: "03-fukuoka-flash-card",
+      title: "Fukuoka flash card",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-patos-lens-tape",
-      title: "Patos lens tape",
+      slug: "04-sapporo-ice-alert-banner",
+      title: "Sapporo ice-alert banner",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-turn-point-foghorn-desk",
-      title: "Turn Point foghorn desk",
+      slug: "05-naha-typhoon-strip",
+      title: "Naha typhoon strip",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-lime-kiln-keeper-slate",
-      title: "Lime Kiln keeper slate",
+      slug: "06-ishigaki-coral-approach",
+      title: "Ishigaki coral approach",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-cattle-point-chart-locker",
-      title: "Cattle Point chart locker",
+      slug: "07-matsumoto-alpine-card",
+      title: "Matsumoto alpine card",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-point-no-point-bell-book",
-      title: "Point No Point bell book",
+      slug: "08-hakodate-night-layout",
+      title: "Hakodate night layout",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-mukilteo-lamp-bank",
-      title: "Mukilteo lamp bank",
+      slug: "09-kagoshima-ash-desk",
+      title: "Kagoshima ash desk",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-alki-point-wick-log",
-      title: "Alki Point wick log",
+      slug: "10-sendai-alternate-strip",
+      title: "Sendai alternate strip",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-west-point-fog-desk",
-      title: "West Point fog desk",
+      slug: "11-hiroshima-fly-in-board",
+      title: "Hiroshima fly-in board",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-point-robinson-lens-drawer",
-      title: "Point Robinson lens drawer",
+      slug: "12-toyama-tateyama-card",
+      title: "Toyama Tateyama card",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-cape-disappointment-lamp-loft",
-      title: "Cape Disappointment lamp loft",
+      slug: "13-chofu-ga-apron",
+      title: "Chofu GA apron",
       bottled: false
     }
   ]

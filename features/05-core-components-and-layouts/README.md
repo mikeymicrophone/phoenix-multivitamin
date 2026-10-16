@@ -6,19 +6,19 @@ Official reference: [Core components and layouts](https://hexdocs.pm/phoenix/com
 
 ## Examples (0 of 13 bottled)
 
-01. Fresnel lens cabinet — planned
-02. New Dungeness lamp desk — planned
-03. Tatoosh incident book — planned
-04. Patos lens tape — planned
-05. Turn Point foghorn desk — planned
-06. Lime Kiln keeper slate — planned
-07. Cattle Point chart locker — planned
-08. Point No Point bell book — planned
-09. Mukilteo lamp bank — planned
-10. Alki Point wick log — planned
-11. West Point fog desk — planned
-12. Point Robinson lens drawer — planned
-13. Cape Disappointment lamp loft — planned
+01. Itami stand board — planned
+02. Jeju windsock layout — planned
+03. Fukuoka flash card — planned
+04. Sapporo ice-alert banner — planned
+05. Naha typhoon strip — planned
+06. Ishigaki coral approach — planned
+07. Matsumoto alpine card — planned
+08. Hakodate night layout — planned
+09. Kagoshima ash desk — planned
+10. Sendai alternate strip — planned
+11. Hiroshima fly-in board — planned
+12. Toyama Tateyama card — planned
+13. Chofu GA apron — planned
 
 ## What each scenario adds
 

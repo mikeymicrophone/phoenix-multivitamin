@@ -6,19 +6,19 @@ Official reference: [Forms and changesets](https://hexdocs.pm/phoenix_live_view/
 
 ## Examples (0 of 13 bottled)
 
-01. Cannery retort cook card — planned
-02. Maple sugar shack batch — planned
-03. Cider press tally sheet — planned
-04. Creamery vat card — planned
-05. Assay office slips — planned
-06. Apiary super stack — planned
-07. Sail loft bolt ticket — planned
-08. Cooperage hoop log — planned
-09. Ridge kite log — planned
-10. Lock gauge house card — planned
-11. Pilot boat mess slate — planned
-12. Icehouse brine tags — planned
-13. Alder damper board — planned
+01. Maastricht slot form — planned
+02. Ostend cargo changeset — planned
+03. Bern alpine weight card — planned
+04. Lugano lakeside fuel slip — planned
+05. Interlaken glider-tow form — planned
+06. Chamonix heliski manifest — planned
+07. Grenoble Alpe weight — planned
+08. Annecy seaplane log — planned
+09. Cannes bizjet slot — planned
+10. Girona Costa Brava card — planned
+11. Menorca Maó changeset — planned
+12. Ibiza night-slot form — planned
+13. Faro Algarve fuel card — planned
 
 ## What each scenario adds
 

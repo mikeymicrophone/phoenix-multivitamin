@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-retort-cook-schema",
-      title: "Retort cook schema",
+      slug: "01-debrecen-puszta-schema",
+      title: "Debrecen puszta schema",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-seed-packet-schema",
-      title: "Seed packet schema",
+      slug: "02-kosice-tatra-schema",
+      title: "Košice Tatra schema",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-watch-log-entry-schema",
-      title: "Watch log entry schema",
+      slug: "03-poprad-high-tatras-entry",
+      title: "Poprad High Tatras entry",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-berth-assignment-schema",
-      title: "Berth assignment schema",
+      slug: "04-brno-moravian-assignment",
+      title: "Brno Moravian assignment",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-fog-signal-timing-schema",
-      title: "Fog signal timing schema",
+      slug: "05-plzen-pilsner-timing",
+      title: "Plzeň pilsner timing",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-lens-cabinet-drawer-schema",
-      title: "Lens cabinet drawer schema",
+      slug: "06-karlovy-vary-spa-drawer",
+      title: "Karlovy Vary spa drawer",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-hatchery-tray-schema",
-      title: "Hatchery tray schema",
+      slug: "07-memmingen-allgau-schema",
+      title: "Memmingen Allgäu schema",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-moorage-bill-schema",
-      title: "Moorage bill schema",
+      slug: "08-altenburg-nobitz-bill",
+      title: "Altenburg Nobitz bill",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-chart-correction-schema",
-      title: "Chart correction schema",
+      slug: "09-wangerooge-dune-correction",
+      title: "Wangerooge dune correction",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-buoy-paint-batch-schema",
-      title: "Buoy paint batch schema",
+      slug: "10-borkum-paint-batch",
+      title: "Borkum paint batch",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-tide-gate-reading-schema",
-      title: "Tide gate reading schema",
+      slug: "11-emden-ems-reading",
+      title: "Emden Ems reading",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-cannery-pass-schema",
-      title: "Cannery pass schema",
+      slug: "12-liege-cargo-pass",
+      title: "Liège cargo pass",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-pilot-order-schema",
-      title: "Pilot order schema",
+      slug: "13-luxembourg-findel-order",
+      title: "Luxembourg Findel order",
       bottled: false
     }
   ]

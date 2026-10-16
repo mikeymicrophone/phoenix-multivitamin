@@ -6,19 +6,19 @@ Official reference: [Verified routes](https://hexdocs.pm/phoenix/Phoenix.Verifie
 
 ## Examples (13 of 13 bottled)
 
-01. [Alki Point signal flags](01-alki-point-signal-flags/) — available
-02. [Bush Point range board](02-bush-point-range-board/) — available
-03. [Patos Island fog logger](03-patos-island-fog-logger/) — available
-04. [Turn Point light book](04-turn-point-light-book/) — available
-05. [West Point current card](05-west-point-current-card/) — available
-06. [Browns Point fog desk](06-browns-point-fog-desk/) — available
-07. [Point No Point staff gate](07-point-no-point-staff-gate/) — available
-08. [Smith Island tide drum](08-smith-island-tide-drum/) — available
-09. [Point Robinson bell relay](09-point-robinson-bell-relay/) — available
-10. [Edmonds ramp tickets](10-edmonds-ramp-tickets/) — available
-11. [Mukilteo fare banner](11-mukilteo-fare-banner/) — available
-12. [Deception Pass fault line](12-deception-pass-fault-line/) — available
-13. [Fort Worden guard house](13-fort-worden-guard-house/) — available
+01. [La Ferté-Alais signal flags](01-la-ferte-alais-signal-flags/) — available
+02. [Innsbruck approach board](02-innsbruck-approach-board/) — available
+03. [Ilulissat ice logger](03-ilulissat-ice-logger/) — available
+04. [Le Bourget light book](04-le-bourget-light-book/) — available
+05. [Funchal wind card](05-funchal-wind-card/) — available
+06. [Courchevel altimeter desk](06-courchevel-altimeter-desk/) — available
+07. [Gibraltar staff gate](07-gibraltar-staff-gate/) — available
+08. [Mataveri METAR drum](08-mataveri-metar-drum/) — available
+09. [Accra slot relay](09-accra-slot-relay/) — available
+10. [Addis ramp tickets](10-addis-ramp-tickets/) — available
+11. [Nairobi Wilson fare banner](11-nairobi-wilson-fare-banner/) — available
+12. [Sion alpine fault line](12-sion-alpine-fault-line/) — available
+13. [Luqa QRA guard house](13-luqa-qra-guard-house/) — available
 
 ## What each scenario adds
 

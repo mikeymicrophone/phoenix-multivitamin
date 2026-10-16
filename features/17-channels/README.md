@@ -6,19 +6,19 @@ Official reference: [Channels](https://hexdocs.pm/phoenix/channels.html)
 
 ## Examples (0 of 13 bottled)
 
-01. Waadah error wire — planned
-02. Partridge Point watch talk — planned
-03. Sekiu pilot orders — planned
-04. Ozette callback gap — planned
-05. Westport retort queue — planned
-06. Hansville isolation — planned
-07. Cape Disappointment report desk — planned
-08. Deception Pass talkback — planned
-09. Tatoosh radio room — planned
-10. Destruction Island channel — planned
-11. Ediz Hook talkback — planned
-12. Slip Point join desk — planned
-13. Admiralty Inlet channel floor — planned
+01. Alderney Casquets wire — planned
+02. Dinard Émeraude talk — planned
+03. Brest Iroise orders — planned
+04. Pau Pyrenees callback — planned
+05. Perpignan tramontane queue — planned
+06. Figari Bonifacio isolation — planned
+07. Pantelleria channel desk — planned
+08. Lampedusa strait talkback — planned
+09. Kotor bay radio room — planned
+10. Ohrid lake talk — planned
+11. Constanța Black Sea wire — planned
+12. Varna Golden Sands talk — planned
+13. Burgas Strandzha orders — planned
 
 ## What each scenario adds
 
@@ -31,7 +31,7 @@ Official reference: [Channels](https://hexdocs.pm/phoenix/channels.html)
 | 05 | handle_out/3 intercepting a broadcast |
 | 06 | reply/2 versus push/3 versus broadcast |
 | 07 | Presence tracked from the channel |
-| 08 | A channel that assigns the keeper on join |
+| 08 | A channel that assigns the controller on join |
 | 09 | terminate/2 on leave |
 | 10 | Topic patterns with a splat |
 | 11 | Transport: websocket versus longpoll |

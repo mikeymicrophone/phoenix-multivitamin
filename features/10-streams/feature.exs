@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-harbor-tide-board",
-      title: "Harbor tide board",
+      slug: "01-porto-douro-departure-stream",
+      title: "Porto Douro departure stream",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-county-bus-route-card",
-      title: "County bus route card",
+      slug: "02-bilbao-nervion-stand-stream",
+      title: "Bilbao Nervión stand stream",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-marina-moorage-bill",
-      title: "Marina moorage bill",
+      slug: "03-san-sebastian-la-concha-stream",
+      title: "San Sebastián La Concha stream",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-garden-work-day-signups",
-      title: "Garden work day signups",
+      slug: "04-mendoza-andes-reset-stream",
+      title: "Mendoza Andes reset stream",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-rehearsal-dinner-seating",
-      title: "Rehearsal dinner seating",
+      slug: "05-el-calafate-perito-stream",
+      title: "El Calafate Perito stream",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-costume-shop-pull-list",
-      title: "Costume shop pull list",
+      slug: "06-puerto-williams-cape-horn-stream",
+      title: "Puerto Williams Cape Horn stream",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-bakery-oven-queue",
-      title: "Bakery oven queue",
+      slug: "07-puerto-montt-reloncavi-stream",
+      title: "Puerto Montt Reloncaví stream",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-apartment-meter-bank",
-      title: "Apartment meter bank",
+      slug: "08-antofagasta-atacama-stream",
+      title: "Antofagasta Atacama stream",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-archive-request-desk",
-      title: "Archive request desk",
+      slug: "09-bogota-eldorado-stream",
+      title: "Bogotá El Dorado stream",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-clinic-intake-sections",
-      title: "Clinic intake sections",
+      slug: "10-quito-cotopaxi-stream",
+      title: "Quito Cotopaxi stream",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-trail-work-crew",
-      title: "Trail work crew",
+      slug: "11-lima-pisco-stream",
+      title: "Lima Pisco stream",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-orchestra-seating-chart",
-      title: "Orchestra seating chart",
+      slug: "12-iquitos-amazon-stream",
+      title: "Iquitos Amazon stream",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-netshed-mend-flags",
-      title: "Netshed mend flags",
+      slug: "13-manaus-negro-stream",
+      title: "Manaus Negro stream",
       bottled: false
     }
   ]

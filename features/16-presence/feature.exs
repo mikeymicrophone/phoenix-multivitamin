@@ -8,80 +8,80 @@
   slots: [
     %{
       number: 1,
-      slug: "01-lighthouse-watch-floor",
-      title: "Lighthouse watch floor",
+      slug: "01-nicosia-green-line-floor",
+      title: "Nicosia Green Line floor",
       bottled: false
     },
     %{
       number: 2,
-      slug: "02-retort-shift-presence",
-      title: "Retort shift presence",
+      slug: "02-heraklion-knossos-presence",
+      title: "Heraklion Knossos presence",
       bottled: false
     },
     %{
       number: 3,
-      slug: "03-ferry-terminal-dispatch-desk",
-      title: "Ferry terminal dispatch desk",
+      slug: "03-santorini-caldera-desk",
+      title: "Santorini caldera desk",
       bottled: false
     },
     %{
       number: 4,
-      slug: "04-lock-house-chamber-crew",
-      title: "Lock house chamber crew",
+      slug: "04-dubrovnik-walls-crew",
+      title: "Dubrovnik walls crew",
       bottled: false
     },
     %{
       number: 5,
-      slug: "05-pilot-station-on-watch",
-      title: "Pilot station on watch",
+      slug: "05-split-diocletian-watch",
+      title: "Split Diocletian watch",
       bottled: false
     },
     %{
       number: 6,
-      slug: "06-cannery-floor-relief",
-      title: "Cannery floor relief",
+      slug: "06-ljubljana-triple-bridge-relief",
+      title: "Ljubljana Triple Bridge relief",
       bottled: false
     },
     %{
       number: 7,
-      slug: "07-chart-desk-night-staff",
-      title: "Chart desk night staff",
+      slug: "07-krakow-wawel-night-staff",
+      title: "Kraków Wawel night staff",
       bottled: false
     },
     %{
       number: 8,
-      slug: "08-foghorn-tender-presence",
-      title: "Foghorn tender presence",
+      slug: "08-gdansk-motlawa-presence",
+      title: "Gdańsk Motława presence",
       bottled: false
     },
     %{
       number: 9,
-      slug: "09-seed-press-operators",
-      title: "Seed press operators",
+      slug: "09-riga-daugava-operators",
+      title: "Riga Daugava operators",
       bottled: false
     },
     %{
       number: 10,
-      slug: "10-hatchery-round-keepers",
-      title: "Hatchery round keepers",
+      slug: "10-tallinn-toompea-round",
+      title: "Tallinn Toompea round",
       bottled: false
     },
     %{
       number: 11,
-      slug: "11-net-loft-menders-on-shift",
-      title: "Net loft menders on shift",
+      slug: "11-helsinki-malmi-menders",
+      title: "Helsinki Malmi menders",
       bottled: false
     },
     %{
       number: 12,
-      slug: "12-buoy-depot-paint-crew",
-      title: "Buoy depot paint crew",
+      slug: "12-turku-archipelago-crew",
+      title: "Turku archipelago crew",
       bottled: false
     },
     %{
       number: 13,
-      slug: "13-strait-radio-watch",
-      title: "Strait radio watch",
+      slug: "13-visby-gotland-radio",
+      title: "Visby Gotland radio",
       bottled: false
     }
   ]

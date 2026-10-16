@@ -1,7 +1,7 @@
 # Contributing to Phoenix Multivitamin
 
 Every scenario in this catalog follows the same conventions. The reference
-scenario, [LiveView lifecycle and events · 01 · New Dungeness watch log](features/06-liveview-lifecycle-and-events/01-new-dungeness-watch-log/),
+scenario, [LiveView lifecycle and events · 01 · Akureyri night watch](features/06-liveview-lifecycle-and-events/01-akureyri-night-watch/),
 follows all of them; copy its shape when you add a new one.
 
 ## The rules
@@ -19,13 +19,13 @@ concrete enough yet.
 
 | Instead of | Write |
 | --- | --- |
-| `defmodule MyLive` | `defmodule NewDungenessWatchLogLive` |
-| `def handle_event("click", ...)` | `def handle_event("log_fog_bank", ...)` |
+| `defmodule MyLive` | `defmodule AkureyriNightWatchLive` |
+| `def handle_event("click", ...)` | `def handle_event("log_ice_pellets", ...)` |
 | `assign(socket, :count, 0)` | `assign(socket, :tick_count, 0)` |
-| `name: "Alice"` | `name: "Maren"` when Maren is the evening keeper |
+| `name: "Alice"` | `name: "Sólrún"` when Sólrún is the evening controller |
 
-Content counts too: use believable sample data (a posted watch log, a retort
-cook card, a seed packet press), not lorem ipsum.
+Content counts too: use believable sample data (a posted night watch, an
+autoclave cure card, a Roadster flight plate), not lorem ipsum.
 
 Test files are named `*_test.exs` because ExUnit loads them that way. The
 word belongs to the runner, not to the domain. Inside the test, the names
@@ -33,8 +33,8 @@ are still the scenario's names.
 
 ### 2. One believable scenario per scenario folder
 
-Each folder is one real-world job: a keeper posting a watch log, a clerk
-logging a retort cook, a press printing seed packets. Pick a scenario where
+Each folder is one real-world job: a controller posting a night watch, a clerk
+logging a cure card, a mechanic stamping a flight plate. Pick a scenario where
 the feature is the natural tool, not one bent to fit it. Within a feature,
 the thirteen scenarios should each show the feature in a different shape
 rather than repeat one pattern.
@@ -95,7 +95,7 @@ each scenario self-contained:
   details, so a new domain can map onto the same structure one name at a
   time.
 - `Catalog` reads `features/*/feature.exs`. It should not mention a station,
-  a boat, or a cabinet.
+  a craft, or a cabinet.
 
 ## Folder layout
 
@@ -103,9 +103,9 @@ each scenario self-contained:
 features/06-liveview-lifecycle-and-events/
   README.md
   feature.exs
-  01-new-dungeness-watch-log/
-    watch_log_live.ex
-    watch_log_live_test.exs
+  01-akureyri-night-watch/
+    night_watch_live.ex
+    night_watch_live_test.exs
     README.md
 ```
 

@@ -6,19 +6,19 @@ Official reference: [JS commands](https://hexdocs.pm/phoenix_live_view/Phoenix.L
 
 ## Examples (0 of 13 bottled)
 
-01. Harbor night watch drawer — planned
-02. Pilot boarding board flaps — planned
-03. Tool library wall latches — planned
-04. Orchard frost lanterns — planned
-05. Canal lock queue gates — planned
-06. Smokehouse rack doors — planned
-07. Shortwave listening post — planned
-08. Cranberry receiving dock — planned
-09. Buoy tender charts — planned
-10. Grain elevator ledger — planned
-11. Letterpress job dockets — planned
-12. Municipal compost scale — planned
-13. Shipyard paint booths — planned
+01. Colombo Katunayake toggle — planned
+02. Kochi backwater hide — planned
+03. Hyderabad Charminar push — planned
+04. Jaipur pink-city focus — planned
+05. Pokhara Annapurna scroll — planned
+06. Dhaka Jamuna transition — planned
+07. Yangon Shwedagon exec — planned
+08. Bangkok Don Mueang cmd — planned
+09. Chiang Mai Doi Suthep JS — planned
+10. Siem Reap Angkor hide — planned
+11. Hanoi Long Biên toggle — planned
+12. Da Nang Marble push — planned
+13. Manila Intramuros focus — planned
 
 ## What each scenario adds
 

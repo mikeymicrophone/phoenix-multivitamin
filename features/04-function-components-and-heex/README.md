@@ -6,19 +6,19 @@ Official reference: [Function components and HEEx](https://hexdocs.pm/phoenix_li
 
 ## Examples (13 of 13 bottled)
 
-01. [Seed packet label press](01-seed-packet-label-press/) — available
-02. [Totten Inlet nursery tags](02-totten-inlet-nursery-tags/) — available
-03. [Chimacum cider labels](03-chimacum-cider-labels/) — available
-04. [Dungeness crab pot tags](04-dungeness-crab-pot-tags/) — available
-05. [Port Angeles mill tickets](05-port-angeles-mill-tickets/) — available
-06. [Sequim lavender sachets](06-sequim-lavender-sachets/) — available
-07. [Port Hadlock boat shop cards](07-port-hadlock-boat-shop-cards/) — available
-08. [Irondale foundry heat slips](08-irondale-foundry-heat-slips/) — available
-09. [Discovery Bay tile board](09-discovery-bay-tile-board/) — available
-10. [Kaleetan trail permits](10-kaleetan-trail-permits/) — available
-11. [Elwha hatchery trays](11-elwha-hatchery-trays/) — available
-12. [Hoko River smolt tags](12-hoko-river-smolt-tags/) — available
-13. [Skokomish weir cards](13-skokomish-weir-cards/) — available
+01. [Payerne Roadster flight plate](01-payerne-roadster-flight-plate/) — available
+02. [São José Embraer tags](02-sao-jose-embraer-tags/) — available
+03. [Filton Concorde labels](03-filton-concorde-labels/) — available
+04. [Tekapo glider tags](04-tekapo-glider-tags/) — available
+05. [Tianjin assembly tickets](05-tianjin-assembly-tickets/) — available
+06. [Cranfield SAF sachets](06-cranfield-saf-sachets/) — available
+07. [Hahnweide work cards](07-hahnweide-work-cards/) — available
+08. [Derby Trent heat slips](08-derby-trent-heat-slips/) — available
+09. [Friedrichshafen dope board](09-friedrichshafen-dope-board/) — available
+10. [Milford Sound permits](10-milford-sound-permits/) — available
+11. [Linköping Gripen trays](11-linkoping-gripen-trays/) — available
+12. [Woomera telemetry tags](12-woomera-telemetry-tags/) — available
+13. [Longyearbyen polar cards](13-longyearbyen-polar-cards/) — available
 
 ## What each scenario adds
 
@@ -36,6 +36,6 @@ Official reference: [Function components and HEEx](https://hexdocs.pm/phoenix_li
 | 10 | Phoenix.Component helpers: assign_new, update, dynamic_tag, intersperse, to_form, used_input? |
 | 11 | values: at compile time versus a dynamic assign |
 | 12 | HTML safety: interpolated versus raw versus {:safe, _} |
-| 13 | Capstone: attrs, slots, nested cards, rest, and class lists on one weir sheet |
+| 13 | Capstone: attrs, slots, nested cards, rest, and class lists on one polar sheet |
 
 See [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

@@ -6,19 +6,19 @@ Official reference: [Streams](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveV
 
 ## Examples (0 of 13 bottled)
 
-01. Harbor tide board — planned
-02. County bus route card — planned
-03. Marina moorage bill — planned
-04. Garden work day signups — planned
-05. Rehearsal dinner seating — planned
-06. Costume shop pull list — planned
-07. Bakery oven queue — planned
-08. Apartment meter bank — planned
-09. Archive request desk — planned
-10. Clinic intake sections — planned
-11. Trail work crew — planned
-12. Orchestra seating chart — planned
-13. Netshed mend flags — planned
+01. Porto Douro departure stream — planned
+02. Bilbao Nervión stand stream — planned
+03. San Sebastián La Concha stream — planned
+04. Mendoza Andes reset stream — planned
+05. El Calafate Perito stream — planned
+06. Puerto Williams Cape Horn stream — planned
+07. Puerto Montt Reloncaví stream — planned
+08. Antofagasta Atacama stream — planned
+09. Bogotá El Dorado stream — planned
+10. Quito Cotopaxi stream — planned
+11. Lima Pisco stream — planned
+12. Iquitos Amazon stream — planned
+13. Manaus Negro stream — planned
 
 ## What each scenario adds
 
@@ -36,7 +36,7 @@ Official reference: [Streams](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveV
 | 10 | A stream of nested LiveComponents |
 | 11 | Insert after a given id |
 | 12 | Don't consume the stream twice in one render |
-| 13 | Capstone: insert, delete, reset, and an empty dock |
+| 13 | Capstone: insert, delete, reset, and an empty apron |
 
 Planned titles are proposals, not commitments. See
 [CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

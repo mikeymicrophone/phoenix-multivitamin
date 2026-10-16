@@ -1,24 +1,24 @@
 # Uploads
 
-allow_upload, consume_uploaded_entries, progress, max_entries, accept, and auto_upload for files a keeper actually hands over.
+allow_upload, consume_uploaded_entries, progress, max_entries, accept, and auto_upload for files a controller actually hands over.
 
 Official reference: [Uploads](https://hexdocs.pm/phoenix_live_view/uploads.html)
 
 ## Examples (0 of 13 bottled)
 
-01. Permit photo uploader — planned
-02. Lens cabinet plate scans — planned
-03. Retort cook card photos — planned
-04. Chart correction overlays — planned
-05. Foghorn timing strips — planned
-06. Seed packet press proofs — planned
-07. Hatchery tray photos — planned
-08. Wharf damage plates — planned
-09. Keeper log page scans — planned
-10. Buoy paint swatches — planned
-11. Net loft mend photos — planned
-12. Tide staff rubbings — planned
-13. Fresnel prism inspections — planned
+01. Centrair Tokoname plate scan — planned
+02. Macau Taipa logbook upload — planned
+03. Shenzhen Baoan weight scan — planned
+04. Chengdu panda chart upload — planned
+05. Ürümqi silk-road scan — planned
+06. Harbin ice-city upload — planned
+07. Kai Tak checkerboard scan — planned
+08. Almaty Tian Shan upload — planned
+09. Tashkent Registan scan — planned
+10. Samarkand silk upload — planned
+11. Bishkek Ala-Too scan — planned
+12. Dushanbe Pamir upload — planned
+13. Ashgabat Karakum scan — planned
 
 ## What each scenario adds
 
@@ -27,7 +27,7 @@ Official reference: [Uploads](https://hexdocs.pm/phoenix_live_view/uploads.html)
 | 01 | allow_upload/3 in mount |
 | 02 | live_file_input/1 in the form |
 | 03 | consume_uploaded_entries/3 after submit |
-| 04 | cancel_upload/3 for a chart the keeper withdraws |
+| 04 | cancel_upload/3 for a chart the controller withdraws |
 | 05 | max_entries and the extra file that is refused |
 | 06 | accept: a MIME list the station actually wants |
 | 07 | max_file_size and the oversize plate |
