@@ -75,12 +75,10 @@ defmodule PhoenixMultivitaminWeb.IncheonDeclarationsHTML do
   end
 
   defp declaration_href(:arrivals, id),
-    do:
-      ~p"/features/01-routing-and-plugs/03-incheon-bonded-shed/arrivals/declarations/#{id}"
+    do: ~p"/features/01-routing-and-plugs/03-incheon-bonded-shed/arrivals/declarations/#{id}"
 
   defp declaration_href(:departures, id),
-    do:
-      ~p"/features/01-routing-and-plugs/03-incheon-bonded-shed/departures/declarations/#{id}"
+    do: ~p"/features/01-routing-and-plugs/03-incheon-bonded-shed/departures/declarations/#{id}"
 
   defp index_href(:arrivals),
     do: ~p"/features/01-routing-and-plugs/03-incheon-bonded-shed/arrivals/declarations"

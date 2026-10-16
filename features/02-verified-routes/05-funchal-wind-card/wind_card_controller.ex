@@ -10,8 +10,7 @@ defmodule PhoenixMultivitaminWeb.FunchalWindCardController do
 
   def drift(conn, _params) do
     redirect(conn,
-      to:
-        ~p"/features/02-verified-routes/05-funchal-wind-card?#{[set: "cross", knots: "18"]}"
+      to: ~p"/features/02-verified-routes/05-funchal-wind-card?#{[set: "cross", knots: "18"]}"
     )
   end
 

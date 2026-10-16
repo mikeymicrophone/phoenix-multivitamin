@@ -9,7 +9,9 @@ defmodule PhoenixMultivitaminWeb.InnsbruckApproachBoardLiveTest do
 
   test "keyword lists and maps encode the same sorted query string" do
     keyword_path = InnsbruckApproachBoardLive.approach_query_path(loc: "outer", radial: "256")
-    map_path = InnsbruckApproachBoardLive.approach_query_path(%{"radial" => "256", "loc" => "outer"})
+
+    map_path =
+      InnsbruckApproachBoardLive.approach_query_path(%{"radial" => "256", "loc" => "outer"})
 
     assert keyword_path == "#{@path}?loc=outer&radial=256"
     assert map_path == keyword_path

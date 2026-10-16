@@ -34,17 +34,13 @@ defmodule PhoenixMultivitaminWeb.IncheonBondedShedLive do
       <div class="watch-switcher">
         <.link
           id="open-arrivals"
-          href={
-            ~p"/features/01-routing-and-plugs/03-incheon-bonded-shed/arrivals/declarations"
-          }
+          href={~p"/features/01-routing-and-plugs/03-incheon-bonded-shed/arrivals/declarations"}
         >
           Arrivals ledger
         </.link>
         <.link
           id="open-departures"
-          href={
-            ~p"/features/01-routing-and-plugs/03-incheon-bonded-shed/departures/declarations"
-          }
+          href={~p"/features/01-routing-and-plugs/03-incheon-bonded-shed/departures/declarations"}
         >
           Departures ledger
         </.link>

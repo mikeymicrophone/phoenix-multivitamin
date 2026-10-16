@@ -21,8 +21,7 @@ defmodule PhoenixMultivitaminWeb.TromsoSarHoistLive do
     ~H"""
     <Layouts.catalog flash={@flash}>
       <p class="breadcrumbs">
-        <.link navigate={~p"/"}>Catalog</.link>
-        · Routing and plugs · 02 · Tromsø SAR hoist
+        <.link navigate={~p"/"}>Catalog</.link> · Routing and plugs · 02 · Tromsø SAR hoist
       </p>
 
       <h1>Tromsø SAR hoist</h1>

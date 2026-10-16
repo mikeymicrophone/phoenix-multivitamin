@@ -78,8 +78,7 @@ defmodule PhoenixMultivitaminWeb.PayerneRoadsterFlightPlateLive do
       <p class="lede">
         {@operator} stamps plates for the Tesla Roadster flying car at {@shop}.
         Pneumatic thrusters, more whistle than roar. Required attrs must be
-        passed. Defaults fill the rest unless the press writes <code>nil</code>
-        onto the puff counter.
+        passed. Defaults fill the rest unless the press writes <code>nil</code> onto the puff counter.
       </p>
 
       <div class="watch-actions">

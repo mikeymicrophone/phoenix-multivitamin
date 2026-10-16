@@ -27,8 +27,7 @@ defmodule PhoenixMultivitaminWeb.HahnweideWorkCardsLive do
   end
 
   def handle_event("move_to_rib", _params, socket) do
-    {:noreply,
-     assign(socket, :station, %{name: "rib", timber: "spruce", siding: "7/8 in"})}
+    {:noreply, assign(socket, :station, %{name: "rib", timber: "spruce", siding: "7/8 in"})}
   end
 
   def handle_event("skip_dope", _params, socket) do
