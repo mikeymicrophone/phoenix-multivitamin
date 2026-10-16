@@ -572,3 +572,22 @@ assign. Do not `Process.exit/2` the async process unless you mean to
 kill the page.
 
 **Seen in:** [Norilsk hoist exit](features/08-async-assigns/11-norilsk-hoist-exit/).
+
+## Forms and changesets
+
+### `render_change/2` on a form cannot name `phx-auto-recover`
+
+**What happens.** The Ivalo form sets `phx-change="validate_deice"` and
+`phx-auto-recover="recover_deice"`.
+`form(view, "#deice-card-form", ...) |> render_change("recover_deice")`
+raises `FunctionClauseError` in `render_event/3`. The element form of
+`render_change` only accepts a value map, and it fires `phx-change`.
+
+**Why it matters.** Auto-recover looks like another change event you can
+name from the test. LiveViewTest does not send `phx-auto-recover` that
+way.
+
+**What to do.** Call `render_hook(view, "recover_deice", params)` to
+exercise the recover clause.
+
+**Seen in:** [Ivalo recover desk](features/09-forms-and-changesets/07-ivalo-recover-desk/).
