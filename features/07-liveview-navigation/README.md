@@ -4,21 +4,21 @@ patch, navigate, live_redirect, handle_params/3 on an already-mounted view, and 
 
 Official reference: [LiveView navigation](https://hexdocs.pm/phoenix_live_view/live-navigation.html)
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Bodø sector hop — planned
-02. Alta fjord patches — planned
-03. Kirkenes border redirect — planned
-04. Whitehorse medevac patch — planned
-05. Yellowknife ice-road nav — planned
-06. Resolute polar push — planned
-07. Ísafjörður go-around patch — planned
-08. Sumburgh Shetland stack — planned
-09. Tiree machair navigate — planned
-10. Jersey Channel live session — planned
-11. Guernsey hold redirect — planned
-12. Quimper Breton patch — planned
-13. Biarritz surf navigate — planned
+01. [Stanley sector hop](01-stanley-sector-hop/) — available
+02. [Rovaniemi aurora desk](02-rovaniemi-aurora-desk/) — available
+03. [Yakutsk frost patches](03-yakutsk-frost-patches/) — available
+04. [Iqaluit medevac navigate](04-iqaluit-medevac-navigate/) — available
+05. [Phu Quoc stand replace](05-phu-quoc-stand-replace/) — available
+06. [Timbuktu dust params](06-timbuktu-dust-params/) — available
+07. [Comodoro Saab patch](07-comodoro-saab-patch/) — available
+08. [Banjul hold navigate](08-banjul-hold-navigate/) — available
+09. [Gelephu QNH query](09-gelephu-qnh-query/) — available
+10. [Narsarsuaq parent patch](10-narsarsuaq-parent-patch/) — available
+11. [Labuan Bajo Komodo cell](11-labuan-bajo-komodo-cell/) — available
+12. [Socotra dead connect](12-socotra-dead-connect/) — available
+13. [Rio Grande Fuegian watch](13-rio-grande-fuegian-watch/) — available
 
 ## What each scenario adds
 
@@ -37,6 +37,3 @@ Official reference: [LiveView navigation](https://hexdocs.pm/phoenix_live_view/l
 | 11 | Navigating from a LiveComponent through the parent |
 | 12 | The dead render of the destination, then the live connect |
 | 13 | Capstone: patch inside a watch, navigate to the relief board |
-
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.
