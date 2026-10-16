@@ -12,9 +12,7 @@ defmodule PhoenixMultivitaminWeb.VanIcingRetryLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Van icing retry")
-     |> assign(:clerk, "Berfin")
-     |> assign(:craft, "Antonov An-74")
+     |> assign_scenario("Van icing retry", "Berfin", "Antonov An-74")
      |> assign(:probe_dark?, true)
      |> fetch_icing()}
   end
@@ -30,7 +28,7 @@ defmodule PhoenixMultivitaminWeb.VanIcingRetryLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 04 · Van icing retry
       </p>
@@ -41,13 +39,12 @@ defmodule PhoenixMultivitaminWeb.VanIcingRetryLive do
         Retry lights it.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p :if={@icing.failed} id="icing-failed">{failed_reason(@icing.failed)}</p>
       <p :if={@icing.ok?} id="icing-value">{@icing.result}</p>
 
       <button id="retry-probe" type="button" phx-click="retry_probe">Retry probe</button>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 

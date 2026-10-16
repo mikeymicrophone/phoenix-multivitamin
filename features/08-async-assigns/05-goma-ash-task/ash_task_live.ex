@@ -12,9 +12,7 @@ defmodule PhoenixMultivitaminWeb.GomaAshTaskLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Goma ash task")
-     |> assign(:clerk, "Amani")
-     |> assign(:craft, "Mil Mi-8")
+     |> assign_scenario("Goma ash task", "Amani", "Mil Mi-8")
      |> assign(:ash_line, nil)
      |> start_async(:ash_task, fn -> "Nyiragongo ash to FL180" end)}
   end
@@ -31,7 +29,7 @@ defmodule PhoenixMultivitaminWeb.GomaAshTaskLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 05 · Goma ash task
       </p>
@@ -42,11 +40,10 @@ defmodule PhoenixMultivitaminWeb.GomaAshTaskLive do
         plain assign, not an AsyncResult key.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p :if={is_nil(@ash_line)} id="ash-pending">Ash task still climbing.</p>
       <p :if={@ash_line} id="ash-line">{@ash_line}</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

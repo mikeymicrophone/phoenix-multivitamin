@@ -6,6 +6,8 @@ Clerk Bai keeps three Comac ARJ21 tape lines at Mohe. A new aurora line pushes Q
 
 - `limit: 3` keeps three rows.
 - `stream_insert/4` must pass `limit` again or the cap is not enforced.
+- A zipped `for` comprehension pairs the tape IDs and bodies.
+- Appending with `at: -1, limit: -3` keeps the last three lines instead of the first three.
 
 **Files**
 

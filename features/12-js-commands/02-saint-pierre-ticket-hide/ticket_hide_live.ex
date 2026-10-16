@@ -11,15 +11,13 @@ defmodule PhoenixMultivitaminWeb.SaintPierreTicketHideLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Saint-Pierre ticket hide")
-     |> assign(:clerk, "Léonie")
-     |> assign(:craft, "Reims F406")}
+     |> assign_scenario("Saint-Pierre ticket hide", "Léonie", "Reims F406")}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 02 · Saint-Pierre ticket hide
       </p>
@@ -29,8 +27,7 @@ defmodule PhoenixMultivitaminWeb.SaintPierreTicketHideLive do
         Clerk {@clerk} shows and hides the {@craft} drift ticket.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button id="show-ticket" type="button" phx-click={JS.show(to: "#drift-ticket")}>
         Show ticket
@@ -40,7 +37,7 @@ defmodule PhoenixMultivitaminWeb.SaintPierreTicketHideLive do
       </button>
 
       <p id="drift-ticket">Crosswind 18 on the Miquelon lane.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

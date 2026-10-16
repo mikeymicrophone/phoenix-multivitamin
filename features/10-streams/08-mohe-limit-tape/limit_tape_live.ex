@@ -1,7 +1,8 @@
 # Streams · 08 · Mohe limit tape
 #
 # Teaches:
-# - Limit and the row that falls off the end
+# - Positive and negative limits trim opposite ends of a stream
+# - A zipped comprehension builds the tape rows
 
 defmodule PhoenixMultivitaminWeb.MoheLimitTapeLive do
   @moduledoc false
@@ -9,17 +10,14 @@ defmodule PhoenixMultivitaminWeb.MoheLimitTapeLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    tapes = [
-      %{id: "one", body: "Ice fog"},
-      %{id: "two", body: "Rime on the vane"},
-      %{id: "three", body: "QNH 1011"}
-    ]
+    tapes =
+      for {id, body} <- Enum.zip(~w(one two three), ["Ice fog", "Rime on the vane", "QNH 1011"]) do
+        %{id: id, body: body}
+      end
 
     {:ok,
      socket
-     |> assign(:page_title, "Mohe limit tape")
-     |> assign(:clerk, "Bai")
-     |> assign(:craft, "Comac ARJ21")
+     |> assign_scenario("Mohe limit tape", "Bai", "Comac ARJ21")
      |> stream(:tapes, tapes, limit: 3)}
   end
 
@@ -32,10 +30,18 @@ defmodule PhoenixMultivitaminWeb.MoheLimitTapeLive do
      )}
   end
 
+  def handle_event("append_aurora", _params, socket) do
+    {:noreply,
+     stream_insert(socket, :tapes, %{id: "aurora", body: "Aurora over the Amur"},
+       at: -1,
+       limit: -3
+     )}
+  end
+
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 08 · Mohe limit tape
       </p>
@@ -46,17 +52,20 @@ defmodule PhoenixMultivitaminWeb.MoheLimitTapeLive do
         line pushes QNH off the end.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button id="prepend-aurora" type="button" phx-click="prepend_aurora">
         Prepend aurora
       </button>
 
+      <button id="append-aurora" type="button" phx-click="append_aurora">
+        Append aurora; keep the last three
+      </button>
+
       <div id="tapes" phx-update="stream">
         <p :for={{id, tape} <- @streams.tapes} id={id}>{tape.body}</p>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

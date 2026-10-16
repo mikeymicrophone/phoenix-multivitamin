@@ -11,15 +11,13 @@ defmodule PhoenixMultivitaminWeb.BitolaTargetLampLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Bitola target lamp")
-     |> assign(:clerk, "Iskra")
-     |> assign(:craft, "Piper PA-31 Navajo")}
+     |> assign_scenario("Bitola target lamp", "Iskra", "Piper PA-31 Navajo")}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 09 · Bitola target lamp
       </p>
@@ -29,8 +27,7 @@ defmodule PhoenixMultivitaminWeb.BitolaTargetLampLive do
         Clerk {@clerk} clicks a switch that lights a different {@craft} lamp.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button
         id="light-other"
@@ -41,7 +38,7 @@ defmodule PhoenixMultivitaminWeb.BitolaTargetLampLive do
       </button>
 
       <p id="pelister-lamp">Pelister lamp.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

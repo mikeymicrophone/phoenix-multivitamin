@@ -5,7 +5,7 @@ defmodule PhoenixMultivitaminWeb.JomsomDeleteStreamLiveTest do
 
   @path "/features/10-streams/04-jomsom-delete-stream"
 
-  test "stream_delete removes the finished Mustang leg", %{conn: conn} do
+  test "stream_delete_by_dom_id removes the finished Mustang leg", %{conn: conn} do
     {:ok, view, _html} = live(conn, @path)
     assert has_element?(view, "#leg-mustang", "Mustang")
     assert has_element?(view, "#leg-kali", "Kali Gandaki")

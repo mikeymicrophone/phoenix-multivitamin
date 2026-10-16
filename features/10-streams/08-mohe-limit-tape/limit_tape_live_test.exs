@@ -13,4 +13,15 @@ defmodule PhoenixMultivitaminWeb.MoheLimitTapeLiveTest do
     assert has_element?(view, "#tapes", "Aurora over the Amur")
     refute has_element?(view, "#tapes", "QNH 1011")
   end
+
+  test "appending with a negative limit drops the first tape", %{conn: conn} do
+    {:ok, view, _html} = live(conn, @path)
+
+    view |> element("#append-aurora") |> render_click()
+
+    assert has_element?(view, "#tapes-aurora", "Aurora over the Amur")
+    assert has_element?(view, "#tapes-two", "Rime on the vane")
+    assert has_element?(view, "#tapes-three", "QNH 1011")
+    refute has_element?(view, "#tapes-one")
+  end
 end

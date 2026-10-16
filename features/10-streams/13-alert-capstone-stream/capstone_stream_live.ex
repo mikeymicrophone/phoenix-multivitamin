@@ -9,7 +9,10 @@ defmodule PhoenixMultivitaminWeb.AlertCapstoneStreamLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, reset_board(assign_meta(socket))}
+    {:ok,
+     socket
+     |> assign_scenario("Alert capstone stream", "Neevee", "Airbus A400M")
+     |> reset_board()}
   end
 
   @impl true
@@ -37,7 +40,7 @@ defmodule PhoenixMultivitaminWeb.AlertCapstoneStreamLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 13 · Alert capstone stream
       </p>
@@ -47,8 +50,7 @@ defmodule PhoenixMultivitaminWeb.AlertCapstoneStreamLive do
         Clerk {@clerk} inserts, deletes, and resets {@craft} aprons at Alert.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p id="apron-count">{@apron_count}</p>
 
       <button id="add-lincoln" type="button" phx-click="add_lincoln">
@@ -65,15 +67,8 @@ defmodule PhoenixMultivitaminWeb.AlertCapstoneStreamLive do
         <p class="hidden only:block" id="empty-apron">No aprons open.</p>
         <p :for={{id, apron} <- @streams.aprons} id={id}>{apron.name}</p>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
-  end
-
-  defp assign_meta(socket) do
-    socket
-    |> assign(:page_title, "Alert capstone stream")
-    |> assign(:clerk, "Neevee")
-    |> assign(:craft, "Airbus A400M")
   end
 
   defp reset_board(socket) do

@@ -11,6 +11,8 @@ clause and returns 422.
 - A flat map does not.
 - The action reads `oat_c` and `elevation_ft` from inside `card`.
 
+- `with` accepts only complete `Integer.parse/1` results; malformed or nonbinary readings return 422.
+
 **Files**
 
 | File | Role |

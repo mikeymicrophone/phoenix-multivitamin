@@ -12,9 +12,7 @@ defmodule PhoenixMultivitaminWeb.BalmacedaCapstoneDeskLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Balmaceda capstone desk")
-     |> assign(:clerk, "Pascual")
-     |> assign(:craft, "BAe 146")
+     |> assign_scenario("Balmaceda capstone desk", "Pascual", "BAe 146")
      |> assign(:probe_dark?, true)
      |> assign_async(:wind, fn -> {:ok, %{wind: "27028G40KT"}} end)
      |> fetch_icing()}
@@ -31,7 +29,7 @@ defmodule PhoenixMultivitaminWeb.BalmacedaCapstoneDeskLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 13 · Balmaceda capstone desk
       </p>
@@ -42,14 +40,13 @@ defmodule PhoenixMultivitaminWeb.BalmacedaCapstoneDeskLive do
         Icing fails until retry.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p :if={@wind.ok?} id="wind-value">{@wind.result}</p>
       <p :if={@icing.failed} id="icing-failed">{inspect(@icing.failed)}</p>
       <p :if={@icing.ok?} id="icing-value">{@icing.result}</p>
 
       <button id="retry-icing" type="button" phx-click="retry_icing">Retry icing</button>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 

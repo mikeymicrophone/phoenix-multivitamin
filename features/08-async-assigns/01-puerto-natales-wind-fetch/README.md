@@ -6,6 +6,7 @@ Clerk Esperanza fetches wind for a Pilatus PC-6 at Puerto Natales. `assign_async
 
 - `assign_async/3` started from mount.
 - The task starts only when the socket is connected.
+- `<.async_result :let={wind}>` binds the successful value and provides loading and failed slots.
 
 **Files**
 

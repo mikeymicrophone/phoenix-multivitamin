@@ -11,15 +11,13 @@ defmodule PhoenixMultivitaminWeb.GrytvikenExecBriefLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Grytviken exec brief")
-     |> assign(:clerk, "Kirsten")
-     |> assign(:craft, "Aerospatiale Alouette III")}
+     |> assign_scenario("Grytviken exec brief", "Kirsten", "Aerospatiale Alouette III")}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 12 · Grytviken exec brief
       </p>
@@ -29,8 +27,7 @@ defmodule PhoenixMultivitaminWeb.GrytvikenExecBriefLive do
         Clerk {@clerk} execs a server-rendered show command on the {@craft} whale-bird brief.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <div id="brief-card" data-open-brief={JS.show(to: "#whale-brief")}>
         <button
@@ -43,7 +40,7 @@ defmodule PhoenixMultivitaminWeb.GrytvikenExecBriefLive do
       </div>
 
       <p id="whale-brief" hidden>Whale-bird brief.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

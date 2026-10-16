@@ -34,4 +34,21 @@ defmodule PhoenixMultivitaminWeb.LehDensityAltitudeCardTest do
     assert body["nested"] == false
     assert body["error"] == "card_missing"
   end
+
+  test "malformed nested readings return validation errors", %{conn: conn} do
+    for reading <- ["22C", "", "warm", nil, 22, ["22"]] do
+      response =
+        conn
+        |> put_req_header("content-type", "application/json")
+        |> post(@card, Jason.encode!(%{card: %{oat_c: reading, elevation_ft: "10682"}}))
+
+      assert %{"nested" => true, "error" => "card_reading_invalid"} = json_response(response, 422)
+    end
+  end
+
+  test "a partial elevation does not reach the calculation", %{conn: conn} do
+    conn = post(conn, @card, %{card: %{oat_c: "22", elevation_ft: "10682ft"}})
+
+    assert %{"nested" => true, "error" => "card_reading_invalid"} = json_response(conn, 422)
+  end
 end

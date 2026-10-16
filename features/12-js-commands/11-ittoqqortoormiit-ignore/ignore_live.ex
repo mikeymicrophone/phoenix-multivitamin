@@ -11,9 +11,7 @@ defmodule PhoenixMultivitaminWeb.IttoqqortoormiitIgnoreLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Ittoqqortoormiit ignore")
-     |> assign(:clerk, "Aputsiaq")
-     |> assign(:craft, "Bell 412")
+     |> assign_scenario("Ittoqqortoormiit ignore", "Aputsiaq", "Bell 412")
      |> assign(:ticks, 0)}
   end
 
@@ -25,7 +23,7 @@ defmodule PhoenixMultivitaminWeb.IttoqqortoormiitIgnoreLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 11 · Ittoqqortoormiit ignore
       </p>
@@ -36,8 +34,7 @@ defmodule PhoenixMultivitaminWeb.IttoqqortoormiitIgnoreLive do
         patch by ignoring the open attribute.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p id="sund-ticks">{@ticks}</p>
 
       <button id="tick-sund" type="button" phx-click="tick_scoresbysund">
@@ -51,7 +48,7 @@ defmodule PhoenixMultivitaminWeb.IttoqqortoormiitIgnoreLive do
       >
         Icing dialog stays open.
       </dialog>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

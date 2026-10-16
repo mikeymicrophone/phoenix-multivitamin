@@ -11,6 +11,8 @@ brief body together.
 - 202 Accepted is not an empty response.
 - Status and template are independent.
 
+- `render/3` takes an explicit keyword list of assigns instead of a chain of `assign/3` calls.
+
 **Files**
 
 | File | Role |

@@ -13,9 +13,7 @@ defmodule PhoenixMultivitaminWeb.FunafutiOnceStreamLive do
 
     {:ok,
      socket
-     |> assign(:page_title, "Funafuti once stream")
-     |> assign(:clerk, "Talia")
-     |> assign(:craft, "DHC-2 Beaver")
+     |> assign_scenario("Funafuti once stream", "Talia", "DHC-2 Beaver")
      |> assign(:hop_count, length(hops))
      |> stream(:hops, hops)}
   end
@@ -31,7 +29,7 @@ defmodule PhoenixMultivitaminWeb.FunafutiOnceStreamLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 12 · Funafuti once stream
       </p>
@@ -42,8 +40,7 @@ defmodule PhoenixMultivitaminWeb.FunafutiOnceStreamLive do
         assign, not a second walk of the stream.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p id="hop-count">{@hop_count}</p>
 
       <button id="add-nukufetau" type="button" phx-click="add_nukufetau">
@@ -53,7 +50,7 @@ defmodule PhoenixMultivitaminWeb.FunafutiOnceStreamLive do
       <div id="hops" phx-update="stream">
         <p :for={{id, hop} <- @streams.hops} id={id}>{hop.name}</p>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

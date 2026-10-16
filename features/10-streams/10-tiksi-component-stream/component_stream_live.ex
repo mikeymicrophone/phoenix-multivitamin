@@ -13,9 +13,7 @@ defmodule PhoenixMultivitaminWeb.TiksiComponentStreamLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Tiksi component stream")
-     |> assign(:clerk, "Aytal")
-     |> assign(:craft, "Kamov Ka-32")
+     |> assign_scenario("Tiksi component stream", "Aytal", "Kamov Ka-32")
      |> stream(:hoists, [%{id: "lena", site: "Lena mouth"}])}
   end
 
@@ -27,7 +25,7 @@ defmodule PhoenixMultivitaminWeb.TiksiComponentStreamLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 10 · Tiksi component stream
       </p>
@@ -37,8 +35,7 @@ defmodule PhoenixMultivitaminWeb.TiksiComponentStreamLive do
         Clerk {@clerk} streams {@craft} hoist cells at Tiksi.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button id="add-laptev" type="button" phx-click="add_laptev">
         Add Laptev
@@ -52,7 +49,7 @@ defmodule PhoenixMultivitaminWeb.TiksiComponentStreamLive do
           hoist={hoist}
         />
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

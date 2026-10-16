@@ -8,7 +8,7 @@ defmodule PhoenixMultivitaminWeb.KangerlussuaqSoundingShelfLiveTest do
 
   @path "/features/08-async-assigns/09-kangerlussuaq-sounding-shelf"
 
-  test "assign_async reads the sounding row without blocking the dead render", %{conn: conn} do
+  test "stream_async reads the sounding row without blocking the dead render", %{conn: conn} do
     now = DateTime.utc_now() |> DateTime.truncate(:second)
 
     {:ok, _} =
@@ -32,5 +32,15 @@ defmodule PhoenixMultivitaminWeb.KangerlussuaqSoundingShelfLiveTest do
     assert has_element?(view, "#sounding-oat", "-31")
     refute has_element?(view, "#sounding-loading")
     assert has_element?(view, "#craft-name", "Airbus A330-200")
+  end
+
+  test "an empty shelf finishes loading without inserting a row", %{conn: conn} do
+    {:ok, view, _html} = live(conn, @path)
+    render_async(view)
+
+    assert has_element?(view, "#sounding-ready")
+    assert has_element?(view, "#soundings > #sounding-empty")
+    refute has_element?(view, "#soundings > article")
+    refute has_element?(view, "#sounding-loading")
   end
 end

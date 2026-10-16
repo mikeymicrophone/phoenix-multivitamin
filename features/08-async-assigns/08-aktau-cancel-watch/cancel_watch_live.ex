@@ -12,9 +12,7 @@ defmodule PhoenixMultivitaminWeb.AktauCancelWatchLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Aktau cancel watch")
-     |> assign(:clerk, "Aigerim")
-     |> assign(:craft, "Antonov An-24")}
+     |> assign_scenario("Aktau cancel watch", "Aigerim", "Antonov An-24")}
   end
 
   @impl true
@@ -41,7 +39,7 @@ defmodule PhoenixMultivitaminWeb.AktauCancelWatchLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Async assigns · 08 · Aktau cancel watch
       </p>
@@ -52,15 +50,14 @@ defmodule PhoenixMultivitaminWeb.AktauCancelWatchLive do
         watch patches. Midwatch starts a new fetch.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
       <p id="watch-name">{@watch}</p>
       <p :if={@metar.loading} id="metar-loading">METAR still out over the Caspian.</p>
       <p :if={@metar.failed} id="metar-failed">{inspect(@metar.failed)}</p>
       <p :if={@metar.ok?} id="metar-value">{@metar.result}</p>
 
       <button id="patch-midwatch" type="button" phx-click="patch_midwatch">Patch midwatch</button>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 

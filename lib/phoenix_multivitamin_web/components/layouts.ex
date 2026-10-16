@@ -61,7 +61,17 @@ defmodule PhoenixMultivitaminWeb.Layouts do
     default: nil,
     doc: "the current [scope](https://phoenix.hexdocs.pm/scopes.html)"
 
+  attr :variant, :atom, default: :default, values: [:default, :catalog]
+
   slot :inner_block, required: true
+
+  def app(%{variant: :catalog} = assigns) do
+    ~H"""
+    <.catalog flash={@flash}>
+      {render_slot(@inner_block)}
+    </.catalog>
+    """
+  end
 
   def app(assigns) do
     ~H"""

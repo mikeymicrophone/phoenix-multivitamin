@@ -11,9 +11,7 @@ defmodule PhoenixMultivitaminWeb.LuderitzStandStreamLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Lüderitz stand stream")
-     |> assign(:clerk, "Immanuel")
-     |> assign(:craft, "Swearingen Metro III")
+     |> assign_scenario("Lüderitz stand stream", "Immanuel", "Swearingen Metro III")
      |> stream(:stands, [%{id: "diamond", name: "Diamond"}])}
   end
 
@@ -25,7 +23,7 @@ defmodule PhoenixMultivitaminWeb.LuderitzStandStreamLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 02 · Lüderitz stand stream
       </p>
@@ -35,8 +33,7 @@ defmodule PhoenixMultivitaminWeb.LuderitzStandStreamLive do
         Clerk {@clerk} appends a {@craft} stand at Lüderitz.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button id="append-kolmanskop" type="button" phx-click="append_kolmanskop">
         Append Kolmanskop
@@ -47,7 +44,7 @@ defmodule PhoenixMultivitaminWeb.LuderitzStandStreamLive do
           <span id={"stand-" <> stand.id}>{stand.name}</span>
         </div>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

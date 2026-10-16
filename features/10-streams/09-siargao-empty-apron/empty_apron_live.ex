@@ -11,9 +11,7 @@ defmodule PhoenixMultivitaminWeb.SiargaoEmptyApronLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Siargao empty apron")
-     |> assign(:clerk, "Ligaya")
-     |> assign(:craft, "Quest Kodiak 100")
+     |> assign_scenario("Siargao empty apron", "Ligaya", "Quest Kodiak 100")
      |> stream(:stands, [])}
   end
 
@@ -25,7 +23,7 @@ defmodule PhoenixMultivitaminWeb.SiargaoEmptyApronLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · Streams · 09 · Siargao empty apron
       </p>
@@ -35,8 +33,7 @@ defmodule PhoenixMultivitaminWeb.SiargaoEmptyApronLive do
         Clerk {@clerk} opens an empty {@craft} apron at Siargao until Cloud 9 parks.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button id="park-cloud" type="button" phx-click="park_cloud">
         Park Cloud 9
@@ -46,7 +43,7 @@ defmodule PhoenixMultivitaminWeb.SiargaoEmptyApronLive do
         <p class="hidden only:block" id="empty-apron">Apron is empty.</p>
         <p :for={{id, stand} <- @streams.stands} id={id}>{stand.name}</p>
       </div>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end

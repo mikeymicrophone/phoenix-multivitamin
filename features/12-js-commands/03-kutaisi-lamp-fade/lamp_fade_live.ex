@@ -2,6 +2,7 @@
 #
 # Teaches:
 # - JS.transition/1 for a lamp that fades
+# - A transition tuple with explicit duration and nonblocking execution
 
 defmodule PhoenixMultivitaminWeb.KutaisiLampFadeLive do
   @moduledoc false
@@ -11,15 +12,13 @@ defmodule PhoenixMultivitaminWeb.KutaisiLampFadeLive do
   def mount(_params, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Kutaisi lamp fade")
-     |> assign(:clerk, "Tamari")
-     |> assign(:craft, "Embraer ERJ-145")}
+     |> assign_scenario("Kutaisi lamp fade", "Tamari", "Embraer ERJ-145")}
   end
 
   @impl true
   def render(assigns) do
     ~H"""
-    <Layouts.catalog flash={@flash}>
+    <Layouts.app flash={@flash} variant={:catalog}>
       <p class="breadcrumbs">
         <.link navigate={~p"/"}>Catalog</.link> · JS commands · 03 · Kutaisi lamp fade
       </p>
@@ -29,19 +28,25 @@ defmodule PhoenixMultivitaminWeb.KutaisiLampFadeLive do
         Clerk {@clerk} fades the threshold lamp on the {@craft}.
       </p>
 
-      <p id="clerk-name">{@clerk}</p>
-      <p id="craft-name">{@craft}</p>
+      <.scenario_identity clerk={@clerk} craft={@craft} />
 
       <button
         id="fade-lamp"
         type="button"
-        phx-click={JS.transition("fade-lamp", to: "#threshold-lamp")}
+        phx-click={
+          JS.transition(
+            {"transition-opacity ease-out", "opacity-100", "opacity-30"},
+            to: "#threshold-lamp",
+            time: 700,
+            blocking: false
+          )
+        }
       >
         Fade lamp
       </button>
 
       <p id="threshold-lamp">Threshold bar lit.</p>
-    </Layouts.catalog>
+    </Layouts.app>
     """
   end
 end
