@@ -8,81 +8,94 @@
   slots: [
     %{
       number: 1,
-      slug: "01-itami-stand-board",
-      title: "Itami stand board",
-      bottled: false
+      slug: "01-duxford-hangar-board",
+      title: "Duxford hangar board",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.DuxfordHangarBoardLive
     },
     %{
       number: 2,
-      slug: "02-jeju-windsock-layout",
-      title: "Jeju windsock layout",
-      bottled: false
+      slug: "02-guadalajara-fuel-flash",
+      title: "Guadalajara fuel flash",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.GuadalajaraFuelFlashLive
     },
     %{
       number: 3,
-      slug: "03-fukuoka-flash-card",
-      title: "Fukuoka flash card",
-      bottled: false
+      slug: "03-johannesburg-qra-table",
+      title: "Johannesburg QRA table",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.JohannesburgQraTableLive
     },
     %{
       number: 4,
-      slug: "04-sapporo-ice-alert-banner",
-      title: "Sapporo ice-alert banner",
-      bottled: false
+      slug: "04-eilat-desert-banner",
+      title: "Eilat desert banner",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.EilatDesertBannerLive
     },
     %{
       number: 5,
-      slug: "05-naha-typhoon-strip",
-      title: "Naha typhoon strip",
-      bottled: false
+      slug: "05-oaxaca-bare-plate",
+      title: "Oaxaca bare plate",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.OaxacaBarePlateLive
     },
     %{
       number: 6,
-      slug: "06-ishigaki-coral-approach",
-      title: "Ishigaki coral approach",
-      bottled: false
+      slug: "06-prestwick-atlantic-title",
+      title: "Prestwick Atlantic title",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.PrestwickAtlanticTitleLive
     },
     %{
       number: 7,
-      slug: "07-matsumoto-alpine-card",
-      title: "Matsumoto alpine card",
-      bottled: false
+      slug: "07-istanbul-cargo-modal",
+      title: "Istanbul cargo modal",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.IstanbulCargoModalLive
     },
     %{
       number: 8,
-      slug: "08-hakodate-night-layout",
-      title: "Hakodate night layout",
-      bottled: false
+      slug: "08-kathmandu-breadcrumb",
+      title: "Kathmandu breadcrumb",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.KathmanduBreadcrumbLive
     },
     %{
       number: 9,
-      slug: "09-kagoshima-ash-desk",
-      title: "Kagoshima ash desk",
-      bottled: false
+      slug: "09-oslo-theme-desk",
+      title: "Oslo theme desk",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.OsloThemeDeskLive
     },
     %{
       number: 10,
-      slug: "10-sendai-alternate-strip",
-      title: "Sendai alternate strip",
-      bottled: false
+      slug: "10-prague-gettext-flash",
+      title: "Prague gettext flash",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.PragueGettextFlashLive
     },
     %{
       number: 11,
-      slug: "11-hiroshima-fly-in-board",
-      title: "Hiroshima fly-in board",
-      bottled: false
+      slug: "11-schiphol-print-ticket",
+      title: "Schiphol print ticket",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.SchipholPrintTicketLive
     },
     %{
       number: 12,
-      slug: "12-toyama-tateyama-card",
-      title: "Toyama Tateyama card",
-      bottled: false
+      slug: "12-billund-apron-card",
+      title: "Billund apron card",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.BillundApronCardLive
     },
     %{
       number: 13,
-      slug: "13-chofu-ga-apron",
-      title: "Chofu GA apron",
-      bottled: false
+      slug: "13-copenhagen-capstone-desk",
+      title: "Copenhagen capstone desk",
+      bottled: true,
+      live_module: PhoenixMultivitaminWeb.CopenhagenCapstoneDeskLive
     }
   ]
 }

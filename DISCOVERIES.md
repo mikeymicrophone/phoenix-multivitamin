@@ -395,3 +395,105 @@ to compile a match on submit, or will skip the assign-stand clause.
 
 **Seen in:** [Tivat stand slate](features/06-liveview-lifecycle-and-events/04-tivat-stand-slate/),
 [Overberg lamp round](features/06-liveview-lifecycle-and-events/03-overberg-lamp-round/).
+
+## Controllers and JSON
+
+### `json/2` keeps the status `put_status/2` already set
+
+**What happens.** `put_status(:created)` then `json/2` is 201. `put_status(:accepted)`
+then `render/3` is 202 with an HTML body. `json/2` alone is 200.
+
+**Why it matters.** `json/2` looks like it might reset the status to OK.
+It does not. The body and the status are independent.
+
+**What to do.** Set the status first when 201 or 202 is the point. Do not
+expect `json/2` to imply Created.
+
+**Seen in:** [Cusco load sheet](features/03-controllers-and-json/02-cusco-load-sheet/),
+[Bariloche Chinook brief](features/03-controllers-and-json/05-bariloche-chinook-brief/).
+
+### `action_fallback` sees tagged tuples; `rescue` sees exceptions
+
+**What happens.** `{:error, :not_found}` from `show/2` hits the fallback
+(`via: "fallback"`). `String.to_integer("runway-Q")` raises `ArgumentError`.
+The rescued clause answers 422 (`via: "rescue"`). The fallback never runs.
+
+**Why it matters.** A fallback looks like a catch-all error door. It only
+runs when the action returns an error tuple, not when Elixir raises.
+
+**What to do.** Return `{:error, reason}` for expected misses. Rescue only
+for exceptions you intend to translate.
+
+**Seen in:** [Ulaanbaatar winter NOTAM](features/03-controllers-and-json/04-ulaanbaatar-winter-notam/).
+
+### A JSON 404 is not ErrorHTML's `"Not Found"` page
+
+**What happens.** `put_status(:not_found)` then `json/2` returns
+`{"error":"slot_missing",...}`. The resp body is not `"Not Found"` and
+not an HTML document.
+
+**Why it matters.** A client that expected the default error page, or a
+test that asserted `"Not Found"`, misses the map the action actually sent.
+
+**What to do.** Decide per action whether a miss is ErrorHTML/ErrorJSON or
+your own JSON map. `json_response(conn, 404)` reads the map.
+
+**Seen in:** [Malé atoll slot list](features/03-controllers-and-json/09-male-atoll-slot-list/).
+
+### Nested params do not match a flat clause
+
+**What happens.** `create(conn, %{"card" => %{"oat_c" => oat, ...}})`
+matches a nested post. The same keys at the top level (`%{"oat_c" => ...}`)
+miss that clause and hit the fallback 422 (`nested: false`).
+
+**Why it matters.** A JSON client that posts a flat map looks "almost
+right" and never enters the domain clause.
+
+**What to do.** Nest under the domain key the action pattern-matches, or
+add a clause that accepts the flat shape.
+
+**Seen in:** [Leh density-altitude card](features/03-controllers-and-json/10-leh-density-altitude-card/).
+
+### `send_resp/3` skips the view and the layout
+
+**What happens.** `put_resp_content_type("text/plain")` then `send_resp/3`
+writes the oxygen ticket. The body has no `<html>` and no `catalog-shell`.
+
+**Why it matters.** A later `render/3` in the same action would be
+`AlreadySentError`. Tests that look for the catalog chrome will fail even
+when the ticket is correct.
+
+**What to do.** Use `send_resp/3` when the body is the ticket. Do not also
+render.
+
+**Seen in:** [Lhasa oxygen plan](features/03-controllers-and-json/11-lhasa-oxygen-plan/).
+
+## Core components and layouts
+
+### Overriding a core input class drops the defaults
+
+**What happens.** `<.input class="...border-amber-600...">` emits that
+class list. The default `w-full input` string is gone. The field still
+posts QNH.
+
+**Why it matters.** A class override looks like "add these utilities".
+None of the default input classes are inherited.
+
+**What to do.** When you pass `class`, fully style the input. Keep the
+default class if you still want the daisy input look.
+
+**Seen in:** [Eilat desert banner](features/05-core-components-and-layouts/04-eilat-desert-banner/).
+
+### `live_title` suffix belongs to the root layout
+
+**What happens.** The LiveView assigns `page_title` `"Prestwick Atlantic title"`.
+The static HTML title is `Prestwick Atlantic title · Phoenix`. The suffix
+is in `root.html.heex`, not in the LiveView.
+
+**Why it matters.** A test or a tab title that expected only the assign
+misses the suffix. Retitling the assign does not move ` · Phoenix`.
+
+**What to do.** Treat `page_title` as the prefix. Assert the suffix if the
+document title is the behavior.
+
+**Seen in:** [Prestwick Atlantic title](features/05-core-components-and-layouts/06-prestwick-atlantic-title/).
