@@ -7,8 +7,8 @@ defmodule PhoenixMultivitaminWeb.KaohsiungLoveRiverScopeLiveTest do
 
   test "the HTTP render offers a fallback and no river hook", %{conn: conn} do
     document = conn |> get(@path) |> html_response(200) |> LazyHTML.from_document()
-    assert document |> LazyHTML.filter("#scope-static") |> LazyHTML.to_html() != ""
-    assert document |> LazyHTML.filter("#love-river-scope") |> LazyHTML.to_html() == ""
+    assert document |> LazyHTML.query("#scope-static") |> LazyHTML.to_html() != ""
+    assert document |> LazyHTML.query("#love-river-scope") |> LazyHTML.to_html() == ""
   end
 
   test "only the connected hook handshake arms the first sweep", %{conn: conn} do
