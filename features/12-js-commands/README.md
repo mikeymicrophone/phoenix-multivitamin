@@ -4,21 +4,21 @@ Phoenix.LiveView.JS push, toggle, show, hide, transition, and composing commands
 
 Official reference: [JS commands](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.JS.html)
 
-## Examples (0 of 13 bottled)
+## Examples (13 of 13 bottled)
 
-01. Colombo Katunayake toggle — planned
-02. Kochi backwater hide — planned
-03. Hyderabad Charminar push — planned
-04. Jaipur pink-city focus — planned
-05. Pokhara Annapurna scroll — planned
-06. Dhaka Jamuna transition — planned
-07. Yangon Shwedagon exec — planned
-08. Bangkok Don Mueang cmd — planned
-09. Chiang Mai Doi Suthep JS — planned
-10. Siem Reap Angkor hide — planned
-11. Hanoi Long Biên toggle — planned
-12. Da Nang Marble push — planned
-13. Manila Intramuros focus — planned
+01. [Qaarsut frost toggle](01-qaarsut-frost-toggle/) — available
+02. [Saint-Pierre ticket hide](02-saint-pierre-ticket-hide/) — available
+03. [Kutaisi lamp fade](03-kutaisi-lamp-fade/) — available
+04. [Gyumri brief push](04-gyumri-brief-push/) — available
+05. [Mary class desk](05-mary-class-desk/) — available
+06. [Bukhara fog flag](06-bukhara-fog-flag/) — available
+07. [Sinop focus pad](07-sinop-focus-pad/) — available
+08. [Trabzon dispatch bell](08-trabzon-dispatch-bell/) — available
+09. [Bitola target lamp](09-bitola-target-lamp/) — available
+10. [Tulcea pipe board](10-tulcea-pipe-board/) — available
+11. [Ittoqqortoormiit ignore](11-ittoqqortoormiit-ignore/) — available
+12. [Grytviken exec brief](12-grytviken-exec-brief/) — available
+13. [Barentsburg capstone board](13-barentsburg-capstone-board/) — available
 
 ## What each scenario adds
 
@@ -37,6 +37,3 @@ Official reference: [JS commands](https://hexdocs.pm/phoenix_live_view/Phoenix.L
 | 11 | JS.ignore_attributes/1 during a patch |
 | 12 | exec from a server-pushed command |
 | 13 | Capstone: toggle, push, and a transition on one board |
-
-Planned titles are proposals, not commitments. See
-[CONTRIBUTING.md](../../CONTRIBUTING.md) before filling a slot.

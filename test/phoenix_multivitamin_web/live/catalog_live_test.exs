@@ -11,7 +11,7 @@ defmodule PhoenixMultivitaminWeb.CatalogLiveTest do
     bottled = Catalog.bottled_slots()
 
     assert html =~ "Phoenix Multivitamin"
-    assert html =~ "130 of 325"
+    assert html =~ "156 of 325"
     assert html =~ "Routing and plugs"
     assert html =~ "LiveView lifecycle and events"
     assert html =~ "Function components and HEEx"
