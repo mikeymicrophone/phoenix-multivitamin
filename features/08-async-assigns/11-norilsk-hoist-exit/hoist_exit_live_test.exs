@@ -11,6 +11,7 @@ defmodule PhoenixMultivitaminWeb.NorilskHoistExitLiveTest do
     assert html =~ "Gavril"
     assert html =~ "Mil Mi-26"
 
-    assert catch_exit(live(conn, @path)) == :hoist_cable_snap
+    assert {:hoist_cable_snap, {Phoenix.LiveViewTest, :live, [@path]}} =
+             catch_exit(live(conn, @path))
   end
 end
